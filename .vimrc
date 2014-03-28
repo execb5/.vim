@@ -1,3 +1,5 @@
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
 let g:syntastic_auto_loc_list=1
 let g:syntastic_disabled_filetypes=['html']
 let g:syntastic_enable_signs=1
