@@ -1,3 +1,6 @@
+"To make the snipMate work
+:filetype plugin on
+
 "To make the NERDTree close with a file
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
@@ -11,7 +14,13 @@ nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <F2> :w<CR> 
 nmap <F3> :wq<CR> 
-nmap <F4> :q!<CR> 
+nmap <F4> :q!<CR>
+
+"Disabling default keys to learn the hjkl
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
 
 "Initial configuration
 set number
