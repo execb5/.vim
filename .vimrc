@@ -16,11 +16,18 @@ nmap <F2> :w<CR>
 nmap <F3> :wq<CR> 
 nmap <F4> :q!<CR>
 
+
 "Disabling default keys to learn the hjkl
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
+"Disable Arrow keys in Escape mode.
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+"Disable Arrow keys in insert mode
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
 
 "Initial configuration
 set number
