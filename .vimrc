@@ -15,6 +15,7 @@ nmap <F8> :TagbarToggle<CR>
 nmap <F2> :w<CR> 
 nmap <F3> :wq<CR> 
 nmap <F4> :q!<CR>
+nmap <F5> :noh<CR>
 
 
 "Disabling default keys to learn the hjkl
