@@ -36,3 +36,8 @@ set autoindent
 set nowrap
 set hlsearch
 set tabpagemax=30
+
+"Only to use with solarized theme
+"syntax enable
+"set background=dark
+"colo solarized
