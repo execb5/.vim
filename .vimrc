@@ -15,6 +15,9 @@ nmap <F8> :TagbarToggle<CR>
 nmap <F2> :w<CR> 
 nmap <F3> :wq<CR> 
 nmap <F4> :q!<CR>
+nmap <F10> :wall<CR> 
+nmap <F11> :wqall<CR> 
+nmap <F12> :qall!<CR>
 nmap <F5> :noh<CR>
 
 
@@ -36,8 +39,3 @@ set autoindent
 set nowrap
 set hlsearch
 set tabpagemax=30
-
-"Only to use with solarized theme
-"syntax enable
-"set background=dark
-"colo solarized
