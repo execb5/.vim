@@ -39,3 +39,4 @@ set autoindent
 set nowrap
 set hlsearch
 set tabpagemax=30
+set clipboard=unnamedplus
