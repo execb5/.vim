@@ -23,15 +23,15 @@ nmap <F5> :noh<CR>
 
 "Disabling default keys to learn the hjkl
 "Disable Arrow keys in Escape mode.
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+"map <up> <nop>
+"map <down> <nop>
+"map <left> <nop>
+"map <right> <nop>
 "Disable Arrow keys in insert mode
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
+"imap <up> <nop>
+"imap <down> <nop>
+"imap <left> <nop>
+"imap <right> <nop>
 
 "Initial configuration
 set number
@@ -40,3 +40,4 @@ set nowrap
 set hlsearch
 set tabpagemax=30
 set clipboard=unnamedplus
+colo darkspectrum
