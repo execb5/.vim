@@ -52,7 +52,7 @@ nmap <F5> :noh<CR>
 map <Leader>c :CMiniBufExplorer<cr>
 map <Leader>u :UMiniBufExplorer<cr>
 map <Leader>t :TMiniBufExplorer<cr>
-nmap <silent> <leader>mw :call MarkWindowSwap()<CR>
+nmap <silent> <leader>yw :call MarkWindowSwap()<CR>
 nmap <silent> <leader>pw :call DoWindowSwap()<CR>
 
 "Disabling default keys to learn the hjkl
