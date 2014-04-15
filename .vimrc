@@ -15,6 +15,9 @@ let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 
+"Defining leader
+let mapleader = ","
+
 "Remap to keyboard buttons
 nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
@@ -25,6 +28,9 @@ nmap <F10> :wall<CR>
 nmap <F11> :wqall<CR> 
 nmap <F12> :qall!<CR>
 nmap <F5> :noh<CR>
+map <Leader>c :CMiniBufExplorer<cr>
+map <Leader>u :UMiniBufExplorer<cr>
+map <Leader>t :TMiniBufExplorer<cr>
 
 
 "Disabling default keys to learn the hjkl
