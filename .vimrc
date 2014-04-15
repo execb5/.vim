@@ -18,6 +18,27 @@ let g:miniBufExplModSelTarget = 1
 "Defining leader
 let mapleader = ","
 
+
+"Functions
+function! MarkWindowSwap()
+    let g:markedWinNum = winnr()
+endfunction
+
+function! DoWindowSwap()
+    "Mark destination
+    let curNum = winnr()
+    let curBuf = bufnr( "%" )
+    exe g:markedWinNum . "wincmd w"
+    "Switch to source and shuffle dest->source
+    let markedBuf = bufnr( "%" )
+    "Hide and open so that we aren't prompted and keep history
+    exe 'hide buf' curBuf
+    "Switch to dest and shuffle source->dest
+    exe curNum . "wincmd w"
+    "Hide and open so that we aren't prompted and keep history
+    exe 'hide buf' markedBuf 
+endfunction
+
 "Remap to keyboard buttons
 nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
@@ -31,7 +52,8 @@ nmap <F5> :noh<CR>
 map <Leader>c :CMiniBufExplorer<cr>
 map <Leader>u :UMiniBufExplorer<cr>
 map <Leader>t :TMiniBufExplorer<cr>
-
+nmap <silent> <leader>mw :call MarkWindowSwap()<CR>
+nmap <silent> <leader>pw :call DoWindowSwap()<CR>
 
 "Disabling default keys to learn the hjkl
 "Disable Arrow keys in Escape mode.
