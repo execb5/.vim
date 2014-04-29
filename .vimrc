@@ -44,6 +44,7 @@ endfunction
 nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <F2> :w<CR> 
+imap <F2>  :w!<CR> i
 nmap <F3> :wq<CR> 
 nmap <F4> :q!<CR>
 nmap <F10> :wall<CR> 
@@ -75,4 +76,4 @@ set nowrap
 set hlsearch
 set tabpagemax=30
 set clipboard=unnamedplus
-colo darkspectrum
+colo babymate256
