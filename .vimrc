@@ -68,6 +68,10 @@ nmap <silent> <leader>pw :call DoWindowSwap()<CR>
 "imap <down> <nop>
 "imap <left> <nop>
 "imap <right> <nop>
+"
+if $TERM == "xterm-256color"
+  set t_Co=256
+endif
 
 "Initial configuration
 set number
