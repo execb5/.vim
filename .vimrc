@@ -41,16 +41,20 @@ function! DoWindowSwap()
 endfunction
 
 "Remap to keyboard buttons
-nmap <F7> :NERDTreeToggle<CR>
-nmap <F8> :TagbarToggle<CR>
 nmap <F2> :w<CR> 
 imap <F2>  :w!<CR> i
 nmap <F3> :wq<CR> 
 nmap <F4> :q!<CR>
+nmap <F5> :noh<CR>
+nmap <F6> :vertical res +1<CR>
+nmap <leader><F6> :res +1<CR>
+nmap <F7> :NERDTreeToggle<CR>
+nmap <F8> :TagbarToggle<CR>
+nmap <F9> :vertical res -1<CR>
+nmap <leader><F9> :res -1<CR>
 nmap <F10> :wall<CR> 
 nmap <F11> :wqall<CR> 
 nmap <F12> :qall!<CR>
-nmap <F5> :noh<CR>
 map <Leader>c :CMiniBufExplorer<cr>
 map <Leader>u :UMiniBufExplorer<cr>
 map <Leader>t :TMiniBufExplorer<cr>
@@ -68,7 +72,7 @@ nmap <silent> <leader>pw :call DoWindowSwap()<CR>
 "imap <down> <nop>
 "imap <left> <nop>
 "imap <right> <nop>
-"
+
 if $TERM == "xterm-256color"
   set t_Co=256
 endif
@@ -80,4 +84,4 @@ set nowrap
 set hlsearch
 set tabpagemax=30
 set clipboard=unnamedplus
-colo babymate256
+colo wombat256mod
