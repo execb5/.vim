@@ -112,10 +112,18 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-# set color to use in vim
-if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
-    export TERM=xterm-256color
-fi
 
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export PATH=$PATH:/usr/local/texlive/2013/bin/x86_64-linux/
+# set color to use in vim
+#if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
+#    export TERM=xterm-256color
+#fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+alias svn='LD_PRELOAD=/usr/lib/libneon.so.27 svn'
+alias vi='TERM=xterm-256color vi'
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+export EDITOR="/usr/bin/vi"
+export PATH=/usr/local/texlive/2013/bin/x86_64-linux:$PATH
+export MANPATH=/usr/local/texlive/2013/texmf/doc/man:$MANPATH
+export INFOPATH=/usr/local/texlive/2013/texmf/doc/info:$INFOPATH

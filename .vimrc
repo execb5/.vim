@@ -67,7 +67,7 @@ nmap <silent> <leader>pw :call DoWindowSwap()<CR>
 "map <down> <nop>
 "map <left> <nop>
 "map <right> <nop>
-"Disable Arrow keys in insert mode
+""Disable Arrow keys in insert mode
 "imap <up> <nop>
 "imap <down> <nop>
 "imap <left> <nop>
@@ -84,4 +84,4 @@ set nowrap
 set hlsearch
 set tabpagemax=30
 set clipboard=unnamedplus
-colo wombat256mod
+colo darkspectrum
