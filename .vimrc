@@ -1,5 +1,5 @@
 "To make the snipMate work
-:filetype plugin on
+filetype plugin on
 
 "To make the NERDTree close with a file
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
