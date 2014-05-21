@@ -127,3 +127,4 @@ export EDITOR="/usr/bin/vi"
 export PATH=/usr/local/texlive/2013/bin/x86_64-linux:$PATH
 export MANPATH=/usr/local/texlive/2013/texmf/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2013/texmf/doc/info:$INFOPATH
+source ~/.rvm/scripts/rvm
