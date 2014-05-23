@@ -63,15 +63,15 @@ nmap <silent> <leader>pw :call DoWindowSwap()<CR>
 
 "Disabling default keys to learn the hjkl
 "Disable Arrow keys in Escape mode.
-"map <up> <nop>
-"map <down> <nop>
-"map <left> <nop>
-"map <right> <nop>
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
 ""Disable Arrow keys in insert mode
-"imap <up> <nop>
-"imap <down> <nop>
-"imap <left> <nop>
-"imap <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
 
 if $TERM == "xterm-256color"
   set t_Co=256
