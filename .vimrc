@@ -84,4 +84,5 @@ set nowrap
 set hlsearch
 set tabpagemax=30
 set clipboard=unnamedplus
+set mouse=a
 colo blazer
