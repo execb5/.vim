@@ -25,6 +25,7 @@ call vundle#begin()
 	Plugin 'mhinz/vim-signify'
 	Plugin 'Yggdroot/indentLine'
 	Plugin 'gregsexton/gitv'
+        Plugin 'mbbill/undotree'
 call vundle#end()
 
 filetype plugin indent on
@@ -70,6 +71,12 @@ function! DoWindowSwap()
 	exe 'hide buf' markedBuf
 endfunction
 
+"Set persistant undo
+if has("persistent_undo")
+        set undodir='~/.undodir/'
+        set undofile
+endif
+
 "Keybindings
 nmap <F2> :w<CR>
 imap <F2> :w!<CR> i
@@ -82,9 +89,7 @@ nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <F9> :vertical res -1<CR>
 nmap <leader><F9> :res -1<CR>
-nmap <F10> :wall<CR>
-nmap <F11> :wqall<CR>
-nmap <F12> :qall!<CR>
+nmap <F10> :UndotreeToggle<CR>
 map <Leader>e :MBEOpen<cr>
 map <Leader>c :MBEClose<cr>
 map <Leader>t :MBEToggle<cr>
