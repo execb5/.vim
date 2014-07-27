@@ -5,26 +5,26 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
-	Plugin 'gmarik/Vundle.vim'
-	Plugin 'scrooloose/nerdtree'
-	Plugin 'scrooloose/syntastic'
-	Plugin 'scrooloose/nerdcommenter'
-	Plugin 'mileszs/ack.vim'
-	Plugin 'majutsushi/tagbar'
-	Plugin 'tpope/vim-endwise'
-	Plugin 'tpope/vim-repeat'
-	Plugin 'tpope/vim-speeddating'
-	Plugin 'tpope/vim-surround'
-	Plugin 'tpope/vim-unimpaired'
-	Plugin 'tpope/vim-fugitive'
-	Plugin 'tpope/vim-rails'
-	Plugin 'fholgado/minibufexpl.vim'
-	Plugin 'kien/ctrlp.vim'
-	Plugin 'terryma/vim-multiple-cursors'
-	Plugin 'bling/vim-airline'
-	Plugin 'mhinz/vim-signify'
-	Plugin 'Yggdroot/indentLine'
-	Plugin 'gregsexton/gitv'
+        Plugin 'gmarik/Vundle.vim'
+        Plugin 'scrooloose/nerdtree'
+        Plugin 'scrooloose/syntastic'
+        Plugin 'scrooloose/nerdcommenter'
+        Plugin 'mileszs/ack.vim'
+        Plugin 'majutsushi/tagbar'
+        Plugin 'tpope/vim-endwise'
+        Plugin 'tpope/vim-repeat'
+        Plugin 'tpope/vim-speeddating'
+        Plugin 'tpope/vim-surround'
+        Plugin 'tpope/vim-unimpaired'
+        Plugin 'tpope/vim-fugitive'
+        Plugin 'tpope/vim-rails'
+        Plugin 'fholgado/minibufexpl.vim'
+        Plugin 'kien/ctrlp.vim'
+        Plugin 'terryma/vim-multiple-cursors'
+        Plugin 'bling/vim-airline'
+        Plugin 'mhinz/vim-signify'
+        Plugin 'Yggdroot/indentLine'
+        Plugin 'gregsexton/gitv'
         Plugin 'mbbill/undotree'
 call vundle#end()
 
@@ -53,22 +53,22 @@ let mapleader = ","
 
 "Functions
 function! MarkWindowSwap()
-	let g:markedWinNum = winnr()
+        let g:markedWinNum = winnr()
 endfunction
 
 function! DoWindowSwap()
-	"Mark destination
-	let curNum = winnr()
-	let curBuf = bufnr( "%" )
-	exe g:markedWinNum . "wincmd w"
-	"Switch to source and shuffle dest->source
-	let markedBuf = bufnr( "%" )
-	"Hide and open so that we aren't prompted and keep history
-	exe 'hide buf' curBuf
-	"Switch to dest and shuffle source->dest
-	exe curNum . "wincmd w"
-	"Hide and open so that we aren't prompted and keep history
-	exe 'hide buf' markedBuf
+        "Mark destination
+        let curNum = winnr()
+        let curBuf = bufnr( "%" )
+        exe g:markedWinNum . "wincmd w"
+        "Switch to source and shuffle dest->source
+        let markedBuf = bufnr( "%" )
+        "Hide and open so that we aren't prompted and keep history
+        exe 'hide buf' curBuf
+        "Switch to dest and shuffle source->dest
+        exe curNum . "wincmd w"
+        "Hide and open so that we aren't prompted and keep history
+        exe 'hide buf' markedBuf
 endfunction
 
 "Set persistant undo
