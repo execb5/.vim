@@ -121,4 +121,8 @@ set hlsearch
 set tabpagemax=30
 set clipboard=unnamedplus
 set mouse=a
+set expandtab
+set tabstop=8
+set shiftwidth=8
+set softtabstop=8
 colo jellybeans
