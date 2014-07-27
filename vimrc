@@ -25,7 +25,7 @@ call vundle#begin()
         Plugin 'mhinz/vim-signify'
         Plugin 'Yggdroot/indentLine'
         Plugin 'gregsexton/gitv'
-        Plugin 'mbbill/undotree'
+        Plugin 'sjl/gundo.vim'
 call vundle#end()
 
 filetype plugin indent on
@@ -89,7 +89,7 @@ nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <F9> :vertical res -1<CR>
 nmap <leader><F9> :res -1<CR>
-nmap <F10> :UndotreeToggle<CR>
+nmap <F10> :GundoToggle<CR>
 map <Leader>e :MBEOpen<cr>
 map <Leader>c :MBEClose<cr>
 map <Leader>t :MBEToggle<cr>
