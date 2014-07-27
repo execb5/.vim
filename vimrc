@@ -26,6 +26,7 @@ call vundle#begin()
         Plugin 'Yggdroot/indentLine'
         Plugin 'gregsexton/gitv'
         Plugin 'sjl/gundo.vim'
+        Plugin 'godlygeek/csapprox'
 call vundle#end()
 
 filetype plugin indent on
