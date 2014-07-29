@@ -27,6 +27,7 @@ call vundle#begin()
         Plugin 'gregsexton/gitv'
         Plugin 'sjl/gundo.vim'
         Plugin 'godlygeek/csapprox'
+        Plugin 'suan/vim-instant-markdown'
 call vundle#end()
 
 filetype plugin indent on
