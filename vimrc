@@ -101,6 +101,8 @@ map <Leader>c :MBEClose<cr>
 map <Leader>t :MBEToggle<cr>
 nmap <silent> <leader>yw :call MarkWindowSwap()<CR>
 nmap <silent> <leader>pw :call DoWindowSwap()<CR>
+
+"Easier command line navigation
 noremap <C-J> <C-W>j
 noremap <C-K> <C-W>k
 noremap <C-H> <C-W>h
