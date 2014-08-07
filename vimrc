@@ -29,10 +29,10 @@ call vundle#begin()
         Plugin 'sjl/gundo.vim'
         Plugin 'godlygeek/csapprox'
         Plugin 'suan/vim-instant-markdown'
-        Plugin "MarcWeber/vim-addon-mw-utils"
-        Plugin "tomtom/tlib_vim"
-        Plugin "garbas/vim-snipmate"
-        Plugin "honza/vim-snippets"
+        Bundle "MarcWeber/vim-addon-mw-utils"
+        Bundle "tomtom/tlib_vim"
+        Bundle "garbas/vim-snipmate"
+        Bundle "honza/vim-snippets"
 call vundle#end()
 
 filetype plugin indent on
