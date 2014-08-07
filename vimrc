@@ -28,11 +28,15 @@ call vundle#begin()
         Plugin 'sjl/gundo.vim'
         Plugin 'godlygeek/csapprox'
         Plugin 'suan/vim-instant-markdown'
+        Bundle "MarcWeber/vim-addon-mw-utils"
+        Bundle "tomtom/tlib_vim"
+        Bundle "garbas/vim-snipmate"
+        Bundle "honza/vim-snippets"
 call vundle#end()
 
 filetype plugin indent on
 
-"To make the NERDTree close with a file
+"Force NERDTree to close with last window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 "To make Syntastic work
@@ -101,6 +105,13 @@ noremap <C-J> <C-W>j
 noremap <C-K> <C-W>k
 noremap <C-H> <C-W>h
 noremap <C-L> <C-W>l
+
+"Better command line editing
+cnoremap <C-j> <t_kd>
+cnoremap <C-k> <t_ku>
+cnoremap <C-a> <Home>
+cnoremap <C-l> <t_kr>
+cnoremap <C-h> <t_kl>
 
 "Disabling default keys to learn the hjkl
 "Disable Arrow keys in Escape mode.
