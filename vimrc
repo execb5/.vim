@@ -18,6 +18,7 @@ call vundle#begin()
         Plugin 'tpope/vim-unimpaired'
         Plugin 'tpope/vim-fugitive'
         Plugin 'tpope/vim-rails'
+        Plugin 'tpope/vim-abolish'
         Plugin 'fholgado/minibufexpl.vim'
         Plugin 'kien/ctrlp.vim'
         Plugin 'terryma/vim-multiple-cursors'
