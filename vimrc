@@ -84,6 +84,7 @@ if has("persistent_undo")
         set undofile
 endif
 
+
 "Keybindings
 nmap <F2> :w<CR>
 imap <F2> :w!<CR> i
@@ -100,33 +101,37 @@ nmap <F10> :GundoToggle<CR>
 map <Leader>e :MBEOpen<cr>
 map <Leader>c :MBEClose<cr>
 map <Leader>t :MBEToggle<cr>
+"Keybindings using Leader
+nmap <Leader><Leader> :w<CR>
+nmap <Leader>wq :wq<CR>
+nmap <Leader>q :q<CR>
+nmap <Leader>g :GundoToggle<CR>
+nmap <Leader>n :NERDTreeToggle<CR>
+nmap <Leader>m :TagbarToggle<CR>
+nmap <Leader>b :TagbarToggle<CR>:NERDTreeToggle<CR>
 nmap <silent> <leader>yw :call MarkWindowSwap()<CR>
 nmap <silent> <leader>pw :call DoWindowSwap()<CR>
-
 "Easier command line navigation
 noremap <C-J> <C-W>j
 noremap <C-K> <C-W>k
 noremap <C-H> <C-W>h
 noremap <C-L> <C-W>l
-
 "Better command line editing
 cnoremap <C-j> <t_kd>
 cnoremap <C-k> <t_ku>
 cnoremap <C-a> <Home>
 cnoremap <C-l> <t_kr>
 cnoremap <C-h> <t_kl>
-
 "Disabling default keys to learn the hjkl
-"Disable Arrow keys in Escape mode.
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
-""Disable Arrow keys in insert mode
 imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
+
 
 "Run 256 colors on terminal
 if $TERM == "xterm-256color"
