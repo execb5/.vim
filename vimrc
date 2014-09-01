@@ -33,6 +33,7 @@ call vundle#begin()
         Bundle "tomtom/tlib_vim"
         Bundle "garbas/vim-snipmate"
         Bundle "honza/vim-snippets"
+        Bundle "ervandew/supertab"
 call vundle#end()
 
 filetype plugin indent on
