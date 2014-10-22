@@ -34,6 +34,7 @@ call vundle#begin()
         Plugin 'garbas/vim-snipmate'
         Plugin 'honza/vim-snippets'
         Plugin 'ervandew/supertab'
+        Plugin 'Townk/vim-autoclose'
 call vundle#end()
 
 filetype plugin indent on
