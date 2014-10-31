@@ -35,6 +35,10 @@ call vundle#begin()
         Plugin 'honza/vim-snippets'
         Plugin 'ervandew/supertab'
         Plugin 'Townk/vim-autoclose'
+        Plugin 'dag/vim2hs' "<-Haskell
+        Plugin 'eagletmt/ghcmod-vim' "<-Haskell
+        Plugin 'Shougo/vimproc.vim' "<-Haskell    Needs to run 'make' after installing
+        Plugin 'eagletmt/neco-ghc' "<-Haskell
 call vundle#end()
 
 filetype plugin indent on
@@ -104,7 +108,7 @@ map <Leader>e :MBEOpen<cr>
 map <Leader>c :MBEClose<cr>
 map <Leader>t :MBEToggle<cr>
 "Keybindings using Leader
-nmap <Leader><Leader> :w<CR>
+nmap <Leader>w :w<CR>
 nmap <Leader>wq :wq<CR>
 nmap <Leader>q :q<CR>
 nmap <Leader>g :GundoToggle<CR>
@@ -133,7 +137,6 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
-
 
 "Run 256 colors on terminal
 if $TERM == "xterm-256color"
