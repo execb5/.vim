@@ -8,7 +8,7 @@ let g:necoghc_enable_detailed_browse = 1
 setlocal omnifunc=necoghc#omnifunc
 
 "Display unicode
-let g:haskell_conceal_wide = 1
+"let g:haskell_conceal_wide = 1
 
 "Shortcut to fold and unfold functions and stuff
 nmap <F8> :foldopen<CR>
