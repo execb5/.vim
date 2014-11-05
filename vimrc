@@ -46,6 +46,9 @@ filetype plugin indent on
 "Force NERDTree to close with last window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+"Detect *.md as markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
 "To make Syntastic work
 let g:syntastic_auto_loc_list=1
 let g:syntastic_disabled_filetypes=['html']
