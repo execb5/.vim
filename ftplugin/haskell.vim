@@ -8,7 +8,16 @@ let g:necoghc_enable_detailed_browse = 1
 setlocal omnifunc=necoghc#omnifunc
 
 "Display unicode
-let g:haskell_conceal_wide = 1
+"let g:haskell_conceal_wide = 1
+
+" disable all conceals, including the simple ones like
+" lambda and composition
+let g:haskell_conceal = 0
+
+" disable concealing of 'enumerations': commatized lists like
+" deriving clauses and LANGUAGE pragmas,
+" otherwise collapsed into a single ellipsis
+let g:haskell_conceal_enumerations = 0
 
 "Shortcut to fold and unfold functions and stuff
 nmap <F8> :foldopen<CR>
