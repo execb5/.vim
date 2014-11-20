@@ -64,6 +64,9 @@ let g:syntastic_quiet_messages = {'level': 'warnings'}
 "Signify option
 let g:signify_vcs_list = [ 'git', 'svn' ]
 
+"Disable latex conceal
+let g:tex_conceal = ""
+
 "Defining leader
 let mapleader = ","
 
