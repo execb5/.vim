@@ -39,6 +39,7 @@ call vundle#begin()
         Plugin 'eagletmt/ghcmod-vim' "<-Haskell
         Plugin 'Shougo/vimproc.vim' "<-Haskell    Needs to run 'make' after installing
         Plugin 'eagletmt/neco-ghc' "<-Haskell
+        Plugin 'whatyouhide/vim-gotham'
 call vundle#end()
 
 filetype plugin indent on
@@ -164,22 +165,23 @@ set shiftwidth=8
 set softtabstop=8
 set wildmenu
 set incsearch
-colo jellybeans
+"colo jellybeans
+colo gotham256
 
 "Transparent background
-"hi Normal ctermbg=NONE
-"hi Comment ctermbg=NONE
-"hi Constant ctermbg=NONE
-"hi Special ctermbg=NONE
-"hi Identifier ctermbg=NONE
-"hi Statement ctermbg=NONE
-"hi PreProc ctermbg=NONE
-"hi Type ctermbg=NONE
-"hi Underlined ctermbg=NONE
-"hi Todo ctermbg=NONE
-"hi String ctermbg=NONE
-"hi Function ctermbg=NONE
-"hi Conditional ctermbg=NONE
-"hi Repeat ctermbg=NONE
-"hi Operator ctermbg=NONE
-"hi Structure ctermbg=NONE
+hi Normal ctermbg=NONE
+hi Comment ctermbg=NONE
+hi Constant ctermbg=NONE
+hi Special ctermbg=NONE
+hi Identifier ctermbg=NONE
+hi Statement ctermbg=NONE
+hi PreProc ctermbg=NONE
+hi Type ctermbg=NONE
+hi Underlined ctermbg=NONE
+hi Todo ctermbg=NONE
+hi String ctermbg=NONE
+hi Function ctermbg=NONE
+hi Conditional ctermbg=NONE
+hi Repeat ctermbg=NONE
+hi Operator ctermbg=NONE
+hi Structure ctermbg=NONE
