@@ -1,7 +1,11 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="half-life"
+#ZSH_THEME="fox"
+#ZSH_THEME="fino"
+
 
 plugins=(git zsh-syntax-highlighting)
 
