@@ -8,7 +8,7 @@ Keybinds are on the vimrc.
 
 ```shell
 
-git clone https://github.com/execb5/.vim
+git clone https://github.com/execb5/.vim.git
 
 cd ~/.vim
 
