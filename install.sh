@@ -6,6 +6,7 @@ rm -rf $(pwd)/bundle/Vundle.vim/
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ln -sf $(pwd)/vimrc ~/.vimrc
 ln -sf $(pwd)/Xdefaults ~/.Xdefaults
+ln -sf $(pwd)/zshrc ~/.zshrc
 vim +PluginInstall +PluginClean +qall
 cd ~/.vim/bundle/vimproc.vim
 make
