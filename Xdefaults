@@ -1,8 +1,6 @@
 ! urxvt ----------------------------------------------------------------------
 
 urxvt.font:             xft: Dejavu Sans Mono for Powerline:autohint=true:antialias=true:size=8
-urxvt.background:       black
-urxvt.foreground:       white
 urxvt.scrollBar:        false
 urxvt.tintColor:        white
 urxvt.fading:           15
@@ -12,31 +10,49 @@ urxvt.inheritPixmap:    true
 urxvt.pointerColor:     black
 urxvt.pointerColor2:    white
 
+! --Gotham theme--
+
 !*.foreground:   #98d1ce
 !*.background:   #0a0f14
 !*.cursorColor:  #98d1ce
 
 !*.color0:       #0a0f14
-!*.color8:       #10151b
-
 !*.color1:       #c33027
-!*.color9:       #d26939
-
 !*.color2:       #26a98b
-!*.color10:      #081f2d
-
 !*.color3:       #edb54b
-!*.color11:      #245361
-
 !*.color4:       #195465
-!*.color12:      #093748
-
 !*.color5:       #4e5165
-!*.color13:      #888ba5
-
 !*.color6:       #33859d
-!*.color14:      #599caa
-
 !*.color7:       #98d1ce
+!*.color8:       #10151b
+!*.color9:       #d26939
+!*.color10:      #081f2d
+!*.color11:      #245361
+!*.color12:      #093748
+!*.color13:      #888ba5
+!*.color14:      #599caa
 !*.color15:      #d3ebe9
+
+! -- --
+
+
+urxvt.foreground:       white
+urxvt.background:       black
+
+*color0:  #2E3436
+*color1:  #a40000
+*color2:  #4E9A06
+*color3:  #C4A000
+*color4:  #3465A4
+*color5:  #75507B
+*color6:  #ce5c00
+*color7:  #babdb9
+*color8:  #555753
+*color9:  #EF2929
+*color10: #8AE234
+*color11: #FCE94F
+*color12: #729FCF
+*color13: #AD7FA8
+*color14: #fcaf3e
+*color15: #EEEEEC
 
