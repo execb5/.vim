@@ -124,4 +124,6 @@ pulseaudio --start &
 ibus-daemon -d
 dropbox start &
 
+xautolock -time 10 -locker slock -nowlocker slock -detectsleep -corners 00+0 -cornerdelay 3 &
+
 exec dwm
