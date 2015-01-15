@@ -143,7 +143,7 @@ imap <left> <nop>
 imap <right> <nop>
 
 "Run 256 colors on terminal
-if $TERM == "xterm-256color"
+if $TERM == "rxvt-unicode-256color"
   set t_Co=256
 endif
 
@@ -162,8 +162,15 @@ set shiftwidth=8
 set softtabstop=8
 set wildmenu
 set incsearch
-"colo jellybeans
-colo gotham256
+if has('gui_running')
+    " GUI colors
+    colorscheme gotham
+else
+    " Non-GUI (terminal) colors
+    colorscheme gotham256
+endif
+
+syn on
 
 "Transparent background
 hi Normal ctermbg=NONE
@@ -182,3 +189,9 @@ hi Conditional ctermbg=NONE
 hi Repeat ctermbg=NONE
 hi Operator ctermbg=NONE
 hi Structure ctermbg=NONE
+
+"gViM stuff
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
