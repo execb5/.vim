@@ -5,7 +5,7 @@ urxvt.scrollBar:        false
 urxvt.tintColor:        white
 urxvt.fading:           15
 urxvt.fadeColor:        black
-urxvt.shading:          75
+urxvt.shading:          25
 urxvt.inheritPixmap:    true
 urxvt.pointerColor:     black
 urxvt.pointerColor2:    white
