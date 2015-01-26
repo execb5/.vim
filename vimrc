@@ -40,6 +40,8 @@ call vundle#begin()
         Plugin 'Shougo/vimproc.vim' "<-Haskell    Needs to run 'make' after installing
         Plugin 'eagletmt/neco-ghc' "<-Haskell
         Plugin 'whatyouhide/vim-gotham'
+        Plugin 'vim-scripts/screensaver.vim'
+        Plugin 'haya14busa/incsearch.vim'
 call vundle#end()
 
 filetype plugin indent on
@@ -197,6 +199,10 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
+"For the incsearch plugin
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 "Run 256 colors on terminal
 if $TERM == "rxvt-unicode-256color"

@@ -2,10 +2,10 @@
 export ZSH=$HOME/.oh-my-zsh
 
 #ZSH_THEME="robbyrussell"
-#ZSH_THEME="half-life"
+ZSH_THEME="half-life"
 #ZSH_THEME="fox"
 #ZSH_THEME="fino"
-ZSH_THEME="mylambdatheme"
+#ZSH_THEME="mylambdatheme"
 
 
 plugins=(git zsh-syntax-highlighting archlinux)
@@ -27,6 +27,8 @@ export INFOPATH=/usr/local/texlive/2013/texmf/doc/info:$INFOPATH
 #source ~/.rvm/scripts/rvm
 
 source $ZSH/oh-my-zsh.sh
+
+PATH=$HOME/.cabal/bin:$PATH
 
 #Vi mode
 #bindkey -v
