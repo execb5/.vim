@@ -18,7 +18,7 @@ plugins=(git zsh-syntax-highlighting archlinux)
 #export PATH="/home/matthias/.rvm/gems/ruby-2.1.2/bin:/home/matthias/.rvm/gems/ruby-2.1.2@global/bin:/home/matthias/.rvm/rubies/ruby-2.1.2/bin:/home/matthias/bin:/usr/local/texlive/2013/bin/x86_64-linux:/home/matthias/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/matthias/.rvm/bin"
 
 alias lsd='ls -d */'
-alias vi='TERM=rxvt-unicode-256color vim'
+alias vi='vim'
 alias vim='TERM=rxvt-unicode-256color vim'
 alias javajml='java -jar ~/Programs/openjml.jar -rac -noPurityCheck'
 export EDITOR="/usr/bin/vi"
