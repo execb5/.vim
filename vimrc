@@ -231,6 +231,8 @@ else
     " Non-GUI (terminal) colors
     colorscheme gotham256
 endif
+set backupdir=~/.vimtmp,.
+set directory=~/.vimtmp,.
 
 syn on
 
