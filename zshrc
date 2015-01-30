@@ -33,3 +33,4 @@ PATH=$HOME/.cabal/bin:$PATH
 #Vi mode
 #bindkey -v
 
+export PATH="/home/matthias/.cabal/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/matthias/.gem/ruby/2.2.0/bin"
