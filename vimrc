@@ -233,6 +233,7 @@ else
 endif
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.
+call NerdPreviewToggle()
 
 syn on
 
