@@ -17,15 +17,15 @@ plugins=(git zsh-syntax-highlighting archlinux)
 
 #export PATH="/home/matthias/.rvm/gems/ruby-2.1.2/bin:/home/matthias/.rvm/gems/ruby-2.1.2@global/bin:/home/matthias/.rvm/rubies/ruby-2.1.2/bin:/home/matthias/bin:/usr/local/texlive/2013/bin/x86_64-linux:/home/matthias/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/matthias/.rvm/bin"
 
-alias lsd='ls -d */'
-alias vi='vim'
-if [ "$TERM" = "xterm" ]
-then
-        alias vim='TERM=xterm-256color vim'
-else #when i'm in dwm using urxvt
-        alias vim='TERM=rxvt-unicode-256color vim'
-fi
-export EDITOR="/usr/bin/vi"
+alias lsd='ls -d */' #copythis
+alias vi='vim' #copythis
+if [ "$TERM" = "xterm" ] #copythis
+then #copythis
+        alias vim='TERM=xterm-256color vim' #copythis
+else #when i'm in dwm using urxvt #copythis
+        alias vim='TERM=rxvt-unicode-256color vim' #copythis
+fi #copythis
+export EDITOR="/usr/bin/vi" #copythis
 export MANPATH=/usr/local/texlive/2013/texmf/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2013/texmf/doc/info:$INFOPATH
 #source ~/.rvm/scripts/rvm
