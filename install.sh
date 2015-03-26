@@ -28,6 +28,7 @@ if [ "$DWM" = "y" ]
 then
         ln -sf $(pwd)/dwmstart /usr/share/xsessions/dwmstart
         echo "dwmstart symlinked"
+        echo "Don't forget to add dwmstart to execute"
 fi
 
 echo "Do you want to use the custom Xdefaults? (y/n)"
@@ -44,4 +45,3 @@ cd ~/.vim/bundle/vimproc.vim
 make
 echo "vimproc compiled!"
 
-echo "Don't forget to add dwmstart to execute"
