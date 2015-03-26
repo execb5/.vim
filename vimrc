@@ -207,6 +207,9 @@ imap <right> <nop>
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+"EasyAlign stuff
+vmap <Enter> <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 "Run 256 colors on terminal
 if $TERM == "xterm-256color" || $TERM == "rxvt-unicode-256color"
