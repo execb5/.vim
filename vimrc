@@ -46,6 +46,7 @@ call vundle#begin()
         Plugin 'junegunn/seoul256.vim'
         Plugin 'junegunn/goyo.vim'
         Plugin 'junegunn/limelight.vim'
+        Plugin 'vim-scripts/visualrepeat'
 call vundle#end()
 
 filetype plugin indent on
