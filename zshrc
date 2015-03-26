@@ -19,8 +19,12 @@ plugins=(git zsh-syntax-highlighting archlinux)
 
 alias lsd='ls -d */'
 alias vi='vim'
-alias vim='TERM=rxvt-unicode-256color vim'
-alias javajml='java -jar ~/Programs/openjml.jar -rac -noPurityCheck'
+if [ "$TERM" = "xterm" ]
+then
+        alias vim='TERM=xterm-256color vim'
+else #when i'm in dwm using urxvt
+        alias vim='TERM=rxvt-unicode-256color vim'
+fi
 export EDITOR="/usr/bin/vi"
 export MANPATH=/usr/local/texlive/2013/texmf/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2013/texmf/doc/info:$INFOPATH
@@ -28,9 +32,12 @@ export INFOPATH=/usr/local/texlive/2013/texmf/doc/info:$INFOPATH
 
 source $ZSH/oh-my-zsh.sh
 
-PATH=$HOME/.cabal/bin:$PATH
+#PATH=$HOME/.cabal/bin:$PATH
 
 #Vi mode
 #bindkey -v
 
-export PATH="/home/matthias/.cabal/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/matthias/.gem/ruby/2.2.0/bin"
+#export PATH="/home/matthias/.cabal/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/matthias/.gem/ruby/2.2.0/bin"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"

@@ -42,6 +42,10 @@ call vundle#begin()
         Plugin 'whatyouhide/vim-gotham'
         Plugin 'vim-scripts/screensaver.vim'
         Plugin 'haya14busa/incsearch.vim'
+        Plugin 'junegunn/vim-easy-align'
+        Plugin 'junegunn/seoul256.vim'
+        Plugin 'junegunn/goyo.vim'
+        Plugin 'junegunn/limelight.vim'
 call vundle#end()
 
 filetype plugin indent on
@@ -205,7 +209,7 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 "Run 256 colors on terminal
-if $TERM == "rxvt-unicode-256color"
+if $TERM == "xterm-256color" || $TERM == "rxvt-unicode-256color"
   set t_Co=256
 endif
 
@@ -229,7 +233,7 @@ if has('gui_running')
     colorscheme gotham
 else
     " Non-GUI (terminal) colors
-    colorscheme gotham256
+    colorscheme seoul256
 endif
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.
@@ -237,22 +241,22 @@ set directory=~/.vimtmp,.
 syn on
 
 "Transparent background
-hi Normal ctermbg=NONE
-hi Comment ctermbg=NONE
-hi Constant ctermbg=NONE
-hi Special ctermbg=NONE
-hi Identifier ctermbg=NONE
-hi Statement ctermbg=NONE
-hi PreProc ctermbg=NONE
-hi Type ctermbg=NONE
-hi Underlined ctermbg=NONE
-hi Todo ctermbg=NONE
-hi String ctermbg=NONE
-hi Function ctermbg=NONE
-hi Conditional ctermbg=NONE
-hi Repeat ctermbg=NONE
-hi Operator ctermbg=NONE
-hi Structure ctermbg=NONE
+"hi Normal ctermbg=NONE
+"hi Comment ctermbg=NONE
+"hi Constant ctermbg=NONE
+"hi Special ctermbg=NONE
+"hi Identifier ctermbg=NONE
+"hi Statement ctermbg=NONE
+"hi PreProc ctermbg=NONE
+"hi Type ctermbg=NONE
+"hi Underlined ctermbg=NONE
+"hi Todo ctermbg=NONE
+"hi String ctermbg=NONE
+"hi Function ctermbg=NONE
+"hi Conditional ctermbg=NONE
+"hi Repeat ctermbg=NONE
+"hi Operator ctermbg=NONE
+"hi Structure ctermbg=NONE
 
 "gViM stuff
 set guioptions-=m  "remove menu bar
