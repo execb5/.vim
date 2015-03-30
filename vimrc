@@ -209,7 +209,7 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 "EasyAlign stuff
-vmap <Enter> <Plug>(EasyAlign)
+vmap <Space> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 "Run 256 colors on terminal
@@ -241,7 +241,7 @@ else
 endif
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.
-call NerdPreviewToggle()
+"call NerdPreviewToggle()
 
 syn on
 
