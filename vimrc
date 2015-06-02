@@ -237,7 +237,7 @@ if has('gui_running')
     colorscheme gotham
 else
     " Non-GUI (terminal) colors
-    colorscheme seoul256
+    colorscheme jellybeans
 endif
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.
