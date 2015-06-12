@@ -17,6 +17,7 @@ plugins=(git zsh-syntax-highlighting archlinux)
 
 #export PATH="/home/matthias/.rvm/gems/ruby-2.1.2/bin:/home/matthias/.rvm/gems/ruby-2.1.2@global/bin:/home/matthias/.rvm/rubies/ruby-2.1.2/bin:/home/matthias/bin:/usr/local/texlive/2013/bin/x86_64-linux:/home/matthias/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/matthias/.rvm/bin"
 
+alias ppsspp='primusrun ppsspp'
 alias lsd='ls -d */' #copythis
 alias vi='vim' #copythis
 if [ "$TERM" = "xterm" ] #copythis
@@ -29,6 +30,10 @@ export EDITOR="/usr/bin/vi" #copythis
 export MANPATH=/usr/local/texlive/2013/texmf/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2013/texmf/doc/info:$INFOPATH
 #source ~/.rvm/scripts/rvm
+
+export PATH="/usr/local/texlive/2014/bin/x86_64-linux:$PATH"
+export INFOPATH=/usr/local/texlive/2014/texmf-dist/doc/info:$INFOPATH
+export MANPATH=/usr/local/texlive/2014/texmf-dist/doc/man:$MANPATH
 
 source $ZSH/oh-my-zsh.sh
 
