@@ -23,8 +23,10 @@ alias vi='vim' #copythis
 if [ "$TERM" = "xterm" ] #copythis
 then #copythis
         alias vim='TERM=xterm-256color vim' #copythis
+        alias vimdiff='TERM=xterm-256color vimdiff' #copythis
 else #when i'm in dwm using urxvt #copythis
         alias vim='TERM=rxvt-unicode-256color vim' #copythis
+        alias vimdiff='TERM=rxvt-unicode-256color vimdiff' #copythis
 fi #copythis
 export EDITOR="/usr/bin/vi" #copythis
 export MANPATH=/usr/local/texlive/2013/texmf/doc/man:$MANPATH
