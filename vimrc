@@ -40,13 +40,16 @@ call vundle#begin()
         Plugin 'Shougo/vimproc.vim' "<-Haskell    Needs to run 'make' after installing
         Plugin 'eagletmt/neco-ghc' "<-Haskell
         Plugin 'whatyouhide/vim-gotham'
-        Plugin 'vim-scripts/screensaver.vim'
         Plugin 'haya14busa/incsearch.vim'
         Plugin 'junegunn/vim-easy-align'
         Plugin 'junegunn/seoul256.vim'
         Plugin 'junegunn/goyo.vim'
         Plugin 'junegunn/limelight.vim'
+        Plugin 'vim-scripts/screensaver.vim'
         Plugin 'vim-scripts/visualrepeat'
+        Plugin 'vim-scripts/ScreenShot'
+        Plugin 'ntpeters/vim-better-whitespace'
+        Plugin 'justinmk/vim-syntax-extra'
 call vundle#end()
 
 filetype plugin indent on
