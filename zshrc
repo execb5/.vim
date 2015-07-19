@@ -17,20 +17,20 @@ plugins=(git zsh-syntax-highlighting archlinux)
 
 #export PATH="/home/matthias/.rvm/gems/ruby-2.1.2/bin:/home/matthias/.rvm/gems/ruby-2.1.2@global/bin:/home/matthias/.rvm/rubies/ruby-2.1.2/bin:/home/matthias/bin:/usr/local/texlive/2013/bin/x86_64-linux:/home/matthias/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/matthias/.rvm/bin"
 
-explain () {
-        if [ "$#" -eq 0 ]; then
-                while read  -p "Command: " cmd; do
-                        curl -Gs "https://www.mankier.com/api/explain/?cols="$(tput cols) --data-urlencode "q=$cmd"
-                done
-                echo "Bye!"
-        elif [ "$#" -eq 1 ]; then
-                curl -Gs "https://www.mankier.com/api/explain/?cols="$(tput cols) --data-urlencode "q=$1"
-        else
-                echo "Usage"
-                echo "explain                  interactive mode."
-                echo "explain 'cmd -o | ...'   one quoted command to explain it."
-        fi
-}
+explain () { #copythis
+        if [ "$#" -eq 0 ]; then #copythis
+                while read  -p "Command: " cmd; do #copythis
+                        curl -Gs "https://www.mankier.com/api/explain/?cols="$(tput cols) --data-urlencode "q=$cmd" #copythis
+                done #copythis
+                echo "Bye!" #copythis
+        elif [ "$#" -eq 1 ]; then #copythis
+                curl -Gs "https://www.mankier.com/api/explain/?cols="$(tput cols) --data-urlencode "q=$1" #copythis
+        else #copythis
+                echo "Usage" #copythis
+                echo "explain                  interactive mode." #copythis
+                echo "explain 'cmd -o | ...'   one quoted command to explain it." #copythis
+        fi #copythis
+} #copythis
 
 alias ppsspp='primusrun ppsspp'
 alias lsd='ls -d */' #copythis
