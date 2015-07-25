@@ -53,6 +53,7 @@ call vundle#begin()
         Plugin 'mhinz/vim-startify'
         Plugin 'spolu/dwm.vim'
         Plugin 'ryanoasis/vim-devicons'
+        Plugin 'Xuyuanp/nerdtree-git-plugin'
 call vundle#end()
 
 filetype plugin indent on
@@ -81,6 +82,21 @@ let g:tex_conceal = ""
 
 "Defining leader
 let mapleader = ","
+
+let g:startify_custom_header = [
+    \ '                                 ________  __ __',
+    \ '            __                  /\_____  \/\ \\ \',
+    \ '    __  __ /\_\    ___ ___      \/___//''/''\ \ \\ \',
+    \ '   /\ \/\ \\/\ \ /'' __` __`\        /'' /''  \ \ \\ \_',
+    \ '   \ \ \_/ |\ \ \/\ \/\ \/\ \      /'' /''__  \ \__ ,__\',
+    \ '    \ \___/  \ \_\ \_\ \_\ \_\    /\_/ /\_\  \/_/\_\_/',
+    \ '     \/__/    \/_/\/_/\/_/\/_/    \//  \/_/     \/_/',
+    \ '',
+    \ '',
+    \ ]
+
+let g:startify_custom_footer =
+ \ map(split(system('fortune | cowsay'), '\n'), '"   ". v:val') + ['','']
 
 "Functions
 function! MarkWindowSwap()
@@ -163,21 +179,6 @@ if has("persistent_undo")
         set undodir='~/.undodir/'
         set undofile
 endif
-
-let g:startify_custom_header = [
-    \ '                                 ________  __ __',
-    \ '            __                  /\_____  \/\ \\ \',
-    \ '    __  __ /\_\    ___ ___      \/___//''/''\ \ \\ \',
-    \ '   /\ \/\ \\/\ \ /'' __` __`\        /'' /''  \ \ \\ \_',
-    \ '   \ \ \_/ |\ \ \/\ \/\ \/\ \      /'' /''__  \ \__ ,__\',
-    \ '    \ \___/  \ \_\ \_\ \_\ \_\    /\_/ /\_\  \/_/\_\_/',
-    \ '     \/__/    \/_/\/_/\/_/\/_/    \//  \/_/     \/_/',
-    \ '',
-    \ '',
-    \ ]
-
-let g:startify_custom_footer =
- \ map(split(system('fortune | cowsay'), '\n'), '"   ". v:val') + ['','']
 
 "Keybindings
 nmap <F2> :w<CR>
