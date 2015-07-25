@@ -174,6 +174,9 @@ let g:startify_custom_header = [
     \ '',
     \ ]
 
+let g:startify_custom_footer =
+ \ map(split(system('fortune | cowsay'), '\n'), '"   ". v:val') + ['','']
+
 "Keybindings
 nmap <F2> :w<CR>
 imap <F2> :w!<CR> i
