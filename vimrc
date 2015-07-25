@@ -19,7 +19,7 @@ call vundle#begin()
         Plugin 'tpope/vim-fugitive'
         Plugin 'tpope/vim-rails'
         Plugin 'tpope/vim-abolish'
-        Plugin 'fholgado/minibufexpl.vim'
+        "Plugin 'fholgado/minibufexpl.vim'
         Plugin 'kien/ctrlp.vim'
         Plugin 'terryma/vim-multiple-cursors'
         Plugin 'bling/vim-airline'
@@ -50,6 +50,8 @@ call vundle#begin()
         Plugin 'vim-scripts/ScreenShot'
         Plugin 'ntpeters/vim-better-whitespace'
         Plugin 'justinmk/vim-syntax-extra'
+        Plugin 'mhinz/vim-startify'
+        Plugin 'spolu/dwm.vim'
 call vundle#end()
 
 filetype plugin indent on
