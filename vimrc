@@ -52,6 +52,7 @@ call vundle#begin()
         Plugin 'justinmk/vim-syntax-extra'
         Plugin 'mhinz/vim-startify'
         Plugin 'spolu/dwm.vim'
+        Plugin 'ryanoasis/vim-devicons'
 call vundle#end()
 
 filetype plugin indent on
@@ -70,6 +71,7 @@ let g:syntastic_quiet_messages = {'level': 'warnings'}
 
 "Airline config
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 "Signify option
 let g:signify_vcs_list = [ 'git', 'svn' ]
