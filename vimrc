@@ -65,6 +65,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 "Detect *.md as markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+"Detect *.gd as gdscript
+autocmd BufNewFile,BufReadPost *.gd set filetype=gdscript
 
 "To make Syntastic work
 let g:syntastic_auto_loc_list=1
@@ -197,17 +199,16 @@ nmap <F8> :TagbarToggle<CR>
 nmap <F9> :vertical res -1<CR>
 nmap <leader><F9> :res -1<CR>
 nmap <F10> :GundoToggle<CR>
-map <Leader>e :MBEOpen<cr>
-map <Leader>c :MBEClose<cr>
-map <Leader>t :MBEToggle<cr>
+"map <Leader>e :MBEOpen<cr>
+"map <Leader>c :MBEClose<cr>
+"map <Leader>t :MBEToggle<cr>
 "Keybindings using Leader
 nmap <Leader>w :w<CR>
-nmap <Leader>wq :wq<CR>
-nmap <Leader>q :q<CR>
-nmap <Leader>g :GundoToggle<CR>
-nmap <Leader>n :NERDTreeToggle<CR>
-nmap <Leader>m :TagbarToggle<CR>
-nmap <Leader>b :TagbarToggle<CR>:NERDTreeToggle<CR>
+nmap <Leader>q :wq<CR>
+"nmap <Leader>g :GundoToggle<CR>
+"nmap <Leader>n :NERDTreeToggle<CR>
+"nmap <Leader>m :TagbarToggle<CR>
+"nmap <Leader>b :TagbarToggle<CR>:NERDTreeToggle<CR>
 nmap <silent> <leader>yw :call MarkWindowSwap()<CR>
 nmap <silent> <leader>pw :call DoWindowSwap()<CR>
 "Easier command line navigation
