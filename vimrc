@@ -54,6 +54,7 @@ call vundle#begin()
         Plugin 'spolu/dwm.vim'
         Plugin 'ryanoasis/vim-devicons'
         Plugin 'Xuyuanp/nerdtree-git-plugin'
+        Plugin 'chriskempson/base16-vim'
 call vundle#end()
 
 filetype plugin indent on
@@ -97,6 +98,8 @@ let g:startify_custom_header = [
 
 let g:startify_custom_footer =
  \ map(split(system('fortune | cowsay'), '\n'), '"   ". v:val') + ['','']
+
+let base16colorspace=256
 
 "Functions
 function! MarkWindowSwap()
@@ -256,10 +259,16 @@ set wildmenu
 set incsearch
 if has('gui_running')
     " GUI colors
-    colorscheme gotham
+    set background=dark
+    colorscheme base16-greenscreen
+    "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono\ Plus\ Pomicons\ Book\ 9
+    set guifont=DotMatrix\ 9
+    set encoding=utf8
 else
     " Non-GUI (terminal) colors
     colorscheme jellybeans
+    "set background=dark
+    "colorscheme base16-greenscreen
 endif
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.
