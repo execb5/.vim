@@ -55,6 +55,7 @@ call vundle#begin()
         Plugin 'ryanoasis/vim-devicons'
         Plugin 'Xuyuanp/nerdtree-git-plugin'
         Plugin 'chriskempson/base16-vim'
+        Plugin 'quabug/vim-gdscript'
 call vundle#end()
 
 filetype plugin indent on
