@@ -55,9 +55,8 @@ export MANPATH=/usr/local/texlive/2014/texmf-dist/doc/man:$MANPATH
 source $ZSH/oh-my-zsh.sh
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
-#BASE16_SHELL="$HOME/.config/base16-shell/base16-greenscreen.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+#BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
+#[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 #PATH=$HOME/.cabal/bin:$PATH
 
