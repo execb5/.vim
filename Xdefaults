@@ -1,6 +1,6 @@
 ! urxvt ----------------------------------------------------------------------
 
-urxvt.font:             xft: Dejavu Sans Mono for Powerline:autohint=true:antialias=true:size=8
+urxvt.font:             xft: DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Pomicons:antialias=true:size=8
 urxvt.scrollBar:        false
 urxvt.tintColor:        white
 urxvt.fading:           15
@@ -9,6 +9,8 @@ urxvt.shading:          25
 urxvt.inheritPixmap:    true
 urxvt.pointerColor:     black
 urxvt.pointerColor2:    white
+
+Xft.rgba: none
 
 ! --Gotham theme--
 
