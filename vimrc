@@ -24,7 +24,7 @@ call vundle#begin()
         Plugin 'terryma/vim-multiple-cursors'
         Plugin 'bling/vim-airline'
         Plugin 'mhinz/vim-signify'
-        Plugin 'Yggdroot/indentLine'
+        "Plugin 'Yggdroot/indentLine'
         Plugin 'gregsexton/gitv'
         Plugin 'sjl/gundo.vim'
         Plugin 'godlygeek/csapprox'
@@ -48,7 +48,7 @@ call vundle#begin()
         Plugin 'vim-scripts/screensaver.vim'
         Plugin 'vim-scripts/visualrepeat'
         Plugin 'vim-scripts/ScreenShot'
-        Plugin 'ntpeters/vim-better-whitespace'
+        "Plugin 'ntpeters/vim-better-whitespace'
         Plugin 'justinmk/vim-syntax-extra'
         Plugin 'mhinz/vim-startify'
         Plugin 'spolu/dwm.vim'
@@ -248,6 +248,8 @@ endif
 set relativenumber
 set number
 set autoindent
+"set list lcs=eol:¬,trail:·,tab:»·
+set list lcs=trail:·,precedes:«,extends:»,eol:¬,tab:▸.
 set nowrap
 set hlsearch
 set tabpagemax=30
