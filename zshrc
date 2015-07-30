@@ -35,7 +35,8 @@ explain () { #copythis
 alias ppsspp='primusrun ppsspp'
 alias lsd='ls -d */' #copythis
 alias vi='vim' #copythis
-alias xmerge='xrdb -merge ~/.Xdefaults' #copythis
+alias xmerge='xrdb -merge ~/.Xresources' #copythis
+alias xresup='xrdb ~/.Xresources' #copythis
 if [ "$TERM" = "xterm" ] #copythis
 then #copythis
         alias vim='TERM=xterm-256color vim' #copythis

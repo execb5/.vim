@@ -44,7 +44,7 @@ read XDEF
 
 if [ "$XDEF" = "y" ]
 then
-        ln -sf $(pwd)/Xdefaults ~/.Xdefaults
+        ln -sf $(pwd)/Xresources ~/.Xresources
         echo ".Xdefaults symlinked"
 fi
 
