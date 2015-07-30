@@ -1,6 +1,9 @@
 set nocompatible
 filetype off
 
+"Defining leader
+let mapleader = ","
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 
@@ -19,12 +22,10 @@ call vundle#begin()
         Plugin 'tpope/vim-fugitive'
         Plugin 'tpope/vim-rails'
         Plugin 'tpope/vim-abolish'
-        "Plugin 'fholgado/minibufexpl.vim'
         Plugin 'kien/ctrlp.vim'
         Plugin 'terryma/vim-multiple-cursors'
         Plugin 'bling/vim-airline'
         Plugin 'mhinz/vim-signify'
-        "Plugin 'Yggdroot/indentLine'
         Plugin 'gregsexton/gitv'
         Plugin 'sjl/gundo.vim'
         Plugin 'godlygeek/csapprox'
@@ -48,7 +49,6 @@ call vundle#begin()
         Plugin 'vim-scripts/screensaver.vim'
         Plugin 'vim-scripts/visualrepeat'
         Plugin 'vim-scripts/ScreenShot'
-        "Plugin 'ntpeters/vim-better-whitespace'
         Plugin 'justinmk/vim-syntax-extra'
         Plugin 'mhinz/vim-startify'
         Plugin 'spolu/dwm.vim'
@@ -77,15 +77,25 @@ let g:syntastic_quiet_messages = {'level': 'warnings'}
 "Airline config
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline#extensions#tabline#tab_nr_type = 2
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
 
 "Signify option
 let g:signify_vcs_list = [ 'git', 'svn' ]
 
 "Disable latex conceal
 let g:tex_conceal = ""
-
-"Defining leader
-let mapleader = ","
 
 let g:startify_custom_header = [
     \ '                                 ________  __ __',
@@ -188,27 +198,16 @@ endif
 
 "Keybindings
 nmap <F2> :w<CR>
-imap <F2> :w!<CR> i
-nmap <F3> :wq<CR>
+imap <F2> :w<CR> i
+nmap <F3> :wq!<CR>
 nmap <F4> :q!<CR>
 nmap <F5> :noh<CR>
-nmap <F6> :vertical res +1<CR>
-nmap <leader><F6> :res +1<CR>
 nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
-nmap <F9> :vertical res -1<CR>
-nmap <leader><F9> :res -1<CR>
 nmap <F10> :GundoToggle<CR>
-"map <Leader>e :MBEOpen<cr>
-"map <Leader>c :MBEClose<cr>
-"map <Leader>t :MBEToggle<cr>
 "Keybindings using Leader
 nmap <Leader>w :w<CR>
 nmap <Leader>q :wq<CR>
-"nmap <Leader>g :GundoToggle<CR>
-"nmap <Leader>n :NERDTreeToggle<CR>
-"nmap <Leader>m :TagbarToggle<CR>
-"nmap <Leader>b :TagbarToggle<CR>:NERDTreeToggle<CR>
 nmap <silent> <leader>yw :call MarkWindowSwap()<CR>
 nmap <silent> <leader>pw :call DoWindowSwap()<CR>
 "Easier command line navigation
@@ -248,18 +247,29 @@ endif
 set relativenumber
 set number
 set autoindent
-"set list lcs=eol:¬,trail:·,tab:»·
 set list lcs=trail:·,precedes:«,extends:»,eol:¬,tab:▸.
+set ls=2 "show status line even when there is only one file
+set textwidth=72
+set showcmd
+set digraph
+set visualbell
+set noerrorbells
+set noexpandtab
+set whichwrap=h,l
+set viminfo=%,'50 
+set viminfo+=\"100,:100 
+set viminfo+=n~/.viminfo
 set nowrap
 set hlsearch
 set tabpagemax=30
 set clipboard=unnamedplus
 set mouse=a
-set expandtab
 set tabstop=8
 set shiftwidth=8
 set softtabstop=8
 set wildmenu
+"Choose which buffer to go
+nnoremap gb :ls<CR>:b<Space>
 set incsearch
 if has('gui_running')
     " GUI colors
