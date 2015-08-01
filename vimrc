@@ -51,7 +51,7 @@ call vundle#begin()
         Plugin 'vim-scripts/ScreenShot'
         Plugin 'justinmk/vim-syntax-extra'
         Plugin 'mhinz/vim-startify'
-        Plugin 'spolu/dwm.vim'
+        "Plugin 'spolu/dwm.vim'
         Plugin 'ryanoasis/vim-devicons'
         Plugin 'Xuyuanp/nerdtree-git-plugin'
         Plugin 'chriskempson/base16-vim'
@@ -97,22 +97,21 @@ let g:signify_vcs_list = [ 'git', 'svn' ]
 "Disable latex conceal
 let g:tex_conceal = ""
 
+"Startify options
 let g:startify_custom_header = [
-    \ '                                 ________  __ __',
-    \ '            __                  /\_____  \/\ \\ \',
-    \ '    __  __ /\_\    ___ ___      \/___//''/''\ \ \\ \',
-    \ '   /\ \/\ \\/\ \ /'' __` __`\        /'' /''  \ \ \\ \_',
+    \ '                                 ________  __ __        ',
+    \ '            __                  /\_____  \/\ \\ \       ',
+    \ '    __  __ /\_\    ___ ___      \/___//''/''\ \ \\ \    ',
+    \ '   /\ \/\ \\/\ \ /'' __` __`\        /'' /''  \ \ \\ \_ ',
     \ '   \ \ \_/ |\ \ \/\ \/\ \/\ \      /'' /''__  \ \__ ,__\',
-    \ '    \ \___/  \ \_\ \_\ \_\ \_\    /\_/ /\_\  \/_/\_\_/',
-    \ '     \/__/    \/_/\/_/\/_/\/_/    \//  \/_/     \/_/',
-    \ '',
-    \ '',
+    \ '    \ \___/  \ \_\ \_\ \_\ \_\    /\_/ /\_\  \/_/\_\_/  ',
+    \ '     \/__/    \/_/\/_/\/_/\/_/    \//  \/_/     \/_/    ',
+    \ '                                                        ',
+    \ '                                                        ',
     \ ]
 
 let g:startify_custom_footer =
  \ map(split(system('fortune | cowsay'), '\n'), '"   ". v:val') + ['','']
-
-let base16colorspace=256
 
 "Functions
 function! MarkWindowSwap()
@@ -120,18 +119,18 @@ function! MarkWindowSwap()
 endfunction
 
 function! DoWindowSwap()
-        "Mark destination
-        let curNum = winnr()
-        let curBuf = bufnr( "%" )
-        exe g:markedWinNum . "wincmd w"
-        "Switch to source and shuffle dest->source
-        let markedBuf = bufnr( "%" )
-        "Hide and open so that we aren't prompted and keep history
-        exe 'hide buf' curBuf
-        "Switch to dest and shuffle source->dest
-        exe curNum . "wincmd w"
-        "Hide and open so that we aren't prompted and keep history
-        exe 'hide buf' markedBuf
+	"Mark destination
+	let curNum = winnr()
+	let curBuf = bufnr( "%" )
+	exe g:markedWinNum . "wincmd w"
+	"Switch to source and shuffle dest->source
+	let markedBuf = bufnr( "%" )
+	"Hide and open so that we aren't prompted and keep history
+	exe 'hide buf' curBuf
+	"Switch to dest and shuffle source->dest
+	exe curNum . "wincmd w"
+	"Hide and open so that we aren't prompted and keep history
+	exe 'hide buf' markedBuf
 endfunction
 
 "NERDTree preview
@@ -210,6 +209,7 @@ nmap <Leader>w :w<CR>
 nmap <Leader>q :wq<CR>
 nmap <silent> <leader>yw :call MarkWindowSwap()<CR>
 nmap <silent> <leader>pw :call DoWindowSwap()<CR>
+nnoremap <leader>nt :call NerdPreviewToggle()<cr>
 "Easier command line navigation
 noremap <C-J> <C-W>j
 noremap <C-K> <C-W>k
@@ -272,21 +272,24 @@ set wildmenu
 nnoremap gb :ls<CR>:b<Space>
 set incsearch
 if has('gui_running')
-    " GUI colors
-    set background=dark
-    colorscheme base16-greenscreen
-    "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono\ Plus\ Pomicons\ Book\ 9
-    set guifont=DotMatrix\ 9
-    set encoding=utf8
+	" GUI colors
+	let base16colorspace=256
+	set background=dark
+	colorscheme base16-greenscreen
+	"set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono\ Plus\ Pomicons\ Book\ 9
+	set guifont=DotMatrix\ 9
+	set encoding=utf8
+	set guioptions-=m  "remove menu bar
+	set guioptions-=T  "remove toolbar
+	set guioptions-=r  "remove right-hand scroll bar
+	set guioptions-=L  "remove left-hand scroll bar
 else
-    " Non-GUI (terminal) colors
-    colorscheme jellybeans
-    "set background=dark
-    "colorscheme base16-greenscreen
+	" Non-GUI (terminal) colors
+	"colorscheme jellybeans
+	colorscheme gotham
 endif
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.
-"call NerdPreviewToggle()
 
 syn on
 
@@ -308,8 +311,3 @@ syn on
 "hi Operator ctermbg=NONE
 "hi Structure ctermbg=NONE
 
-"gViM stuff
-set guioptions-=m  "remove menu bar
-set guioptions-=T  "remove toolbar
-set guioptions-=r  "remove right-hand scroll bar
-set guioptions-=L  "remove left-hand scroll bar

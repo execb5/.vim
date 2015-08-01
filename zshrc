@@ -2,9 +2,9 @@
 export ZSH=$HOME/.oh-my-zsh
 
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="half-life"
+#ZSH_THEME="half-life"
 #ZSH_THEME="fox"
-#ZSH_THEME="fino"
+ZSH_THEME="fino"
 #ZSH_THEME="mylambdatheme"
 
 
@@ -51,6 +51,7 @@ export INFOPATH=/usr/local/texlive/2013/texmf/doc/info:$INFOPATH
 #source ~/.rvm/scripts/rvm
 
 export PATH="/usr/local/texlive/2014/bin/x86_64-linux:$PATH"
+export PATH=$HOME/cmus/bin:$PATH
 export INFOPATH=/usr/local/texlive/2014/texmf-dist/doc/info:$INFOPATH
 export MANPATH=/usr/local/texlive/2014/texmf-dist/doc/man:$MANPATH
 
