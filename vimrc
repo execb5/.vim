@@ -247,7 +247,7 @@ endif
 set relativenumber
 set number
 set autoindent
-set list lcs=trail:·,precedes:«,extends:»,eol:¬,tab:▸.
+set list lcs=trail:·,precedes:«,extends:»,eol:¬,tab:▸\ 
 set ls=2 "show status line even when there is only one file
 set textwidth=72
 set showcmd
