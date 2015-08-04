@@ -5,7 +5,8 @@ export ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="half-life"
 #ZSH_THEME="fox"
 #ZSH_THEME="fino"
-ZSH_THEME="smt"
+#ZSH_THEME="smt"
+ZSH_THEME="custom"
 #ZSH_THEME="mylambdatheme"
 
 
