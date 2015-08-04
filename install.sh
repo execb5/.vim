@@ -9,6 +9,8 @@ fi
 
 ln -sf $(pwd)/vimrc ~/.vimrc
 echo "vimrc symlinked"
+ln -sf $(pwd)/gitconfig ~/.gitconfig
+echo "gitconfig symlinked"
 
 vim +PluginInstall +PluginClean +qall
 echo "Plugins installed!"

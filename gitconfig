@@ -1,0 +1,13 @@
+[user]
+	email = matthiasnunes@gmail.com
+	name = Matthias Nunes
+[push]
+	default = matching
+[core]
+	editor = vim
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+	st = status
