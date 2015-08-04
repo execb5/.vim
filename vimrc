@@ -8,54 +8,53 @@ let mapleader = ","
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
-        Plugin 'gmarik/Vundle.vim'
-        Plugin 'scrooloose/nerdtree'
-        Plugin 'scrooloose/syntastic'
-        Plugin 'scrooloose/nerdcommenter'
-        Plugin 'mileszs/ack.vim'
-        Plugin 'majutsushi/tagbar'
-        Plugin 'tpope/vim-endwise'
-        Plugin 'tpope/vim-repeat'
-        Plugin 'tpope/vim-speeddating'
-        Plugin 'tpope/vim-surround'
-        Plugin 'tpope/vim-unimpaired'
-        Plugin 'tpope/vim-fugitive'
-        Plugin 'tpope/vim-rails'
-        Plugin 'tpope/vim-abolish'
-        Plugin 'kien/ctrlp.vim'
-        Plugin 'terryma/vim-multiple-cursors'
-        Plugin 'bling/vim-airline'
-        Plugin 'mhinz/vim-signify'
-        Plugin 'gregsexton/gitv'
-        Plugin 'sjl/gundo.vim'
-        Plugin 'godlygeek/csapprox'
-        Plugin 'suan/vim-instant-markdown'
-        Plugin 'MarcWeber/vim-addon-mw-utils'
-        Plugin 'tomtom/tlib_vim'
-        Plugin 'garbas/vim-snipmate'
-        Plugin 'honza/vim-snippets'
-        Plugin 'ervandew/supertab'
-        Plugin 'Townk/vim-autoclose'
-        Plugin 'dag/vim2hs' "<-Haskell
-        Plugin 'eagletmt/ghcmod-vim' "<-Haskell
-        Plugin 'Shougo/vimproc.vim' "<-Haskell    Needs to run 'make' after installing
-        Plugin 'eagletmt/neco-ghc' "<-Haskell
-        Plugin 'whatyouhide/vim-gotham'
-        Plugin 'haya14busa/incsearch.vim'
-        Plugin 'junegunn/vim-easy-align'
-        Plugin 'junegunn/seoul256.vim'
-        Plugin 'junegunn/goyo.vim'
-        Plugin 'junegunn/limelight.vim'
-        Plugin 'vim-scripts/screensaver.vim'
-        Plugin 'vim-scripts/visualrepeat'
-        Plugin 'vim-scripts/ScreenShot'
-        Plugin 'justinmk/vim-syntax-extra'
-        Plugin 'mhinz/vim-startify'
-        "Plugin 'spolu/dwm.vim'
-        Plugin 'ryanoasis/vim-devicons'
-        Plugin 'Xuyuanp/nerdtree-git-plugin'
-        Plugin 'chriskempson/base16-vim'
-        Plugin 'quabug/vim-gdscript'
+	Plugin 'gmarik/Vundle.vim'
+	Plugin 'scrooloose/nerdtree'
+	Plugin 'scrooloose/syntastic'
+	Plugin 'scrooloose/nerdcommenter'
+	Plugin 'mileszs/ack.vim'
+	Plugin 'majutsushi/tagbar'
+	Plugin 'tpope/vim-endwise'
+	Plugin 'tpope/vim-repeat'
+	Plugin 'tpope/vim-speeddating'
+	Plugin 'tpope/vim-surround'
+	Plugin 'tpope/vim-unimpaired'
+	Plugin 'tpope/vim-fugitive'
+	Plugin 'tpope/vim-rails'
+	Plugin 'tpope/vim-abolish'
+	Plugin 'kien/ctrlp.vim'
+	Plugin 'terryma/vim-multiple-cursors'
+	Plugin 'bling/vim-airline'
+	Plugin 'mhinz/vim-signify'
+	Plugin 'gregsexton/gitv'
+	Plugin 'sjl/gundo.vim'
+	Plugin 'godlygeek/csapprox'
+	Plugin 'suan/vim-instant-markdown'
+	Plugin 'MarcWeber/vim-addon-mw-utils'
+	Plugin 'tomtom/tlib_vim'
+	Plugin 'garbas/vim-snipmate'
+	Plugin 'honza/vim-snippets'
+	Plugin 'ervandew/supertab'
+	Plugin 'Townk/vim-autoclose'
+	Plugin 'dag/vim2hs' "<-Haskell
+	Plugin 'eagletmt/ghcmod-vim' "<-Haskell
+	Plugin 'Shougo/vimproc.vim' "<-Haskell    Needs to run 'make' after installing
+	Plugin 'eagletmt/neco-ghc' "<-Haskell
+	Plugin 'whatyouhide/vim-gotham'
+	Plugin 'haya14busa/incsearch.vim'
+	Plugin 'junegunn/vim-easy-align'
+	Plugin 'junegunn/seoul256.vim'
+	Plugin 'junegunn/goyo.vim'
+	Plugin 'junegunn/limelight.vim'
+	Plugin 'vim-scripts/screensaver.vim'
+	Plugin 'vim-scripts/visualrepeat'
+	Plugin 'vim-scripts/ScreenShot'
+	Plugin 'justinmk/vim-syntax-extra'
+	Plugin 'mhinz/vim-startify'
+	Plugin 'ryanoasis/vim-devicons'
+	Plugin 'Xuyuanp/nerdtree-git-plugin'
+	Plugin 'chriskempson/base16-vim'
+	Plugin 'quabug/vim-gdscript'
 call vundle#end()
 
 filetype plugin indent on
@@ -93,9 +92,6 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 
 "Signify option
 let g:signify_vcs_list = [ 'git', 'svn' ]
-
-"Disable latex conceal
-let g:tex_conceal = ""
 
 "Startify options
 let g:startify_custom_header = [
