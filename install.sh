@@ -11,6 +11,8 @@ ln -sf $(pwd)/vimrc ~/.vimrc
 echo "vimrc symlinked"
 ln -sf $(pwd)/gitconfig ~/.gitconfig
 echo "gitconfig symlinked"
+ln -sf $(pwd)/tmux.conf ~/.tmux.conf
+echo "tmux.conf symlinked"
 
 vim +PluginInstall +PluginClean +qall
 echo "Plugins installed!"
