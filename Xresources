@@ -11,6 +11,11 @@ urxvt.inheritPixmap:    true
 urxvt.pointerColor:     black
 urxvt.pointerColor2:    white
 
+!Open links
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
+
 Xft.rgba: none
 
 ! --Gotham theme--
