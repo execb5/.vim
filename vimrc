@@ -193,7 +193,7 @@ endif
 
 "Keybindings
 nmap <F2> :w<CR>
-imap <F2> :w<CR> i
+imap <F2> :w<CR>a
 nmap <F3> :wq!<CR>
 nmap <F4> :q!<CR>
 nmap <F5> :noh<CR>

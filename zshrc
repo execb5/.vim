@@ -35,6 +35,7 @@ explain () { #copythis
 } #copythis
 
 alias ppsspp='primusrun ppsspp'
+alias roc='CACA_DRIVER=ncurses mplayer -vo caca -msglevel all=0'
 alias lsd='ls -d */' #copythis
 alias vi='vim' #copythis
 alias xmerge='xrdb -merge ~/.Xresources' #copythis
