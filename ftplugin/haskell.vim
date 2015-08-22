@@ -20,11 +20,10 @@ let g:haskell_conceal = 0
 let g:haskell_conceal_enumerations = 0
 
 "Shortcut to fold and unfold functions and stuff
-nmap <F8> :foldopen<CR>
-nmap <Leader><Leader> :foldclose<CR>
+nmap <Leader>fo :foldopen<CR>
+nmap <Leader>fc :foldclose<CR>
 
 
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
-set expandtab

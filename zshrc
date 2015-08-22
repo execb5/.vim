@@ -9,9 +9,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="custom"
 #ZSH_THEME="mylambdatheme"
 
-ZSH_TMUX_AUTOSTART=true
-
-plugins=(git zsh-syntax-highlighting archlinux tmux)
+plugins=(git zsh-syntax-highlighting archlinux)
 
 explain () { #copythis
 	if [ "$#" -eq 0 ]; then #copythis
@@ -28,12 +26,13 @@ explain () { #copythis
 	fi #copythis
 } #copythis
 
-alias ppsspp='primusrun ppsspp'
-alias roc='CACA_DRIVER=ncurses mplayer -vo caca -msglevel all=0'
+alias ppsspp='primusrun ppsspp' #copythis
+alias roc='CACA_DRIVER=ncurses mplayer -vo caca -msglevel all=0' #copythis
 alias lsd='ls -d */' #copythis
 alias vi='vim' #copythis
 alias xmerge='xrdb -merge ~/.Xresources' #copythis
 alias xresup='xrdb ~/.Xresources' #copythis
+alias texmk='latexmk -pvc -pdf -f -silent' #copythis
 
 if [ "$TERM" = "xterm" ] #copythis
 then #copythis
