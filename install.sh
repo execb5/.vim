@@ -26,6 +26,8 @@ then
 
         ln -sf $(pwd)/zshrc ~/.zshrc
         echo "zshrc symlinked"
+        ln -sf $(pwd)/custom.zsh-theme ~/.oh-my-zsh/themes/custom.zsh-theme
+        echo "zsh-theme symlinked"
 else
         echo "You're not a winner, try using zsh"
         grep copythis zshrc >> ~/.bashrc
