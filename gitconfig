@@ -11,3 +11,4 @@
 	prompt = false
 [alias]
 	st = status
+	co = checkout
