@@ -44,16 +44,20 @@ else #when i'm in dwm using urxvt #copythis
 	alias vimdiff='TERM=rxvt-unicode-256color vimdiff' #copythis
 fi #copythis
 
+if which ruby >/dev/null && which gem >/dev/null; then
+	PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
 export EDITOR="/usr/bin/vim" #copythis
 #export MANPATH=/usr/local/texlive/2013/texmf/doc/man:$MANPATH
 #export INFOPATH=/usr/local/texlive/2013/texmf/doc/info:$INFOPATH
 #source ~/.rvm/scripts/rvm
 
-export PATH="/usr/local/texlive/2014/bin/x86_64-linux:$PATH"
-export PATH=$HOME/cmus/bin:$PATH
+#export PATH="/usr/local/texlive/2014/bin/x86_64-linux:$PATH"
+#export PATH=$HOME/cmus/bin:$PATH
 #export INFOPATH=/usr/local/texlive/2014/texmf-dist/doc/info:$INFOPATH
 #export MANPATH=/usr/local/texlive/2014/texmf-dist/doc/man:$MANPATH
-
+#
 source $ZSH/oh-my-zsh.sh
 
 #PATH=$HOME/.cabal/bin:$PATH
