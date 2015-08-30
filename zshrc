@@ -34,6 +34,7 @@ alias vi='vim' #copythis
 alias xmerge='xrdb -merge ~/.Xresources' #copythis
 alias xresup='xrdb ~/.Xresources' #copythis
 alias texmk='latexmk -pvc -pdf -f -silent' #copythis
+alias astah='java -jar ~/Programs/astah_professional/astah-pro.jar'
 
 if [ "$TERM" = "xterm" ] #copythis
 then #copythis
@@ -49,18 +50,10 @@ if which ruby >/dev/null && which gem >/dev/null; then
 fi
 
 export EDITOR="/usr/bin/vim" #copythis
-#export MANPATH=/usr/local/texlive/2013/texmf/doc/man:$MANPATH
-#export INFOPATH=/usr/local/texlive/2013/texmf/doc/info:$INFOPATH
-#source ~/.rvm/scripts/rvm
-
-#export PATH="/usr/local/texlive/2014/bin/x86_64-linux:$PATH"
-#export PATH=$HOME/cmus/bin:$PATH
-#export INFOPATH=/usr/local/texlive/2014/texmf-dist/doc/info:$INFOPATH
-#export MANPATH=/usr/local/texlive/2014/texmf-dist/doc/man:$MANPATH
+export PATH="/usr/local/texlive/2015/bin/x86_64-linux:$PATH"
+export INFOPATH=/usr/local/texlive/2015/texmf-dist/doc/info:$INFOPATH
+export MANPATH=/usr/local/texlive/2015/texmf-dist/doc/man:$MANPATH
 #
 source $ZSH/oh-my-zsh.sh
 
 #PATH=$HOME/.cabal/bin:$PATH
-
-#export PATH="$HOME/.rbenv/bin:$PATH"
-#export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
