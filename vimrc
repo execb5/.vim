@@ -32,7 +32,6 @@ call vundle#begin()
 	Plugin 'Townk/vim-autoclose'
 	Plugin 'haya14busa/incsearch.vim'
 	Plugin 'junegunn/vim-easy-align'
-	Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 	"Haskell
 	Plugin 'dag/vim2hs'
@@ -47,6 +46,7 @@ call vundle#begin()
 	Plugin 'justinmk/vim-syntax-extra'    "better syntax highlight for C
 	Plugin 'mhinz/vim-startify'           "start screen
 	Plugin 'ryanoasis/vim-devicons'       "icons
+	Plugin 'Xuyuanp/nerdtree-git-plugin'  "show git signs in nerdtree
 
 	"Colorschemes
 	Plugin 'whatyouhide/vim-gotham'
