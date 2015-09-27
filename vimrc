@@ -8,7 +8,11 @@ let mapleader = ","
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
+
+	"Plugin manager
 	Plugin 'gmarik/Vundle.vim'
+
+	"Workflow
 	Plugin 'scrooloose/nerdtree'
 	Plugin 'scrooloose/syntastic'
 	Plugin 'scrooloose/nerdcommenter'
@@ -16,45 +20,41 @@ call vundle#begin()
 	Plugin 'majutsushi/tagbar'
 	Plugin 'tpope/vim-endwise'
 	Plugin 'tpope/vim-repeat'
-	Plugin 'tpope/vim-speeddating'
 	Plugin 'tpope/vim-surround'
-	Plugin 'tpope/vim-unimpaired'
-	Plugin 'tpope/vim-fugitive'
-	Plugin 'tpope/vim-rails'
-	Plugin 'tpope/vim-abolish'
 	Plugin 'kien/ctrlp.vim'
 	Plugin 'terryma/vim-multiple-cursors'
-	Plugin 'bling/vim-airline'
-	Plugin 'mhinz/vim-signify'
-	Plugin 'gregsexton/gitv'
 	Plugin 'sjl/gundo.vim'
-	Plugin 'godlygeek/csapprox'
-	Plugin 'suan/vim-instant-markdown'
-	Plugin 'MarcWeber/vim-addon-mw-utils'
-	Plugin 'tomtom/tlib_vim'
 	Plugin 'garbas/vim-snipmate'
-	Plugin 'honza/vim-snippets'
+	Plugin 'MarcWeber/vim-addon-mw-utils' "dependency for snipmate
+	Plugin 'tomtom/tlib_vim'              "dependency for snipmate
+	Plugin 'honza/vim-snippets'           "without this snipmate would be useless
 	Plugin 'ervandew/supertab'
 	Plugin 'Townk/vim-autoclose'
-	Plugin 'dag/vim2hs' "<-Haskell
-	Plugin 'eagletmt/ghcmod-vim' "<-Haskell
-	Plugin 'Shougo/vimproc.vim' "<-Haskell    Needs to run 'make' after installing
-	Plugin 'eagletmt/neco-ghc' "<-Haskell
-	Plugin 'whatyouhide/vim-gotham'
 	Plugin 'haya14busa/incsearch.vim'
 	Plugin 'junegunn/vim-easy-align'
-	Plugin 'junegunn/seoul256.vim'
-	Plugin 'junegunn/goyo.vim'
-	Plugin 'junegunn/limelight.vim'
-	Plugin 'vim-scripts/screensaver.vim'
-	Plugin 'vim-scripts/visualrepeat'
-	Plugin 'vim-scripts/ScreenShot'
-	Plugin 'justinmk/vim-syntax-extra'
-	Plugin 'mhinz/vim-startify'
-	Plugin 'ryanoasis/vim-devicons'
 	Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+	"Haskell
+	Plugin 'dag/vim2hs'
+	Plugin 'eagletmt/ghcmod-vim'
+	Plugin 'Shougo/vimproc.vim'           "Needs to run 'make' after installing
+	Plugin 'eagletmt/neco-ghc'
+
+	"Pretify things
+	Plugin 'bling/vim-airline'
+	Plugin 'mhinz/vim-signify'            "show what changed in file
+	Plugin 'godlygeek/csapprox'           "makes gui themes work in terminal
+	Plugin 'justinmk/vim-syntax-extra'    "better syntax highlight for C
+	Plugin 'mhinz/vim-startify'           "start screen
+	Plugin 'ryanoasis/vim-devicons'       "icons
+
+	"Colorschemes
+	Plugin 'whatyouhide/vim-gotham'
+	Plugin 'junegunn/seoul256.vim'
 	Plugin 'chriskempson/base16-vim'
-	Plugin 'quabug/vim-gdscript'
+	Plugin 'NLKNguyen/papercolor-theme'
+	Plugin 'nanotech/jellybeans.vim'
+
 call vundle#end()
 
 filetype plugin indent on
@@ -269,20 +269,19 @@ nnoremap gb :ls<CR>:b<Space>
 set incsearch
 if has('gui_running')
 	" GUI colors
-	let base16colorspace=256
-	set background=dark
-	colorscheme base16-greenscreen
-	"set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono\ Plus\ Pomicons\ Book\ 9
-	set guifont=DotMatrix\ 9
+	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono\ Plus\ Pomicons\ Book\ 9
 	set encoding=utf8
 	set guioptions-=m  "remove menu bar
 	set guioptions-=T  "remove toolbar
 	set guioptions-=r  "remove right-hand scroll bar
 	set guioptions-=L  "remove left-hand scroll bar
+	colorscheme gotham
 else
 	" Non-GUI (terminal) colors
 	"colorscheme jellybeans
 	colorscheme gotham
+	"set background=light
+	"colorscheme PaperColor
 endif
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.

@@ -1,15 +1,11 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="half-life"
-#ZSH_THEME="fox"
-#ZSH_THEME="fino"
-#ZSH_THEME="smt"
 ZSH_THEME="custom"
-#ZSH_THEME="mylambdatheme"
 
-plugins=(git zsh-syntax-highlighting archlinux)
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOCONNECT=false
+plugins=(git zsh-syntax-highlighting archlinux tmux)
 
 explain () { #copythis
 	if [ "$#" -eq 0 ]; then #copythis
@@ -36,16 +32,16 @@ alias xresup='xrdb ~/.Xresources' #copythis
 alias texmk='latexmk -pvc -pdf -f -silent' #copythis
 alias astah='java -jar ~/Programs/astah_professional/astah-pro.jar'
 
-if [ "$TERM" = "xterm" ] #copythis
-then #copythis
-	alias vim='TERM=xterm-256color vim' #copythis
-	alias vimdiff='TERM=xterm-256color vimdiff' #copythis
-else #when i'm in dwm using urxvt #copythis
-	alias vim='TERM=rxvt-unicode-256color vim' #copythis
-	alias vimdiff='TERM=rxvt-unicode-256color vimdiff' #copythis
-fi #copythis
+#if [ "$TERM" = "xterm" ] #copythis
+#then #copythis
+	#alias vim='TERM=xterm-256color vim' #copythis
+	#alias vimdiff='TERM=xterm-256color vimdiff' #copythis
+#else #when i'm in dwm using urxvt #copythis
+	#alias vim='TERM=rxvt-unicode-256color vim' #copythis
+	#alias vimdiff='TERM=rxvt-unicode-256color vimdiff' #copythis
+#fi #copythis
 
-if which ruby >/dev/null && which gem >/dev/null; then
+if which ruby > /dev/null && which gem >/dev/null; then
 	PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
 
