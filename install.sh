@@ -13,6 +13,8 @@ ln -sf $(pwd)/gitconfig ~/.gitconfig
 echo "gitconfig symlinked"
 ln -sf $(pwd)/tmux.conf ~/.tmux.conf
 echo "tmux.conf symlinked"
+ln -sf $(pwd)/vimperatorrc ~/.vimperatorrc
+echo "vimperatorrc symlinked"
 
 vim +PluginInstall +PluginClean +qall
 echo "Plugins installed!"
