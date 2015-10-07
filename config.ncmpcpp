@@ -27,7 +27,7 @@ browser_display_mode = "columns"
 
 colors_enabled = "yes"
 discard_colors_if_item_is_selected = "yes"
-header_window_color = "black"
+header_window_color = "blue"
 volume_color = "cyan"
 state_line_color = "white"
 state_flags_color = "yellow"
