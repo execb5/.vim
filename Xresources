@@ -19,85 +19,43 @@ URxvt.matcher.button: 1
 Xft.rgba: none
 
 ! --Gotham theme--
-*.foreground:   #98d1ce
-*.background:   #0a0f14
-*.cursorColor:  #98d1ce
+!*.foreground:   #98d1ce
+!*.background:   #0a0f14
+!*.cursorColor:  #98d1ce
 
-*.color0:       #0a0f14
-*.color1:       #c33027
-*.color2:       #26a98b
-*.color3:       #edb54b
-*.color4:       #195465
-*.color5:       #4e5165
-*.color6:       #33859d
-*.color7:       #98d1ce
-*.color8:       #10151b
-*.color9:       #d26939
-*.color10:      #081f2d
-*.color11:      #245361
-*.color12:      #093748
-*.color13:      #888ba5
-*.color14:      #599caa
-*.color15:      #d3ebe9
+!*.color0:       #0a0f14
+!*.color1:       #c33027
+!*.color2:       #26a98b
+!*.color3:       #edb54b
+!*.color4:       #195465
+!*.color5:       #4e5165
+!*.color6:       #33859d
+!*.color7:       #98d1ce
+!*.color8:       #10151b
+!*.color9:       #d26939
+!*.color10:      #081f2d
+!*.color11:      #245361
+!*.color12:      #093748
+!*.color13:      #888ba5
+!*.color14:      #599caa
+!*.color15:      #d3ebe9
 
-! -- --
-
-
-!Solarized Light Theme
-!#define S_base03        #002b36
-!#define S_base02        #073642
-!#define S_base01        #586e75
-!#define S_base00        #657b83
-!#define S_base0         #839496
-!#define S_base1         #93a1a1
-!#define S_base2         #eee8d5
-!#define S_base3         #fdf6e3
-
-!*background:            S_base3
-!*foreground:            S_base00
-!*fadeColor:             S_base3
-!*cursorColor:           S_base01
-!*pointerColorBackground:S_base1
-!*pointerColorForeground:S_base01
-
-!#define S_yellow        #b58900
-!#define S_orange        #cb4b16
-!#define S_red           #dc322f
-!#define S_magenta       #d33682
-!#define S_violet        #6c71c4
-!#define S_blue          #268bd2
-!#define S_cyan          #2aa198
-!#define S_green         #859900
-
-!!! black dark/light
-!*color0:                S_base02
-!*color8:                S_base03
-
-!!! red dark/light
-!*color1:                S_red
-!*color9:                S_orange
-
-!!! green dark/light
-!*color2:                S_green
-!*color10:               S_base01
-
-!!! yellow dark/light
-!*color3:                S_yellow
-!*color11:               S_base00
-
-!!! blue dark/light
-!*color4:                S_blue
-!*color12:               S_base0
-
-!!! magenta dark/light
-!*color5:                S_magenta
-!*color13:               S_violet
-
-!!! cyan dark/light
-!*color6:                S_cyan
-!*color14:               S_base1
-
-!!! white dark/light
-!*color7:                S_base2
-!*color15:               S_base3
-
+!urnn
+*background: #040408
+*foreground: #d2d5d4
+*color0: #492723
+*color1: #c45341
+*color2: #7a90bb
+*color3: #646e61
+*color4: #416172
+*color5: #b7769e
+*color6: #9f878a
+*color7: #bcafa4
+*color8: #1b1718
+*color9: #e16a5a
+*color10: #85ba9b
+*color11: #c2b286
+*color12: #7591b2
+*color13: #9e4a65
+*color14: #9091b7
+*color15: #dbdbe7

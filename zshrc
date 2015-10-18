@@ -5,7 +5,7 @@ ZSH_THEME="custom"
 
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOCONNECT=false
-plugins=(git zsh-syntax-highlighting archlinux tmux)
+plugins=(git zsh-syntax-highlighting archlinux tmux rails bundle rake)
 
 explain () { #copythis
 	if [ "$#" -eq 0 ]; then #copythis
@@ -31,6 +31,7 @@ alias xmerge='xrdb -merge ~/.Xresources' #copythis
 alias xresup='xrdb ~/.Xresources' #copythis
 alias texmk='latexmk -pvc -pdf -f -silent' #copythis
 alias astah='java -jar ~/Programs/astah_professional/astah-pro.jar'
+alias fuck='eval $(thefuck --alias)'
 
 #if [ "$TERM" = "xterm" ] #copythis
 #then #copythis
