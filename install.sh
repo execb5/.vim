@@ -47,6 +47,28 @@ then
         echo "Don't forget to add dwmstart to execute"
 fi
 
+echo "Configure mpd? (y/n)"
+read MPD
+
+if [ "$MPD" = "y" ]
+then
+	[ -d ~/.mpd ] || mkdir ~/.mpd
+	ln -sf $(pwd)/mpd.conf ~/.mpd/mpd.conf
+	touch ~/.mpd/mpd.db
+	touch ~/.mpd/mpd.log
+	touch ~/.mpd/mpdstate
+	mkdir ~/.mpd/playlists
+fi
+
+echo "Configure ncmpcpp? (y/n)"
+read NCMPCPP
+
+if [ "$NCMPCPP" = "y" ]
+then
+	[ -d ~/.ncmpcpp ] || mkdir ~/.ncmpcpp
+	ln -sf $(pwd)/ncmpcpp ~/.ncmpcpp/config
+fi
+
 echo "Do you want to use the custom Xdefaults? (y/n)"
 read XDEF
 
