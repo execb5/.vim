@@ -3,9 +3,9 @@ export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="custom"
 
-ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOCONNECT=false
-plugins=(git zsh-syntax-highlighting archlinux tmux rails bundle rake)
+#ZSH_TMUX_AUTOSTART=true
+#ZSH_TMUX_AUTOCONNECT=false
+plugins=(git zsh-syntax-highlighting archlinux rails bundle rake)
 
 explain () { #copythis
 	if [ "$#" -eq 0 ]; then #copythis
@@ -50,6 +50,7 @@ export EDITOR="/usr/bin/vim" #copythis
 export PATH="/usr/local/texlive/2015/bin/x86_64-linux:$PATH"
 export INFOPATH=/usr/local/texlive/2015/texmf-dist/doc/info:$INFOPATH
 export MANPATH=/usr/local/texlive/2015/texmf-dist/doc/man:$MANPATH
+export XDG_CONFIG_HOME="$HOME/.config"
 #
 source $ZSH/oh-my-zsh.sh
 

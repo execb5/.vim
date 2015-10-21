@@ -1,4 +1,4 @@
-mpd_music_dir = "/home/matthias/Music/"  
+mpd_music_dir = "/home/matthias/music/"  
 mpd_connection_timeout = "5"  
 mpd_crossfade_time = "5"  
 mpd_host = "localhost"

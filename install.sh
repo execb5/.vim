@@ -19,6 +19,9 @@ echo "vimperatorrc symlinked"
 vim +PluginInstall +PluginClean +qall
 echo "Plugins installed!"
 
+[ -d ~/.vimperator/plugins ] || git clone https://github.com/ervandew/vimperator-plugins.git plugins
+[ -d ~/.vimperator/colors ] || git clone https://github.com/vimpr/vimperator-colors.git ~/.vimperator/colors
+
 if [ $( echo $SHELL | tail -c 4 ) = "zsh" ]
 then
         echo "Setting oh my zsh..."
