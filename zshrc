@@ -5,7 +5,7 @@ ZSH_THEME="custom"
 
 #ZSH_TMUX_AUTOSTART=true
 #ZSH_TMUX_AUTOCONNECT=false
-plugins=(git zsh-syntax-highlighting archlinux rails bundle rake)
+plugins=(git zsh-syntax-highlighting archlinux rails bundle rake tmux)
 
 explain () { #copythis
 	if [ "$#" -eq 0 ]; then #copythis
