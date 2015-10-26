@@ -21,6 +21,8 @@ call vundle#begin()
 	Plugin 'tpope/vim-endwise'
 	Plugin 'tpope/vim-repeat'
 	Plugin 'tpope/vim-surround'
+	Plugin 'tpope/vim-rails'
+	"Plugin 'tpope/vim-rake'
 	Plugin 'kien/ctrlp.vim'
 	Plugin 'terryma/vim-multiple-cursors'
 	Plugin 'sjl/gundo.vim'
@@ -279,9 +281,9 @@ if has('gui_running')
 else
 	" Non-GUI (terminal) colors
 	"colorscheme jellybeans
-	colorscheme gotham
-	"set background=light
-	"colorscheme PaperColor
+	"colorscheme gotham
+	set background=light
+	colorscheme PaperColor
 endif
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.
@@ -289,20 +291,19 @@ set directory=~/.vimtmp,.
 syn on
 
 "Transparent background
-"hi Normal ctermbg=NONE
-"hi Comment ctermbg=NONE
-"hi Constant ctermbg=NONE
-"hi Special ctermbg=NONE
-"hi Identifier ctermbg=NONE
-"hi Statement ctermbg=NONE
-"hi PreProc ctermbg=NONE
-"hi Type ctermbg=NONE
-"hi Underlined ctermbg=NONE
-"hi Todo ctermbg=NONE
-"hi String ctermbg=NONE
-"hi Function ctermbg=NONE
-"hi Conditional ctermbg=NONE
-"hi Repeat ctermbg=NONE
-"hi Operator ctermbg=NONE
-"hi Structure ctermbg=NONE
-
+hi Normal ctermbg=NONE
+hi Comment ctermbg=NONE
+hi Constant ctermbg=NONE
+hi Special ctermbg=NONE
+hi Identifier ctermbg=NONE
+hi Statement ctermbg=NONE
+hi PreProc ctermbg=NONE
+hi Type ctermbg=NONE
+hi Underlined ctermbg=NONE
+hi Todo ctermbg=NONE
+hi String ctermbg=NONE
+hi Function ctermbg=NONE
+hi Conditional ctermbg=NONE
+hi Repeat ctermbg=NONE
+hi Operator ctermbg=NONE
+hi Structure ctermbg=NONE
