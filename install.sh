@@ -15,6 +15,8 @@ ln -sf $(pwd)/tmux.conf ~/.tmux.conf
 echo "tmux.conf symlinked"
 ln -sf $(pwd)/vimperatorrc ~/.vimperatorrc
 echo "vimperatorrc symlinked"
+ln -sf $(pwd)/xinitrc ~/.xinitrc
+echo "xinitrc symlinked"
 
 vim +PluginInstall +PluginClean +qall
 echo "Plugins installed!"

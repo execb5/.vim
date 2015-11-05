@@ -52,11 +52,12 @@ alias vi='vim' #copythis
 alias xmerge='xrdb -merge ~/.Xresources' #copythis
 alias xresup='xrdb ~/.Xresources' #copythis
 alias texmk='latexmk -pvc -pdf -f -silent' #copythis
-alias astah='java -jar ~/Programs/astah_professional/astah-pro.jar'
+alias astah='java -jar ~/programs/astah_professional/astah-pro.jar'
 alias fuck='eval $(thefuck --alias)'
 alias torrentstart='transmission-daemon'
 alias torrent='transmission-remote-cli'
 alias torrentexit='transmission-remote --exit'
+alias cava="/home/matthias/.local/bin/cava -i fifo -p /tmp/mpd.fifo"
 
 #if [ "$TERM" = "xterm" ] #copythis
 #then #copythis

@@ -2,7 +2,7 @@
 	email = matthiasnunes@gmail.com
 	name = Matthias Nunes
 [push]
-	default = matching
+	default = simple
 [core]
 	editor = vim
 [diff]

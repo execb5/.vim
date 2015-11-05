@@ -1,0 +1,121 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+* {
+    margin: 0;
+    padding: 0
+}
+*::-webkit-input-placeholder {
+    opacity: 0.3
+}
+
+.home {
+    text-align: center;
+    font-size: 130px;
+    margin: auto;
+    padding-bottom: 20px;
+    font-family: Ostrich Sans Inline;
+    color: #CC6666;
+
+}
+body {
+    background: #222;
+    padding-top: 12%;
+    font-size: 15px;
+    width: 88%;
+    margin: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased
+}
+p,
+li,
+a {
+    color: #CC6666;
+    font-family: League Spartan;
+    font-weight: bold;
+}
+.favorites {
+    width: 90%;
+    margin: 10px auto 0 auto;
+    text-align: center
+}
+.favorites p {
+    font-size: 20px;
+    font-family: Ostrich Sans;
+    font-weight: bold;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #CC6666;
+    padding-right: 100%
+}
+.list {
+    display: inline-block;
+    width: 20%;
+    margin: 0 15px;
+    vertical-align: text-top
+}
+.list ul {
+    list-style-type: none
+}
+a {
+    text-decoration: none;
+    display: block;
+    padding: 3px
+}
+a:hover {
+    color: #222;
+    background: #CC6666
+}
+.googles {
+    width: 90%;
+    margin: 25px auto;
+    text-align: center
+}
+.googles p {
+    display: inline-block;
+    width: 22%;
+    margin: 10px 10px;
+    border: 1px solid #CC6666
+}
+form {
+    width: 90%;
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+    position: relative
+}
+.search {
+    width: 400px;
+    height: 15px;
+    margin-right: -4px;
+	font-family:Ostrich Sans;
+	font-size:14px;
+	font-weight: bold;
+    padding: 5px;
+	margin-top: 35px;
+    background: #222;
+    color: #CC6666;
+    border: 0px solid #444
+}
+.search:hover {
+    border: 0px solid #666
+}
+.search:focus {
+    outline: none;
+    border: 0px solid #CC6666
+}
+.go {
+    height: 27px;
+    width: 40px;
+    background: #222;
+    color: #CC6666;
+    border: 0px solid #CC6666
+}
+.go:hover {
+    background: #CC6666;
+    color: #222;
+    cursor: pointer
+}
+.go:focus {
+    outline: none
+}
