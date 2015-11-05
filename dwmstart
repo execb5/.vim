@@ -90,7 +90,7 @@ BCHECK () {
                         notify-send "Battery Critical"
                 CUNT=2
                 fi
-         
+
         else
                 if [[ "$BATT" -ge "11" ]]; then
                         CUNT=1
