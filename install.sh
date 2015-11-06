@@ -88,3 +88,6 @@ cd ~/.vim/bundle/vimproc.vim
 make
 echo "vimproc compiled!"
 
+mkdir ~/.vimtmp
+echo ".vimtmp directory created"
+
