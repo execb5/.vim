@@ -22,7 +22,6 @@ call vundle#begin()
 	Plugin 'tpope/vim-repeat'
 	Plugin 'tpope/vim-surround'
 	Plugin 'tpope/vim-rails'
-	"Plugin 'tpope/vim-rake'
 	Plugin 'kien/ctrlp.vim'
 	Plugin 'terryma/vim-multiple-cursors'
 	Plugin 'sjl/gundo.vim'
