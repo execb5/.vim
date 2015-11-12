@@ -41,9 +41,9 @@ call vundle#begin()
 	Plugin 'eagletmt/neco-ghc'
 
 	"Pretify things
-	Plugin 'bling/vim-airline'
+	"Plugin 'bling/vim-airline'
 	Plugin 'mhinz/vim-signify'            "show what changed in file
-	Plugin 'godlygeek/csapprox'           "makes gui themes work in terminal
+	"Plugin 'godlygeek/csapprox'           "makes gui themes work in terminal
 	Plugin 'justinmk/vim-syntax-extra'    "better syntax highlight for C
 	Plugin 'mhinz/vim-startify'           "start screen
 	Plugin 'ryanoasis/vim-devicons'       "icons
@@ -268,16 +268,17 @@ vmap <Space> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 "Run 256 colors on terminal
-if $TERM == "xterm-256color" || $TERM == "rxvt-unicode-256color"
-  set t_Co=256
-endif
+"if $TERM == "xterm-256color" || $TERM == "rxvt-unicode-256color"
+  "set t_Co=256
+  set t_Co=16
+"endif
 
 "Initial configuration
 set relativenumber
 set number
 set autoindent
 set list lcs=trail:·,precedes:«,extends:»,eol:¬,tab:▸\ 
-set ls=2 "show status line even when there is only one file
+"set ls=2 "show status line even when there is only one file
 set textwidth=72
 set showcmd
 set digraph
@@ -313,8 +314,8 @@ else
 	" Non-GUI (terminal) colors
 	"colorscheme jellybeans
 	"colorscheme gotham
-	set background=light
-	colorscheme PaperColor
+	"set background=light
+	"colorscheme PaperColor
 endif
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.
@@ -322,19 +323,19 @@ set directory=~/.vimtmp,.
 syn on
 
 "Transparent background
-hi Normal ctermbg=NONE
-hi Comment ctermbg=NONE
-hi Constant ctermbg=NONE
-hi Special ctermbg=NONE
-hi Identifier ctermbg=NONE
-hi Statement ctermbg=NONE
-hi PreProc ctermbg=NONE
-hi Type ctermbg=NONE
-hi Underlined ctermbg=NONE
-hi Todo ctermbg=NONE
-hi String ctermbg=NONE
-hi Function ctermbg=NONE
-hi Conditional ctermbg=NONE
-hi Repeat ctermbg=NONE
-hi Operator ctermbg=NONE
-hi Structure ctermbg=NONE
+"hi Normal ctermbg=NONE
+"hi Comment ctermbg=NONE
+"hi Constant ctermbg=NONE
+"hi Special ctermbg=NONE
+"hi Identifier ctermbg=NONE
+"hi Statement ctermbg=NONE
+"hi PreProc ctermbg=NONE
+"hi Type ctermbg=NONE
+"hi Underlined ctermbg=NONE
+"hi Todo ctermbg=NONE
+"hi String ctermbg=NONE
+"hi Function ctermbg=NONE
+"hi Conditional ctermbg=NONE
+"hi Repeat ctermbg=NONE
+"hi Operator ctermbg=NONE
+"hi Structure ctermbg=NONE
