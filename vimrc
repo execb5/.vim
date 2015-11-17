@@ -33,6 +33,7 @@ call vundle#begin()
 	Plugin 'Townk/vim-autoclose'
 	Plugin 'haya14busa/incsearch.vim'
 	Plugin 'junegunn/vim-easy-align'
+	Plugin 'suan/vim-instant-markdown'
 
 	"Haskell
 	Plugin 'dag/vim2hs'
@@ -109,6 +110,9 @@ let g:startify_custom_header = [
 
 let g:startify_custom_footer =
  \ map(split(system('fortune | cowsay'), '\n'), '"   ". v:val') + ['','']
+
+"For markdown preview
+let g:instant_markdown_autostart = 0
 
 "Functions
 function! MarkWindowSwap()
