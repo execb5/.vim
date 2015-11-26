@@ -22,13 +22,13 @@ call vundle#begin()
 	Plugin 'tpope/vim-repeat'
 	Plugin 'tpope/vim-surround'
 	Plugin 'tpope/vim-rails'
-	Plugin 'kien/ctrlp.vim'
+	Plugin 'ctrlpvim/ctrlp.vim'
 	Plugin 'terryma/vim-multiple-cursors'
 	Plugin 'sjl/gundo.vim'
 	Plugin 'garbas/vim-snipmate'
-	Plugin 'MarcWeber/vim-addon-mw-utils' "dependency for snipmate
-	Plugin 'tomtom/tlib_vim'              "dependency for snipmate
-	Plugin 'honza/vim-snippets'           "without this snipmate would be useless
+	Plugin 'MarcWeber/vim-addon-mw-utils'     "dependency for snipmate
+	Plugin 'tomtom/tlib_vim'                  "dependency for snipmate
+	Plugin 'honza/vim-snippets'               "without this snipmate would be useless
 	Plugin 'ervandew/supertab'
 	Plugin 'Townk/vim-autoclose'
 	Plugin 'haya14busa/incsearch.vim'
@@ -38,17 +38,23 @@ call vundle#begin()
 	"Haskell
 	Plugin 'dag/vim2hs'
 	Plugin 'eagletmt/ghcmod-vim'
-	Plugin 'Shougo/vimproc.vim'           "Needs to run 'make' after installing
+	Plugin 'Shougo/vimproc.vim'               "Needs to run 'make' after installing
 	Plugin 'eagletmt/neco-ghc'
 
+	"C and C++
+	Plugin 'justinmk/vim-syntax-extra'        "better syntax highlight for C
+	Plugin 'a.vim'                            "Alternate Files quickly (.c --> .h etc)
+	Plugin 'drmikehenry/vim-headerguard'      "Vim plugin for adding header guards to C/C++ header files
+	Plugin 'vim-jp/cpp-vim'                   "c or cpp syntax files
+	Plugin 'octol/vim-cpp-enhanced-highlight' "Additional Vim syntax highlighting for C++
+
 	"Pretify things
-	"Plugin 'bling/vim-airline'
-	Plugin 'mhinz/vim-signify'            "show what changed in file
-	"Plugin 'godlygeek/csapprox'           "makes gui themes work in terminal
-	Plugin 'justinmk/vim-syntax-extra'    "better syntax highlight for C
-	Plugin 'mhinz/vim-startify'           "start screen
-	Plugin 'ryanoasis/vim-devicons'       "icons
-	Plugin 'Xuyuanp/nerdtree-git-plugin'  "show git signs in nerdtree
+	Plugin 'bling/vim-airline'
+	Plugin 'mhinz/vim-signify'                "show what changed in file
+	"Plugin 'godlygeek/csapprox'              "makes gui themes work in terminal
+	Plugin 'mhinz/vim-startify'               "start screen
+	Plugin 'ryanoasis/vim-devicons'           "icons
+	Plugin 'Xuyuanp/nerdtree-git-plugin'      "show git signs in nerdtree
 
 	"Colorschemes
 	Plugin 'whatyouhide/vim-gotham'
@@ -77,20 +83,20 @@ let g:syntastic_quiet_messages = {'level': 'warnings'}
 
 "Airline config
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_tabs = 1
-let g:airline#extensions#tabline#show_tab_nr = 1
-let g:airline#extensions#tabline#tab_nr_type = 2
-let g:airline#extensions#tabline#buffer_idx_mode = 1
-nmap <leader>1 <Plug>AirlineSelectTab1
-nmap <leader>2 <Plug>AirlineSelectTab2
-nmap <leader>3 <Plug>AirlineSelectTab3
-nmap <leader>4 <Plug>AirlineSelectTab4
-nmap <leader>5 <Plug>AirlineSelectTab5
-nmap <leader>6 <Plug>AirlineSelectTab6
-nmap <leader>7 <Plug>AirlineSelectTab7
-nmap <leader>8 <Plug>AirlineSelectTab8
-nmap <leader>9 <Plug>AirlineSelectTab9
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#show_tabs = 1
+"let g:airline#extensions#tabline#show_tab_nr = 1
+"let g:airline#extensions#tabline#tab_nr_type = 2
+"let g:airline#extensions#tabline#buffer_idx_mode = 1
+"nmap <leader>1 <Plug>AirlineSelectTab1
+"nmap <leader>2 <Plug>AirlineSelectTab2
+"nmap <leader>3 <Plug>AirlineSelectTab3
+"nmap <leader>4 <Plug>AirlineSelectTab4
+"nmap <leader>5 <Plug>AirlineSelectTab5
+"nmap <leader>6 <Plug>AirlineSelectTab6
+"nmap <leader>7 <Plug>AirlineSelectTab7
+"nmap <leader>8 <Plug>AirlineSelectTab8
+"nmap <leader>9 <Plug>AirlineSelectTab9
 
 "Signify option
 let g:signify_vcs_list = [ 'git', 'svn' ]
@@ -113,6 +119,10 @@ let g:startify_custom_footer =
 
 "For markdown preview
 let g:instant_markdown_autostart = 0
+
+"vim-cpp-enhanced-highlight
+let g:cpp_class_scope_highlight = 1
+let g:cpp_experimental_template_highlight = 1
 
 "Functions
 function! MarkWindowSwap()

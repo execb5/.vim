@@ -17,8 +17,13 @@ feh --bg-scale ~/pictures/wallpapers/snow.jpg
 
 xsetroot -cursor_name left_ptr
 
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+
 #xset +fp /usr/share/fonts/local
 #xset fp rehash
+
+compton -b
 
 sxhkd &
 panel &
