@@ -51,58 +51,64 @@ Xft.rgba: none
 
 !---------------
 
-*foreground: #D7D0C7
-*background: #151515
-!
-! !black
-!*color0:     #AF875F
-!*color8:     #AF875F
-*color0:     #101010
-*color8:     #404040
-! !red
-*color1:     #E84F4F
-*color9:     #D23D3D
-! !green
-*color2:     #B8D68C
-*color10:    #A0CF5D
-! !yellow
-*color3:     #E1AA5D
-*color11:    #F39D21
-! !blue
-*color4:     #7DC1CF
-*color12:    #4E9FB1
-! !magenta
-*color5:     #9B64FB
-*color13:    #8542FF
-! !cyan
-*color6:     #6D878D
-*color14:    #42717B
-! !white
-*color7:     #dddddd
-*color15:    #dddddd
+!*foreground: #D7D0C7
+!*background: #151515
+!!
+!! !black
+!*color0:     #101010
+!*color8:     #404040
+!! !red
+!*color1:     #E84F4F
+!*color9:     #D23D3D
+!! !green
+!*color2:     #B8D68C
+!*color10:    #A0CF5D
+!! !yellow
+!*color3:     #E1AA5D
+!*color11:    #F39D21
+!! !blue
+!*color4:     #7DC1CF
+!*color12:    #4E9FB1
+!! !magenta
+!*color5:     #9B64FB
+!*color13:    #8542FF
+!! !cyan
+!*color6:     #6D878D
+!*color14:    #42717B
+!! !white
+!*color7:     #dddddd
+!*color15:    #dddddd
 
-URxvt*borderColor:        #151515
-URxvt*colorBD:            #ffffff
-URxvt*cursorColor:        #ff8939
-URxvt*cursorColor2:       #151515
+!URxvt*borderColor:        #151515
+!URxvt*colorBD:            #ffffff
+!URxvt*cursorColor:        #ff8939
+!URxvt*cursorColor2:       #151515
 
 !---------------
 
-!*background: #070709
-!*foreground: #dcdccf
-!*color0: #0c0c0e
-!*color1: #7c4c46
-!*color2: #608144
-!*color3: #b66d42
-!*color4: #507c83
-!*color5: #976c5a
-!*color6: #5b786f
-!*color7: #d8d6d3
-!*color8: #464c4e
-!*color9: #b35c54
-!*color10: #8ea85c
-!*color11: #db985b
-!*color12: #64a0a5
-!*color13: #a37470
-!*color14: #7b9d89
-!*color15: #e6e4e1
+*background: #fbfcfc
+*foreground: #a0bedb
+
+*color0: #a4d8f2
+*color8: #225cb6
+
+*color1: #ed7c78
+*color9: #d92057
+
+*color2: #a9aee6
+*color10: #291c62
+
+*color3: #bc2e9a
+*color11: #17434c
+
+*color4: #357ff3
+*color12: #0643f3
+
+*color5: #51c8c8
+*color13: #460998
+
+*color6: #89cef3
+*color14: #0c49b0
+
+*color7: #c8e2e8
+*color15: #c7b9d6

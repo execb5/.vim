@@ -58,6 +58,7 @@ alias torrentstart='transmission-daemon'
 alias torrent='transmission-remote-cli'
 alias torrentexit='transmission-remote --exit'
 alias cava="/home/matthias/.local/bin/cava -i fifo -p /tmp/mpd.fifo"
+alias shot='clear && screenfetch && ./.vim/colorer 1 && ./.vim/colorer 2 && figlet'
 
 #if [ "$TERM" = "xterm" ] #copythis
 #then #copythis
