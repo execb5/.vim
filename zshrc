@@ -77,6 +77,9 @@ export PATH="/usr/local/texlive/2015/bin/x86_64-linux:$PATH"
 export INFOPATH=/usr/local/texlive/2015/texmf-dist/doc/info:$INFOPATH
 export MANPATH=/usr/local/texlive/2015/texmf-dist/doc/man:$MANPATH
 
+export ANDROID_HOME=/home/matthias/programs/android/sdk
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 export XDG_CONFIG_HOME="$HOME/.config"
