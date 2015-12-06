@@ -55,6 +55,7 @@ call vundle#begin()
 	Plugin 'mhinz/vim-startify'               "start screen
 	Plugin 'ryanoasis/vim-devicons'           "icons
 	Plugin 'Xuyuanp/nerdtree-git-plugin'      "show git signs in nerdtree
+	Plugin 'udalov/kotlin-vim'
 
 	"Colorschemes
 	Plugin 'whatyouhide/vim-gotham'
