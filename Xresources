@@ -51,38 +51,38 @@ Xft.rgba: none
 
 !---------------
 
-*foreground: #D7D0C7
-*background: #151515
-!
-! !black
-*color0:     #101010
-*color8:     #404040
-! !red
-*color1:     #E84F4F
-*color9:     #D23D3D
-! !green
-*color2:     #B8D68C
-*color10:    #A0CF5D
-! !yellow
-*color3:     #E1AA5D
-*color11:    #F39D21
-! !blue
-*color4:     #7DC1CF
-*color12:    #4E9FB1
-! !magenta
-*color5:     #9B64FB
-*color13:    #8542FF
-! !cyan
-*color6:     #6D878D
-*color14:    #42717B
-! !white
-*color7:     #dddddd
-*color15:    #dddddd
+!*foreground: #D7D0C7
+!*background: #151515
+!!
+!! !black
+!*color0:     #101010
+!*color8:     #404040
+!! !red
+!*color1:     #E84F4F
+!*color9:     #D23D3D
+!! !green
+!*color2:     #B8D68C
+!*color10:    #A0CF5D
+!! !yellow
+!*color3:     #E1AA5D
+!*color11:    #F39D21
+!! !blue
+!*color4:     #7DC1CF
+!*color12:    #4E9FB1
+!! !magenta
+!*color5:     #9B64FB
+!*color13:    #8542FF
+!! !cyan
+!*color6:     #6D878D
+!*color14:    #42717B
+!! !white
+!*color7:     #dddddd
+!*color15:    #dddddd
 
-URxvt*borderColor:        #151515
-URxvt*colorBD:            #ffffff
-URxvt*cursorColor:        #ff8939
-URxvt*cursorColor2:       #151515
+!URxvt*borderColor:        #151515
+!URxvt*colorBD:            #ffffff
+!URxvt*cursorColor:        #ff8939
+!URxvt*cursorColor2:       #151515
 
 !---------------
 
@@ -112,3 +112,21 @@ URxvt*cursorColor2:       #151515
 
 !*color7: #c8e2e8
 !*color15: #c7b9d6
+*background: #242e3f
+*foreground: #bacac4
+*color0: #26272d
+*color1: #ac5635
+*color2: #c0d9ed
+*color3: #8bbbdc
+*color4: #586373
+*color5: #9eacc1
+*color6: #ccc7ba
+*color7: #bbc3c9
+*color8: #755d57
+*color9: #d27878
+*color10: #97b9df
+*color11: #96c4e6
+*color12: #4ea3ad
+*color13: #bdc3f3
+*color14: #c9bf91
+*color15: #e6ebef

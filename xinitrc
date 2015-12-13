@@ -11,7 +11,7 @@ then
 	xrandr --output $VGA_NUMBER --mode $VGA_RESOLUTION --output $LVDS_NUMBER --off
 fi
 
-feh --bg-scale ~/pictures/wallpapers/snow.jpg
+feh --bg-scale ~/pictures/wallpapers/prisonschool02.jpg
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
