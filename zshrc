@@ -22,27 +22,27 @@ explain () { #copythis
 	fi #copythis
 } #copythis
 
-function extract()
-{
-	if [ -f $1 ] ; then
-		case $1 in
-			*.tar.bz2)   tar xvjf $1     ;;
-			*.tar.gz)    tar xvzf $1     ;;
-			*.bz2)       bunzip2 $1      ;;
-			*.rar)       unrar x $1      ;;
-			*.gz)        gunzip $1       ;;
-			*.tar)       tar xvf $1      ;;
-			*.tbz2)      tar xvjf $1     ;;
-			*.tgz)       tar xvzf $1     ;;
-			*.zip)       unzip $1        ;;
-			*.Z)         uncompress $1   ;;
-			*.7z)        7z x $1         ;;
-			*)           echo "'$1' cannot be extracted via >extract<" ;;
-		esac
-	else
-		echo "'$1' is not a valid file!"
-	fi
-}
+function extract() #copythis
+{ #copythis
+	if [ -f $1 ] ; then #copythis
+		case $1 in #copythis
+			*.tar.bz2)   tar xvjf $1     ;; #copythis
+			*.tar.gz)    tar xvzf $1     ;; #copythis
+			*.bz2)       bunzip2 $1      ;; #copythis
+			*.rar)       unrar x $1      ;; #copythis
+			*.gz)        gunzip $1       ;; #copythis
+			*.tar)       tar xvf $1      ;; #copythis
+			*.tbz2)      tar xvjf $1     ;; #copythis
+			*.tgz)       tar xvzf $1     ;; #copythis
+			*.zip)       unzip $1        ;; #copythis
+			*.Z)         uncompress $1   ;; #copythis
+			*.7z)        7z x $1         ;; #copythis
+			*)           echo "'$1' cannot be extracted via >extract<" ;; #copythis
+		esac #copythis
+	else #copythis
+		echo "'$1' is not a valid file!" #copythis
+	fi #copythis
+} #copythis
 
 alias oct='octave --no-gui' #copythis
 alias ppsspp='primusrun ppsspp' #copythis
