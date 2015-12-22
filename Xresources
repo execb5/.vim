@@ -20,6 +20,126 @@ URxvt.matcher.button: 1
 
 Xft.rgba: none
 
+! Window opacity
+rofi.opacity:                        100
+! Window width
+rofi.width:                          50
+! Number of lines
+rofi.lines:                          10
+rofi.font:                           mono 12
+rofi.fullscreen:                     false
+rofi.fake-transparency:              false
+! Keybinding
+rofi.kb-primary-paste:               Control+Shift+v,Shift+Insert
+! Keybinding
+rofi.kb-secondary-paste:             Control+v,Insert
+! Keybinding
+rofi.kb-clear-line:                  Control+u
+! Keybinding
+rofi.kb-move-front:                  Control+a
+! Keybinding
+rofi.kb-move-end:                    Control+e
+! Keybinding
+rofi.kb-move-word-back:              Alt+b
+! Keybinding
+rofi.kb-move-word-forward:           Alt+f
+! Keybinding
+rofi.kb-move-char-back:              Left,Control+b
+! Keybinding
+rofi.kb-move-char-forward:           Right,Control+f
+! Keybinding
+rofi.kb-remove-word-back:            Control+Alt+h
+! Keybinding
+rofi.kb-remove-word-forward:         Control+Alt+d
+! Keybinding
+rofi.kb-remove-char-forward:         Delete,Control+d
+! Keybinding
+rofi.kb-remove-char-back:            BackSpace,Control+h
+! Keybinding
+rofi.kb-accept-entry:                Control+j,Control+m,Return,KP_Enter
+! Keybinding
+rofi.kb-accept-custom:               Control+Return
+! Keybinding
+rofi.kb-accept-entry-continue:       Shift+Return
+! Keybinding
+rofi.kb-mode-next:                   Shift+Right,Control+Tab
+! Keybinding
+rofi.kb-mode-previous:               Shift+Left,Control+Shift+Tab
+! Keybinding
+rofi.kb-toggle-case-sensitivity:     grave,dead_grave
+! Keybinding
+rofi.kb-delete-entry:                Shift+Delete
+! Keybinding
+rofi.kb-row-left:                    Control+Page_Up
+! Keybinding
+rofi.kb-row-right:                   Control+Page_Down
+! Keybinding
+rofi.kb-row-up:                      Up,Control+p,Shift+Tab
+! Keybinding
+rofi.kb-row-down:                    Down,Control+n
+! Keybinding
+rofi.kb-row-tab:                     Tab
+! Keybinding
+rofi.kb-page-prev:                   Page_Up
+! Keybinding
+rofi.kb-page-next:                   Page_Down
+! Keybinding
+rofi.kb-row-first:                   Home,KP_Home
+! Keybinding
+rofi.kb-row-last:                    End,KP_End
+! Keybinding
+rofi.kb-row-select:                  Control+space
+! Keybinding
+rofi.kb-cancel:                      Escape,Control+bracketleft
+! Keybinding
+rofi.kb-custom-1:                    Alt+1
+! Keybinding
+rofi.kb-custom-2:                    Alt+2
+! Keybinding
+rofi.kb-custom-3:                    Alt+3
+! Keybinding
+rofi.kb-custom-4:                    Alt+4
+! Keybinding
+rofi.kb-custom-5:                    Alt+5
+! Keybinding
+rofi.kb-custom-6:                    Alt+6
+! Keybinding
+rofi.kb-custom-7:                    Alt+7
+! Keybinding
+rofi.kb-custom-8:                    Alt+8
+! Keybinding
+rofi.kb-custom-9:                    Alt+9
+! Keybinding
+rofi.kb-custom-10:                   Alt+0
+! Keybinding
+rofi.kb-custom-11:                   Alt+Shift+1
+! Keybinding
+rofi.kb-custom-12:                   Alt+Shift+2
+! Keybinding
+rofi.kb-custom-13:                   Alt+Shift+3
+! Keybinding
+rofi.kb-custom-14:                   Alt+Shift+4
+! Keybinding
+rofi.kb-custom-15:                   Alt+Shift+5
+! Keybinding
+rofi.kb-custom-16:                   Alt+Shift+6
+! Keybinding
+rofi.kb-custom-18:                   Alt+Shift+8
+! Keybinding
+rofi.kb-custom-17:                   Alt+Shift+7
+! Keybinding
+rofi.kb-custom-19:                   Alt+Shift+9
+! Keybinding
+rofi.kb-screenshot:                  Alt+Shift+S
+! Keybinding
+rofi.kb-toggle-sort:                 Alt+grave
+! Keybinding
+rofi.key-window:                     
+! Keybinding
+rofi.key-run:                        
+! Keybinding
+rofi.key-ssh:                        
+
 !--Gotham theme--
 !*.foreground:   #98d1ce
 !*.background:   #0a0f14
@@ -112,6 +232,8 @@ Xft.rgba: none
 
 !*color7: #c8e2e8
 !*color15: #c7b9d6
+
+
 *background: #242e3f
 *foreground: #bacac4
 *color0: #26272d
