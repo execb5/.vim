@@ -1,4 +1,5 @@
 #!/bin/sh
+
 #--------------------------------------------------------------------
 #Purpose: To automate screen capture and webm conversion
 #
@@ -83,18 +84,18 @@ while :; do
 	esac
 done
 
-if [ -n -z "$cac_input" -a -n -z "$cac_output" ]; then
+if [ -n "$cac_input" -a -n "$cac_output" ]; then
 	ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -c:v libx264 -qp 0 -preset ultrafast "$cac_input"
 	ffmpeg -i "$cac_input" -vpre libvpx-720p -b 3900k -an -f webm -y "$cac_output"
 	exit
 fi
 
-if [ -n -z "capture_output" ]; then
+if [ -n "capture_output" ]; then
 	ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -c:v libx264 -qp 0 -preset ultrafast "$capture_output"
 	exit
 fi
 
-if [ -n -z "$webm_input" -n -a -z "$webm_output" ]; then
+if [ -n "$webm_input" -n -a -z "$webm_output" ]; then
 	ffmpeg -i "$webm_input" -vpre libvpx-720p -b 3900k -an -f webm -y "$webm_output"
 	exit
 fi
