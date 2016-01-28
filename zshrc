@@ -84,7 +84,10 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH=$PATH:/home/matthias/.config/bspwm/scripts
-#
+
+export SDL_VIDEO_FULLSCREEN_DISPLAY=1
+export SDL_VIDEO_FULLSCREEN_HEAD=1
+
 source $ZSH/oh-my-zsh.sh
 
 #PATH=$HOME/.cabal/bin:$PATH
