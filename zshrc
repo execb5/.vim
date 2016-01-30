@@ -1,7 +1,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="custom"
+#ZSH_THEME="custom"
+ZSH_THEME="rkj-repos"
 
 #ZSH_TMUX_AUTOSTART=true
 #ZSH_TMUX_AUTOCONNECT=false

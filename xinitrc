@@ -32,7 +32,7 @@ else
 	fi
 fi
 
-feh --bg-fill ~/pictures/wallpapers/fsn02.jpg
+feh --bg-fill ~/pictures/wallpapers/fsn03.png
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
