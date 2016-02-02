@@ -253,21 +253,39 @@ rofi.key-ssh:
 !*color14: #c9bf91
 !*color15: #e6ebef
 
-*background: #020000
-*foreground: #8594a9
-*color0: #080a13
-*color1: #0e084a
-*color2: #171d69
-*color3: #023f67
-*color4: #1a5425
-*color5: #1b1315
-*color6: #675c7a
-*color7: #a9b4a4
-*color8: #252826
-*color9: #555883
-*color10: #9cc6cb
-*color11: #0a756f
-*color12: #30791e
-*color13: #4f3652
-*color14: #cf969b
-*color15: #aabd95
+! special
+*.foreground:   #e0cdd4
+*.background:   #12080c
+*.cursorColor:  #e0cdd4
+
+! black
+*.color0:       #1d0f15
+*.color8:       #d8b1c0
+
+! red
+*.color1:       #29171f
+*.color9:       #72b29f
+
+! green
+*.color2:       #3f2731
+*.color10:      #ebcfbc
+
+! yellow
+*.color3:       #5e3b4a
+*.color11:      #93a475
+
+! blue
+*.color4:       #85566a
+*.color12:      #bdadd0
+
+! magenta
+*.color5:       #b37790
+*.color13:      #e28bb1
+
+! cyan
+*.color6:       #cca9b7
+*.color14:      #c5d9a3
+
+! white
+*.color7:       #ebdfe4
+*.color15:      #73af9d
