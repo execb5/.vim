@@ -141,33 +141,33 @@ rofi.key-run:
 rofi.key-ssh:                        
 
 !--Gotham theme--
-!*.foreground:   #98d1ce
-!*.background:   #0a0f14
-!*.cursorColor:  #98d1ce
+*.foreground:   #98d1ce
+*.background:   #0a0f14
+*.cursorColor:  #98d1ce
 
-!*.color0:       #0a0f14
-!*.color8:       #10151b
+*.color0:       #0a0f14
+*.color8:       #10151b
 
-!*.color1:       #c33027
-!*.color9:       #d26939
+*.color1:       #c33027
+*.color9:       #d26939
 
-!*.color2:       #26a98b
-!*.color10:      #081f2d
+*.color2:       #26a98b
+*.color10:      #081f2d
 
-!*.color3:       #edb54b
-!*.color11:      #245361
+*.color3:       #edb54b
+*.color11:      #245361
 
-!*.color4:       #195465
-!*.color12:      #093748
+*.color4:       #195465
+*.color12:      #093748
 
-!*.color5:       #4e5165
-!*.color13:      #888ba5
+*.color5:       #4e5165
+*.color13:      #888ba5
 
-!*.color6:       #33859d
-!*.color14:      #599caa
+*.color6:       #33859d
+*.color14:      #599caa
 
-!*.color7:       #98d1ce
-!*.color15:      #d3ebe9
+*.color7:       #98d1ce
+*.color15:      #d3ebe9
 
 !---------------
 
@@ -253,39 +253,39 @@ rofi.key-ssh:
 !*color14: #c9bf91
 !*color15: #e6ebef
 
-! special
-*.foreground:   #e0cdd4
-*.background:   #12080c
-*.cursorColor:  #e0cdd4
+!! special
+!*.foreground:   #e0cdd4
+!*.background:   #12080c
+!*.cursorColor:  #e0cdd4
 
-! black
-*.color0:       #1d0f15
-*.color8:       #d8b1c0
+!! black
+!*.color0:       #1d0f15
+!*.color8:       #d8b1c0
 
-! red
-*.color1:       #29171f
-*.color9:       #72b29f
+!! red
+!*.color1:       #29171f
+!*.color9:       #72b29f
 
-! green
-*.color2:       #3f2731
-*.color10:      #ebcfbc
+!! green
+!*.color2:       #3f2731
+!*.color10:      #ebcfbc
 
-! yellow
-*.color3:       #5e3b4a
-*.color11:      #93a475
+!! yellow
+!*.color3:       #5e3b4a
+!*.color11:      #93a475
 
-! blue
-*.color4:       #85566a
-*.color12:      #bdadd0
+!! blue
+!*.color4:       #85566a
+!*.color12:      #bdadd0
 
-! magenta
-*.color5:       #b37790
-*.color13:      #e28bb1
+!! magenta
+!*.color5:       #b37790
+!*.color13:      #e28bb1
 
-! cyan
-*.color6:       #cca9b7
-*.color14:      #c5d9a3
+!! cyan
+!*.color6:       #cca9b7
+!*.color14:      #c5d9a3
 
-! white
-*.color7:       #ebdfe4
-*.color15:      #73af9d
+!! white
+!*.color7:       #ebdfe4
+!*.color15:      #73af9d
