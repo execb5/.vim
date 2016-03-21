@@ -85,16 +85,17 @@ while :; do
 done
 
 if [ -n "$cac_input" -a -n "$cac_output" ]; then
-	ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -c:v libx264 -qp 0 -preset ultrafast "$cac_input"
+	ffmpeg -video_size 3200x1080 -framerate 30 -f x11grab -i :0.0 -c:v libx264 -qp 0 -preset ultrafast "$cac_input"
 	ffmpeg -i "$cac_input" -vpre libvpx-720p -b 3900k -an -f webm -y "$cac_output"
 	exit
 fi
 
-if [ -n "capture_output" ]; then
-	ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -c:v libx264 -qp 0 -preset ultrafast "$capture_output"
+if [ -n "$capture_output" ]; then
+	ffmpeg -video_size 3200x1080 -framerate 30 -f x11grab -i :0.0 -c:v libx264 -qp 0 -preset ultrafast "$capture_output"
 	exit
 fi
 
+#TODO: fix this option
 if [ -n "$webm_input" -n -a -z "$webm_output" ]; then
 	ffmpeg -i "$webm_input" -vpre libvpx-720p -b 3900k -an -f webm -y "$webm_output"
 	exit

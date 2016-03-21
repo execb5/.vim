@@ -74,7 +74,7 @@ then
 	ln -sf $(pwd)/ncmpcpp ~/.ncmpcpp/config
 fi
 
-echo "Do you want to use the custom Xdefaults? (y/n)"
+echo "Do you want to use the custom Xresources? (y/n)"
 read XDEF
 
 if [ "$XDEF" = "y" ]
