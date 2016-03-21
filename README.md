@@ -1,4 +1,4 @@
-## Vim, dwm and Xresources
+## Title should be here
 
-This is my stuff.
+My dotfiles, just don't feel like changing the repo name. Too much history...
 
