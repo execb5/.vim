@@ -134,11 +134,11 @@ rofi.kb-screenshot:                  Alt+Shift+S
 ! Keybinding
 rofi.kb-toggle-sort:                 Alt+grave
 ! Keybinding
-rofi.key-window:                     
+rofi.key-window:
 ! Keybinding
-rofi.key-run:                        
+rofi.key-run:
 ! Keybinding
-rofi.key-ssh:                        
+rofi.key-ssh:
 
 !--Gotham theme--
 *.foreground:   #98d1ce
@@ -169,123 +169,3 @@ rofi.key-ssh:
 *.color7:       #98d1ce
 *.color15:      #d3ebe9
 
-!---------------
-
-!*foreground: #D7D0C7
-!*background: #151515
-!!
-!! !black
-!*color0:     #101010
-!*color8:     #404040
-!! !red
-!*color1:     #E84F4F
-!*color9:     #D23D3D
-!! !green
-!*color2:     #B8D68C
-!*color10:    #A0CF5D
-!! !yellow
-!*color3:     #E1AA5D
-!*color11:    #F39D21
-!! !blue
-!*color4:     #7DC1CF
-!*color12:    #4E9FB1
-!! !magenta
-!*color5:     #9B64FB
-!*color13:    #8542FF
-!! !cyan
-!*color6:     #6D878D
-!*color14:    #42717B
-!! !white
-!*color7:     #dddddd
-!*color15:    #dddddd
-
-!URxvt*borderColor:        #151515
-!URxvt*colorBD:            #ffffff
-!URxvt*cursorColor:        #ff8939
-!URxvt*cursorColor2:       #151515
-
-!---------------
-
-!*background: #bc2e9a
-!*foreground: #a0bedb
-
-!*color0: #a4d8f2
-!*color8: #225cb6
-
-!*color1: #ed7c78
-!*color9: #d92057
-
-!*color2: #a9aee6
-!*color10: #291c62
-
-!*color3: #fbfcfc
-!*color11: #17434c
-
-!*color4: #357ff3
-!*color12: #0643f3
-
-!*color5: #51c8c8
-!*color13: #460998
-
-!*color6: #89cef3
-!*color14: #0c49b0
-
-!*color7: #c8e2e8
-!*color15: #c7b9d6
-
-
-!*background: #242e3f
-!*foreground: #bacac4
-!*color0: #26272d
-!*color1: #ac5635
-!*color2: #c0d9ed
-!*color3: #8bbbdc
-!*color4: #586373
-!*color5: #9eacc1
-!*color6: #ccc7ba
-!*color7: #bbc3c9
-!*color8: #755d57
-!*color9: #d27878
-!*color10: #97b9df
-!*color11: #96c4e6
-!*color12: #4ea3ad
-!*color13: #bdc3f3
-!*color14: #c9bf91
-!*color15: #e6ebef
-
-!! special
-!*.foreground:   #e0cdd4
-!*.background:   #12080c
-!*.cursorColor:  #e0cdd4
-
-!! black
-!*.color0:       #1d0f15
-!*.color8:       #d8b1c0
-
-!! red
-!*.color1:       #29171f
-!*.color9:       #72b29f
-
-!! green
-!*.color2:       #3f2731
-!*.color10:      #ebcfbc
-
-!! yellow
-!*.color3:       #5e3b4a
-!*.color11:      #93a475
-
-!! blue
-!*.color4:       #85566a
-!*.color12:      #bdadd0
-
-!! magenta
-!*.color5:       #b37790
-!*.color13:      #e28bb1
-
-!! cyan
-!*.color6:       #cca9b7
-!*.color14:      #c5d9a3
-
-!! white
-!*.color7:       #ebdfe4
-!*.color15:      #73af9d

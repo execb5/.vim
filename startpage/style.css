@@ -1,0 +1,110 @@
+body {
+    background: #0a0f14;
+    color: #98d1ce;
+    font-family: 'Ubuntu Mono';
+    font-size: 14px;
+    margin: 0;
+    padding:0;
+}
+
+main {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+main h1 {
+    font-size: 76px;
+    margin: 0;
+}
+
+.search-box {
+    width: 525px;
+    height: 30px;
+    color: #4e5165;
+    background-color: #0a0f14;
+    border: 1px solid #888ba5;
+    box-shadow: 0 0 5px #000;
+    text-align: center;
+    margin: 20px 0 10px 0;
+    font-family: 'Ubuntu Mono';
+    font-size: 14px;
+}
+.search-box:focus {
+    outline-width: 0;
+}
+
+.search-box::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #3e4e3e;
+}
+.search-box::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #3e4e3e;
+   opacity:  1;
+}
+.search-box:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+  color:    #3e4e3e;
+}
+
+
+
+main span {
+    font-size: 14px;
+}
+
+.table {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+		padding-bottom: 20px;
+}
+
+.table .cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+nav {
+
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul strong {
+    font-size: 16px;
+    color: #98d1ce;
+}
+
+nav ul a {
+    color: #26a98b;
+    text-decoration: none;
+    line-height: 200%;
+}
+
+nav ul a:visited {
+    color: #26a98b;
+}
+
+.character {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    opacity: 0.9;
+    height: 40%;
+}
+
+footer {
+    background-color: #10151b;
+    position: fixed;
+    width: 100%;
+    height: 20px;
+    bottom: 0;
+    text-align: center;
+    font-size: 12px;
+    padding-top: 5px;
+}

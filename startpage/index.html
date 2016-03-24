@@ -1,69 +1,83 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
-		<title>home</title>
-		<link rel='stylesheet' type='text/css' href='css/homepage.css'/>
-		<link rel='stylesheet' type='text/css' href='css/fonts.css'/>
-		<script type='text/javascript' src='js/fonticon.js'></script>
+		<meta charset="UTF-8">
+		<title>~ ホーム ~</title>
+		<link rel="shortcut icon" href="favicon.ico">
+		<meta name="viewport" content="width=device-width">
+		<link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Henny+Penny|Press+Start+2P|Cinzel+Decorative:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 
 	<body>
-		<div class="home">firefox</div>
-		<div class='favorites'>
+		<img class="character" src="mashiro_shiina_vector01.png" draggable="false"/>
 
-			<div class='list fav-anime'>
-				<p>japshit</p>
-				<ul>
-					<li><a href='http://myanimelist.net/'>MAL</a></li>
-					<li><a href='http://neregate.com/blog/'>neregate</a></li>
-					<li><a href="http://live.nicovideo.jp/">nico</a></li>
-					<!--<li><a href="anime.html">- more -</a></li>-->
-				</ul>
+		<div class="table">
+			<div class="cell">
+				<main>
+				<h1>おかえり、ご主人様</h1>
+
+				<form method="get" action="https://google.com/search">
+					<input class="search-box" type="text" name="q" placeholder="Google 検索" autofocus="autofocus"/>
+				</form>
+
+				<span>ただしその頃にはあんたは八つ裂きになっているだろうけどな</span>
+				</main>
+
+				<nav>
+					<ul>
+						<li>
+							<a href='http://www.4chan.org'><strong>４ちゃん -</strong></a>
+							<a href="http://boards.4chan.org/a/" title="Anime">/a/</a> ~
+							<a href="http://boards.4chan.org/b/" title="Random">/b/</a> ~
+							<a href="http://boards.4chan.org/g/" title="Technology">/g/</a> ~
+							<a href="http://boards.4chan.org/gif/" title="Adult GIF">/gif/</a> ~
+							<a href="http://boards.4chan.org/pol/" title="Politically Incorrect">/pol/</a> ~
+							<a href="http://boards.4chan.org/v/" title="Video Games">/v/</a> ~
+							<a href="http://boards.4chan.org/w/" title="Anime/Wallpaper">/w/</a> ~
+							<a href="http://boards.4chan.org/wg/" title="Wallpapers/General">/wg/</a> ~
+							<a href="http://boards.4chan.org/wsg/" title="Worksafe GIF">/wsg/</a> ~
+						</li>
+						<li>
+							<strong>ウェブ -</strong>
+							<a href='https://www.reddit.com'>レティット</a> ~
+							<a href='https://twitter.com/'>ツイッター</a> ~
+							<a href='https://youtube.com/'>youtube</a> ~
+							<a href='http://alpha.wallhaven.cc/'>wallhaven</a> ~
+						</li>
+						<li>
+							<strong>ゲーム -</strong>
+							<a href='https://store.steampowered.com/'>steam</a> ~
+							<a href='https://gog.com/'>gog</a> ~
+						</li>
+						<li>
+							<strong>トレント -</strong>
+							<a href="https://animebytes.tv/">ab</a> ~
+							<a href="https://www.nyaa.se/">nyaa</a> ~
+							<a href="https://kat.cr/">kat</a> ~
+							<a href='http://horriblesubs.info/'>hs</a> ~
+							<a href="http://bakabt.me/">bbt</a> ~
+							<a href="https://coalgirls.wakku.to/">cg</a> ~
+							<a href='http://fffansubs.org/'>fff</a> ~
+							<a href='http://torrents.yourexotic.com/'>ye</a> ~
+						</li>
+						<li>
+							<strong>ユーティリティ -</strong>
+							<a href="https://maps.google.com.br/">マップ</a> ~
+							<a href="https://translate.google.com/">トランスレーター</a> ~
+							<a href="http://imgur.com/">imgur</a> ~
+						</li>
+					</ul>
+				</nav>
 			</div>
+		</div>
 
-			<div class='list fav-web'>
-				<p>web</p>
-				<ul>
-					<li><a href='http://www.4chan.org'>4chan</a></li>
-					<li><a href='https://www.reddit.com'>reddit</a></li>
-					<li><a href='https://twitter.com/'>twitter</a></li>
-					<li><a href='https://youtube.com/'>youtube</a></li>
-					<li><a href='http://alpha.wallhaven.cc/'>wallhaven</a></li>
-				</ul>
-			</div>
+		<footer>
+			©Matthias Nunes, 2016.
+		</footer>
 
-			<div class='list fav-torrent'>
-				<p>torrent</p>
-				<ul>
-					<li><a href='https://animebytes.tv/'>animebytes</a></li>
-					<li><a href='http://horriblesubs.info/'>horriblesubs</a></li>
-					<li><a href="http://bakabt.me/">bakabt</a></li>
-					<li><a href="https://coalgirls.wakku.to/">coalgirls</a></li>
-					<li><a href='http://fffansubs.org/'>fffansubs</a></li>
-					<li><a href='https://www.nyaa.eu'>nyaa</a></li>
-					<li><a href='https://thepiratebay.vg/'>thepiratebay</a></li>
-					<li><a href='http://kickasstorrent.proxyindex.eu/'>kickasstorrents</a></li>
-					<li><a href='http://torrents.yourexotic.com/'>yourexotic</a></li>
-				</ul>
-			</div>
-
-			<div class='list fav-dev'>
-				<p>dev</p>
-				<ul>
-					<li><a href='https://www.github.com'>github</a></li>
-					<li><a href="http://www.bitbucket.org/">bitbucket</a></li>
-					<li><a href="https://wiki.archlinux.org">arch wiki</a></li>
-					<li><a href="https://github.com/bitemyapp/learnhaskell">learnhaskell</a></li>
-					<li><a href="https://trello.com/">trello</a></li>
-					<li><a href="http://colorschemedesigner.com/csd-3.5/">color scheme designer</a></li>
-					<!--<li><a href="dev.html">- more -</a></li>-->
-				</ul>
-			</div>
-
-		<form method="get" action="https://duckduckgo.com/?q=">
-			<input class='search' name='q' type='text' placeholder='search'/>
-			<button class='go' type='submit'><i class='icon icon-search'></i></button>
-		</form>
-
-		</body>
+	</body>
 </html>
+

@@ -35,6 +35,9 @@ call vundle#begin()
 	Plugin 'junegunn/vim-easy-align'
 	Plugin 'suan/vim-instant-markdown'
 
+	"Rust
+	Plugin 'rust-lang/rust.vim'
+
 	"Haskell
 	Plugin 'dag/vim2hs'
 	Plugin 'eagletmt/ghcmod-vim'
