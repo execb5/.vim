@@ -6,7 +6,7 @@ ZSH_THEME="rkj-repos"
 
 #ZSH_TMUX_AUTOSTART=true
 #ZSH_TMUX_AUTOCONNECT=false
-plugins=(git zsh-syntax-highlighting archlinux rails bundle rake tmux)
+plugins=(git zsh-syntax-highlighting archlinux bundle tmux)
 
 explain () { #copythis
 	if [ "$#" -eq 0 ]; then #copythis
@@ -69,9 +69,14 @@ alias cava="/home/matthias/.local/bin/cava -i fifo -p /tmp/mpd.fifo"
 	#alias vimdiff='TERM=rxvt-unicode-256color vimdiff' #copythis
 #fi #copythis
 
-if which ruby > /dev/null && which gem >/dev/null; then
-	PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
-fi
+# RVM STUFF
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -r "$HOME/.rvm/scripts/completion" ]] && source "$HOME/.rvm/scripts/completion"
+
+#if which ruby > /dev/null && which gem >/dev/null; then
+	#PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+#fi
 
 export EDITOR="/usr/bin/vim" #copythis
 export PATH="/usr/local/texlive/2015/bin/x86_64-linux:$PATH"
@@ -93,7 +98,3 @@ source $ZSH/oh-my-zsh.sh
 
 #PATH=$HOME/.cabal/bin:$PATH
 
-# RVM STUFF
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-[[ -r "$HOME/.rvm/scripts/completion" ]] && source "$HOME/.rvm/scripts/completion"
