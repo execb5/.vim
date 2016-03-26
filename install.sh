@@ -18,6 +18,9 @@ echo "vimperatorrc symlinked"
 ln -sf $(pwd)/xinitrc ~/.xinitrc
 echo "xinitrc symlinked"
 
+git clone http://github.com/execb5/execb5.github.io.git
+echo "Home page cloned and ready to be set in a browser"
+
 vim +PluginInstall +PluginClean +qall
 echo "Plugins installed!"
 
