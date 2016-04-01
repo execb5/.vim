@@ -24,7 +24,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'honza/vim-snippets'                                       "without this snipmate would be useless
 	Plug 'ervandew/supertab'
 	Plug 'Townk/vim-autoclose'
-	Plug 'haya14busa/incsearch.vim'
 	Plug 'junegunn/vim-easy-align'
 	Plug 'suan/vim-instant-markdown'
 
@@ -53,6 +52,9 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 filetype plugin indent on
+
+"NERDTree close when quitting
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "Detect *.md as markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -177,10 +179,6 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
-"For the incsearch plugin
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
 "EasyAlign stuff
 vmap <Space> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
