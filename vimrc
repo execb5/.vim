@@ -7,50 +7,41 @@ let mapleader = ","
 call plug#begin('~/.vim/plugged')
 
 	"Workflow
-	Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+	Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 	Plug 'scrooloose/syntastic'
 	Plug 'scrooloose/nerdcommenter'
-	Plug 'mileszs/ack.vim'
-	Plug 'majutsushi/tagbar', { 'on':  'TagbarToggle' }
+	Plug 'mileszs/ack.vim', { 'on': 'Ack' }
+	Plug 'majutsushi/tagbar'
 	Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-rails', { 'for': 'ruby' }
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'terryma/vim-multiple-cursors'
-	Plug 'sjl/gundo.vim'
 	Plug 'garbas/vim-snipmate'
-	Plug 'MarcWeber/vim-addon-mw-utils'     "dependency for snipmate
-	Plug 'tomtom/tlib_vim'                  "dependency for snipmate
-	Plug 'honza/vim-snippets'               "without this snipmate would be useless
+	Plug 'MarcWeber/vim-addon-mw-utils'                             "dependency for snipmate
+	Plug 'tomtom/tlib_vim'                                          "dependency for snipmate
+	Plug 'honza/vim-snippets'                                       "without this snipmate would be useless
 	Plug 'ervandew/supertab'
 	Plug 'Townk/vim-autoclose'
 	Plug 'haya14busa/incsearch.vim'
 	Plug 'junegunn/vim-easy-align'
 	Plug 'suan/vim-instant-markdown'
 
-	"Rust
-	Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+	"C
+	Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }                "better syntax highlight for C
+	Plug 'a.vim', { 'for': 'c' }                                    "Alternate Files quickly (.c --> .h etc)
+	Plug 'drmikehenry/vim-headerguard', { 'for': 'c' }              "Vim plugin for adding header guards to C/C++ header files
 
-	"Haskell
-	Plug 'dag/vim2hs', { 'for': 'haskell' }
-	Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
-	Plug 'Shougo/vimproc.vim', { 'for': 'haskell' }               "Needs to run 'make' after installing
-	Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
-
-	"C and C++
-	Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }        "better syntax highlight for C
-	Plug 'a.vim', { 'for': 'c' }                            "Alternate Files quickly (.c --> .h etc)
-	Plug 'drmikehenry/vim-headerguard', { 'for': 'c' }      "Vim plugin for adding header guards to C/C++ header files
-	Plug 'vim-jp/cpp-vim', { 'for': 'c' }                   "c or cpp syntax files
-	Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'c' } "Additional Vim syntax highlighting for C++
+	"C++
+	Plug 'vim-jp/cpp-vim', { 'for': 'cpp' }                         "c or cpp syntax files
+	Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }       "Additional Vim syntax highlighting for C++
 
 	"Pretify things
-	Plug 'bling/vim-airline'
-	Plug 'mhinz/vim-signify'                "show what changed in file
-	Plug 'mhinz/vim-startify'               "start screen
-	Plug 'ryanoasis/vim-devicons'           "icons
-	Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }      "show git signs in nerdtree
+	Plug 'vim-airline/vim-airline'
+	Plug 'mhinz/vim-signify'                                        "show what changed in file
+	Plug 'ryanoasis/vim-devicons'                                   "icons
+	Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }  "show git signs in nerdtree
 
 	"Colorschemes
 	Plug 'whatyouhide/vim-gotham'
@@ -62,9 +53,6 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 filetype plugin indent on
-
-"Force NERDTree to close with last window
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 "Detect *.md as markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -97,25 +85,6 @@ let g:airline_powerline_fonts = 1
 "Signify option
 let g:signify_vcs_list = [ 'git', 'svn' ]
 
-"Startify options
-let g:startify_custom_header = [
-    \ '                                 ________  __ __        ',
-    \ '            __                  /\_____  \/\ \\ \       ',
-    \ '    __  __ /\_\    ___ ___      \/___//''/''\ \ \\ \    ',
-    \ '   /\ \/\ \\/\ \ /'' __` __`\        /'' /''  \ \ \\ \_ ',
-    \ '   \ \ \_/ |\ \ \/\ \/\ \/\ \      /'' /''__  \ \__ ,__\',
-    \ '    \ \___/  \ \_\ \_\ \_\ \_\    /\_/ /\_\  \/_/\_\_/  ',
-    \ '     \/__/    \/_/\/_/\/_/\/_/    \//  \/_/     \/_/    ',
-    \ '                                                        ',
-    \ '                                                        ',
-    \ ]
-
-let g:startify_custom_footer =
- \ map(split(system('fortune | cowsay'), '\n'), '"   ". v:val') + ['','']
-
-"For markdown preview
-let g:instant_markdown_autostart = 0
-
 "vim-cpp-enhanced-highlight
 let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_template_highlight = 1
@@ -140,99 +109,38 @@ function! DoWindowSwap()
 	exe 'hide buf' markedBuf
 endfunction
 
-"NERDTree preview
-let g:nerd_preview_enabled = 0
-let g:preview_last_buffer  = 0
-
-function! NerdTreePreview()
-  " Only on nerdtree window
-  if (&ft ==# 'nerdtree')
-    " Get filename
-    let l:filename = substitute(getline("."), "^\\s\\+\\|\\s\\+$","","g")
-
-    " Preview if it is not a folder
-    let l:lastchar = strpart(l:filename, strlen(l:filename) - 1, 1)
-    if (l:lastchar != "/" && strpart(l:filename, 0 ,2) != "..")
-
-      let l:store_buffer_to_close = 1
-      if (bufnr(l:filename) > 0)
-        " Don't close if the buffer is already open
-        let l:store_buffer_to_close = 0
-      endif
-
-      " Do preview
-      execute "normal go"
-
-      " Close previews buffer
-      if (g:preview_last_buffer > 0)
-        execute "bwipeout " . g:preview_last_buffer
-        let g:preview_last_buffer = 0
-      endif
-
-      " Set last buffer to close it later
-      if (l:store_buffer_to_close)
-        let g:preview_last_buffer = bufnr(l:filename)
-      endif
-    endif
-  elseif (g:preview_last_buffer > 0)
-    " Close last previewed buffer
-    let g:preview_last_buffer = 0
-  endif
-endfunction
-
-function! NerdPreviewToggle()
-  if (g:nerd_preview_enabled)
-    let g:nerd_preview_enabled = 0
-    augroup nerdpreview
-      autocmd!
-      augroup END
-  else
-    let g:nerd_preview_enabled = 1
-    augroup nerdpreview
-      autocmd!
-      autocmd CursorMoved * nested call NerdTreePreview()
-    augroup END
-  endif
-endfunction
-
 "Use ranger to open files
 function! RangeChooser()
-    let temp = tempname()
-    " The option "--choosefiles" was added in ranger 1.5.1. Use the next line
-    " with ranger 1.4.2 through 1.5.0 instead.
-    "exec 'silent !ranger --choosefile=' . shellescape(temp)
-    if has("gui_running")
-        exec 'silent !xterm -e ranger --choosefiles=' . shellescape(temp)
-    else
-        exec 'silent !ranger --choosefiles=' . shellescape(temp)
-    endif
-    if !filereadable(temp)
-        redraw!
-        " Nothing to read.
-        return
-    endif
-    let names = readfile(temp)
-    if empty(names)
-        redraw!
-        " Nothing to open.
-        return
-    endif
-    " Edit the first item.
-    exec 'edit ' . fnameescape(names[0])
-    " Add any remaning items to the arg list/buffer list.
-    for name in names[1:]
-        exec 'argadd ' . fnameescape(name)
-    endfor
-    redraw!
+	let temp = tempname()
+	" The option "--choosefiles" was added in ranger 1.5.1. Use the next line
+	" with ranger 1.4.2 through 1.5.0 instead.
+	"exec 'silent !ranger --choosefile=' . shellescape(temp)
+	if has("gui_running")
+		exec 'silent !xterm -e ranger --choosefiles=' . shellescape(temp)
+	else
+		exec 'silent !ranger --choosefiles=' . shellescape(temp)
+	endif
+	if !filereadable(temp)
+		redraw!
+		" Nothing to read.
+		return
+	endif
+	let names = readfile(temp)
+	if empty(names)
+		redraw!
+		" Nothing to open.
+		return
+	endif
+	" Edit the first item.
+	exec 'edit ' . fnameescape(names[0])
+	" Add any remaning items to the arg list/buffer list.
+	for name in names[1:]
+		exec 'argadd ' . fnameescape(name)
+	endfor
+	redraw!
 endfunction
 command! -bar RangerChooser call RangeChooser()
 nnoremap <leader>r :<C-U>RangerChooser<CR>
-
-"Set persistant undo
-if has("persistent_undo")
-        set undodir='~/.undodir/'
-        set undofile
-endif
 
 "Keybindings
 nmap <F2> :w<CR>
