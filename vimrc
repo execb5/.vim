@@ -152,7 +152,7 @@ nmap <F4> :q!<CR>
 nmap <F5> :noh<CR>
 nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
-nmap <F10> :GundoToggle<CR>
+map <F9> mzgg=G`z "Ident whole code
 "Keybindings using Leader
 nmap <Leader>w :w<CR>
 nmap <Leader>q :wq<CR>
