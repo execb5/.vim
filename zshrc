@@ -90,3 +90,5 @@ export SDL_VIDEO_FULLSCREEN_HEAD=1
 
 source $ZSH/oh-my-zsh.sh
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
