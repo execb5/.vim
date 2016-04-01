@@ -58,8 +58,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 "Detect *.md as markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-"Detect *.gd as gdscript
-autocmd BufNewFile,BufReadPost *.gd set filetype=gdscript
 
 "To make Syntastic work
 let g:syntastic_auto_loc_list=1
