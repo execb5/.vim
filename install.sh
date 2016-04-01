@@ -1,11 +1,7 @@
 #!/bin/sh
 
-if [ "$(ls -A $(pwd)/bundle/Vundle.vim/)" ]; then
-        echo "Vundle already installed!"
-else
-        rm -rf $(pwd)/bundle/Vundle.vim/
-        git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+	    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 ln -sf $(pwd)/vimrc ~/.vimrc
 echo "vimrc symlinked"
@@ -17,20 +13,21 @@ ln -sf $(pwd)/vimperatorrc ~/.vimperatorrc
 echo "vimperatorrc symlinked"
 ln -sf $(pwd)/xinitrc ~/.xinitrc
 echo "xinitrc symlinked"
+ln -sf $(pwd)/Xresources ~/.Xresources
+echo ".Xdefaults symlinked"
 
 if [ "$(ls -A $(pwd)/execb5.github.io/)" ]; then
         echo "Home page already installed!"
 else
-        rm -rf $(pwd)/execb5.github.io/
 	git clone http://github.com/execb5/execb5.github.io.git
 	echo "Home page cloned and ready to be set in a browser"
 fi
 
 
-vim +PluginInstall +PluginClean +qall
+vim +PlugInstall +qall
 echo "Plugins installed!"
 
-[ -d ~/.vimperator/plugins ] || git clone https://github.com/ervandew/vimperator-plugins.git plugins
+[ -d ~/.vimperator/plugins ] || git clone https://github.com/ervandew/vimperator-plugins.git ~/.vimperator/plugins
 [ -d ~/.vimperator/colors ] || git clone https://github.com/vimpr/vimperator-colors.git ~/.vimperator/colors
 
 if [ $( echo $SHELL | tail -c 4 ) = "zsh" ]
@@ -85,17 +82,6 @@ fi
 
 echo "Do you want to use the custom Xresources? (y/n)"
 read XDEF
-
-if [ "$XDEF" = "y" ]
-then
-        ln -sf $(pwd)/Xresources ~/.Xresources
-        echo ".Xdefaults symlinked"
-fi
-
-echo "Compiling vimproc..."
-cd ~/.vim/bundle/vimproc.vim
-make
-echo "vimproc compiled!"
 
 mkdir ~/.vimtmp
 echo ".vimtmp directory created"

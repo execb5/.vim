@@ -141,31 +141,96 @@ rofi.key-run:
 rofi.key-ssh:
 
 !--Gotham theme--
-*.foreground:   #98d1ce
-*.background:   #0a0f14
-*.cursorColor:  #98d1ce
+!*.foreground:   #98d1ce
+!*.background:   #0a0f14
+!*.cursorColor:  #98d1ce
 
-*.color0:       #0a0f14
-*.color8:       #10151b
+!*.color0:       #0a0f14
+!*.color8:       #10151b
 
-*.color1:       #c33027
-*.color9:       #d26939
+!*.color1:       #c33027
+!*.color9:       #d26939
 
-*.color2:       #26a98b
-*.color10:      #081f2d
+!*.color2:       #26a98b
+!*.color10:      #081f2d
 
-*.color3:       #edb54b
-*.color11:      #245361
+!*.color3:       #edb54b
+!*.color11:      #245361
 
-*.color4:       #195465
-*.color12:      #093748
+!*.color4:       #195465
+!*.color12:      #093748
 
-*.color5:       #4e5165
-*.color13:      #888ba5
+!*.color5:       #4e5165
+!*.color13:      #888ba5
 
-*.color6:       #33859d
-*.color14:      #599caa
+!*.color6:       #33859d
+!*.color14:      #599caa
 
-*.color7:       #98d1ce
-*.color15:      #d3ebe9
+!*.color7:       #98d1ce
+!*.color15:      #d3ebe9
+!
 
+!Good one
+!*background: #6c7177
+!*foreground: #e3dbec
+!*color0: #a3c4a3
+!*color1: #e19063
+!*color2: #cee9ee
+!*color3: #98dcf7
+!*color4: #835c82
+!*color5: #c04a83
+!*color6: #dce2c0
+!*color7: #bdc0d5
+!*color8: #37484b
+!*color9: #c66b9c
+!*color10: #f9eff5
+!*color11: #b8f8fa
+!*color12: #6c9bd8
+!*color13: #cb86d2
+!*color14: #efe2c6
+!*color15: #4863d4
+
+
+!Nice one
+
+*background: #232350
+
+*foreground: #ccdde6
+*color0: #3b3364
+*color1: #7eaa9d
+*color2: #faecd2
+*color3: #90cee9
+*color4: #ced6ea
+*color5: #fef4ef
+*color6: #8cdbe0
+*color7: #a7bde5
+
+*color8: #1b4551
+
+*color9: #f56dcb
+*color10: #fae7a0
+*color11: #376dbb
+*color12: #346fd7
+*color13: #f5cbe2
+*color14: #bff1f5
+*color15: #4391ca
+
+!Another nice one
+!*background: #020a07
+!*foreground: #dce3f1
+!*color0: #16201d
+!*color1: #c51340
+!*color2: #e2c5ea
+!*color3: #23a2f3
+!*color4: #52a9d2
+!*color5: #d643c8
+!*color6: #a6d9e6
+!*color7: #b4d1d2
+!*color8: #55656b
+!*color9: #b681b7
+!*color10: #f7e9f3
+!*color11: #5debf7
+!*color12: #4cbce0
+!*color13: #ee9feb
+!*color14: #eef8f9
+!*color15: #c6d2eb

@@ -12,6 +12,7 @@ then
 		LVDS_NUMBER=`xrandr | awk '/LVDS/{ print $1 }'`
 		LVDS_RESOLUTION=`xrandr | awk '/LVDS/{ getline; print $1 }'` #will be useful if using two monitors
 		xrandr --output $HDMI_NUMBER --mode $HDMI_RESOLUTION --output $VGA_NUMBER --mode $VGA_RESOLUTION --right-of $HDMI_NUMBER --output $LVDS_NUMBER --off
+		feh --bg-fill ~/pictures/wallpapers/pantystocking/1459239719157.jpg ~/pictures/wallpapers/pantystocking/1447797820185.jpg
 else
 	if [ "$CONNECTED_VGA" = "connected" ]
 	then
@@ -30,9 +31,10 @@ else
 			xrandr --output $HDMI_NUMBER --mode $HDMI_RESOLUTION --output $LVDS_NUMBER --off
 		fi
 	fi
-fi
 
-feh --bg-fill ~/pictures/wallpapers/the_real_her.jpg
+	feh --bg-fill ~/pictures/wallpapers/pantystocking/1459239719157.jpg
+
+fi
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 

@@ -59,12 +59,13 @@ alias torrentstart='transmission-daemon'
 alias torrent='transmission-remote-cli'
 alias torrentexit='transmission-remote --exit'
 alias cava="/home/matthias/.local/bin/cava -i fifo -p /tmp/mpd.fifo"
+#alias mpv="optirun mpv"
 
 #if [ "$TERM" = "xterm" ] #copythis
 #then #copythis
 	#alias vim='TERM=xterm-256color vim' #copythis
 	#alias vimdiff='TERM=xterm-256color vimdiff' #copythis
-#else #when i'm in dwm using urxvt #copythis
+#else ##copythis
 	#alias vim='TERM=rxvt-unicode-256color vim' #copythis
 	#alias vimdiff='TERM=rxvt-unicode-256color vimdiff' #copythis
 #fi #copythis
@@ -74,14 +75,7 @@ alias cava="/home/matthias/.local/bin/cava -i fifo -p /tmp/mpd.fifo"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -r "$HOME/.rvm/scripts/completion" ]] && source "$HOME/.rvm/scripts/completion"
 
-#if which ruby > /dev/null && which gem >/dev/null; then
-	#PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
-#fi
-
 export EDITOR="/usr/bin/vim" #copythis
-export PATH="/usr/local/texlive/2015/bin/x86_64-linux:$PATH"
-export INFOPATH=/usr/local/texlive/2015/texmf-dist/doc/info:$INFOPATH
-export MANPATH=/usr/local/texlive/2015/texmf-dist/doc/man:$MANPATH
 
 export ANDROID_HOME=/home/matthias/programs/android/sdk
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
@@ -95,6 +89,4 @@ export SDL_VIDEO_FULLSCREEN_DISPLAY=1
 export SDL_VIDEO_FULLSCREEN_HEAD=1
 
 source $ZSH/oh-my-zsh.sh
-
-#PATH=$HOME/.cabal/bin:$PATH
 

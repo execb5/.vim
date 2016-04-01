@@ -4,70 +4,62 @@ filetype off
 "Defining leader
 let mapleader = ","
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-
-call vundle#begin()
-
-	"Plugin manager
-	Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 	"Workflow
-	Plugin 'scrooloose/nerdtree'
-	Plugin 'scrooloose/syntastic'
-	Plugin 'scrooloose/nerdcommenter'
-	Plugin 'mileszs/ack.vim'
-	Plugin 'majutsushi/tagbar'
-	Plugin 'tpope/vim-endwise'
-	Plugin 'tpope/vim-repeat'
-	Plugin 'tpope/vim-surround'
-	Plugin 'tpope/vim-rails'
-	Plugin 'ctrlpvim/ctrlp.vim'
-	Plugin 'terryma/vim-multiple-cursors'
-	Plugin 'sjl/gundo.vim'
-	Plugin 'garbas/vim-snipmate'
-	Plugin 'MarcWeber/vim-addon-mw-utils'     "dependency for snipmate
-	Plugin 'tomtom/tlib_vim'                  "dependency for snipmate
-	Plugin 'honza/vim-snippets'               "without this snipmate would be useless
-	Plugin 'ervandew/supertab'
-	Plugin 'Townk/vim-autoclose'
-	Plugin 'haya14busa/incsearch.vim'
-	Plugin 'junegunn/vim-easy-align'
-	Plugin 'suan/vim-instant-markdown'
+	Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+	Plug 'scrooloose/syntastic'
+	Plug 'scrooloose/nerdcommenter'
+	Plug 'mileszs/ack.vim'
+	Plug 'majutsushi/tagbar', { 'on':  'TagbarToggle' }
+	Plug 'tpope/vim-endwise', { 'for': 'ruby' }
+	Plug 'tpope/vim-repeat'
+	Plug 'tpope/vim-surround'
+	Plug 'tpope/vim-rails', { 'for': 'ruby' }
+	Plug 'ctrlpvim/ctrlp.vim'
+	Plug 'terryma/vim-multiple-cursors'
+	Plug 'sjl/gundo.vim'
+	Plug 'garbas/vim-snipmate'
+	Plug 'MarcWeber/vim-addon-mw-utils'     "dependency for snipmate
+	Plug 'tomtom/tlib_vim'                  "dependency for snipmate
+	Plug 'honza/vim-snippets'               "without this snipmate would be useless
+	Plug 'ervandew/supertab'
+	Plug 'Townk/vim-autoclose'
+	Plug 'haya14busa/incsearch.vim'
+	Plug 'junegunn/vim-easy-align'
+	Plug 'suan/vim-instant-markdown'
 
 	"Rust
-	Plugin 'rust-lang/rust.vim'
+	Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 	"Haskell
-	Plugin 'dag/vim2hs'
-	Plugin 'eagletmt/ghcmod-vim'
-	Plugin 'Shougo/vimproc.vim'               "Needs to run 'make' after installing
-	Plugin 'eagletmt/neco-ghc'
+	Plug 'dag/vim2hs', { 'for': 'haskell' }
+	Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
+	Plug 'Shougo/vimproc.vim', { 'for': 'haskell' }               "Needs to run 'make' after installing
+	Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 
 	"C and C++
-	Plugin 'justinmk/vim-syntax-extra'        "better syntax highlight for C
-	Plugin 'a.vim'                            "Alternate Files quickly (.c --> .h etc)
-	Plugin 'drmikehenry/vim-headerguard'      "Vim plugin for adding header guards to C/C++ header files
-	Plugin 'vim-jp/cpp-vim'                   "c or cpp syntax files
-	Plugin 'octol/vim-cpp-enhanced-highlight' "Additional Vim syntax highlighting for C++
+	Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }        "better syntax highlight for C
+	Plug 'a.vim', { 'for': 'c' }                            "Alternate Files quickly (.c --> .h etc)
+	Plug 'drmikehenry/vim-headerguard', { 'for': 'c' }      "Vim plugin for adding header guards to C/C++ header files
+	Plug 'vim-jp/cpp-vim', { 'for': 'c' }                   "c or cpp syntax files
+	Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'c' } "Additional Vim syntax highlighting for C++
 
 	"Pretify things
-	Plugin 'bling/vim-airline'
-	Plugin 'mhinz/vim-signify'                "show what changed in file
-	"Plugin 'godlygeek/csapprox'              "makes gui themes work in terminal
-	Plugin 'mhinz/vim-startify'               "start screen
-	Plugin 'ryanoasis/vim-devicons'           "icons
-	Plugin 'Xuyuanp/nerdtree-git-plugin'      "show git signs in nerdtree
-	Plugin 'udalov/kotlin-vim'
+	Plug 'bling/vim-airline'
+	Plug 'mhinz/vim-signify'                "show what changed in file
+	Plug 'mhinz/vim-startify'               "start screen
+	Plug 'ryanoasis/vim-devicons'           "icons
+	Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }      "show git signs in nerdtree
 
 	"Colorschemes
-	Plugin 'whatyouhide/vim-gotham'
-	Plugin 'junegunn/seoul256.vim'
-	Plugin 'chriskempson/base16-vim'
-	Plugin 'NLKNguyen/papercolor-theme'
-	Plugin 'nanotech/jellybeans.vim'
+	Plug 'whatyouhide/vim-gotham'
+	Plug 'junegunn/seoul256.vim'
+	Plug 'chriskempson/base16-vim'
+	Plug 'NLKNguyen/papercolor-theme'
+	Plug 'nanotech/jellybeans.vim'
 
-call vundle#end()
+call plug#end()
 
 filetype plugin indent on
 
@@ -287,8 +279,8 @@ nmap ga <Plug>(EasyAlign)
 
 "Run 256 colors on terminal
 if $TERM == "xterm-256color" || $TERM == "rxvt-unicode-256color"
-  set t_Co=256
-  "set t_Co=16
+	set t_Co=256
+	"set t_Co=16
 endif
 
 "Initial configuration
@@ -320,7 +312,7 @@ set wildmenu
 nnoremap gb :ls<CR>:b<Space>
 set incsearch
 if has('gui_running')
-	" GUI colors
+	"GUI colors
 	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono\ Plus\ Pomicons\ Book\ 9
 	set encoding=utf8
 	set guioptions-=m  "remove menu bar
@@ -329,11 +321,11 @@ if has('gui_running')
 	set guioptions-=L  "remove left-hand scroll bar
 	colorscheme gotham
 else
-	" Non-GUI (terminal) colors
+	"Non-GUI (terminal) colors
 	"colorscheme jellybeans
-	colorscheme gotham
-	"set background=light
-	"colorscheme PaperColor
+	"colorscheme gotham
+	set background=light
+	colorscheme PaperColor
 endif
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.

@@ -1,3 +1,5 @@
 *.swp
 eclim/
 plugin/
+plugged/
+autoload/
