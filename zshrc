@@ -59,6 +59,7 @@ alias torrentstart='transmission-daemon'
 alias torrent='transmission-remote-cli'
 alias torrentexit='transmission-remote --exit'
 alias cava="/home/matthias/.local/bin/cava -i fifo -p /tmp/mpd.fifo"
+alias mpsyt="optirun mpsyt"
 #alias mpv="optirun mpv"
 
 #if [ "$TERM" = "xterm" ] #copythis

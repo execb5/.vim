@@ -59,6 +59,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 "Detect *.md as markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
+"Temp, while there's still AI projects to do
+let g:syntastic_python_python_exec = '/usr/bin/python2'
+
 "To make Syntastic work
 let g:syntastic_auto_loc_list=1
 let g:syntastic_disabled_filetypes=['html']
@@ -182,10 +185,10 @@ vmap <Space> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 "Run 256 colors on terminal
-if $TERM == "xterm-256color" || $TERM == "rxvt-unicode-256color"
-	set t_Co=256
-	"set t_Co=16
-endif
+"if $TERM == "xterm-256color" || $TERM == "rxvt-unicode-256color"
+	"set t_Co=256
+    set t_Co=16
+"endif
 
 "Initial configuration
 set relativenumber
@@ -228,8 +231,8 @@ else
 	"Non-GUI (terminal) colors
 	"colorscheme jellybeans
 	"colorscheme gotham
-	set background=light
-	colorscheme PaperColor
+	"set background=light
+	"colorscheme PaperColor
 endif
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.

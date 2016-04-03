@@ -193,8 +193,7 @@ rofi.key-ssh:
 
 !Nice one
 
-*background: #232350
-
+*background: #1b4551
 *foreground: #ccdde6
 *color0: #3b3364
 *color1: #7eaa9d
@@ -204,9 +203,7 @@ rofi.key-ssh:
 *color5: #fef4ef
 *color6: #8cdbe0
 *color7: #a7bde5
-
-*color8: #1b4551
-
+*color8: #232350
 *color9: #f56dcb
 *color10: #fae7a0
 *color11: #376dbb
