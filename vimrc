@@ -97,7 +97,7 @@ let g:cpp_experimental_template_highlight = 1
 
 "Functions
 function! MarkWindowSwap()
-        let g:markedWinNum = winnr()
+	let g:markedWinNum = winnr()
 endfunction
 
 function! DoWindowSwap()
