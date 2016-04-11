@@ -27,10 +27,13 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/vim-easy-align'
 	Plug 'suan/vim-instant-markdown'
 
+	"Rust
+	Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+
 	"C
 	Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }                "better syntax highlight for C
 	Plug 'a.vim', { 'for': 'c' }                                    "Alternate Files quickly (.c --> .h etc)
-	Plug 'drmikehenry/vim-headerguard', { 'for': 'c' }              "Vim plugin for adding header guards to C/C++ header files
+	Plug 'drmikehenry/vim-headerguard', { 'for': ['c', 'cpp'] }     "Vim plugin for adding header guards to C/C++ header files
 
 	"C++
 	Plug 'vim-jp/cpp-vim', { 'for': 'cpp' }                         "c or cpp syntax files
@@ -153,7 +156,7 @@ nmap <F4> :q!<CR>
 nmap <F5> :noh<CR>
 nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
-map <F9> mzgg=G`z "Ident whole code
+map <leader>i mzgg=G`z
 "Keybindings using Leader
 nmap <Leader>w :w<CR>
 nmap <Leader>q :wq<CR>
@@ -187,7 +190,7 @@ nmap ga <Plug>(EasyAlign)
 "Run 256 colors on terminal
 "if $TERM == "xterm-256color" || $TERM == "rxvt-unicode-256color"
 	"set t_Co=256
-    set t_Co=16
+	set t_Co=16
 "endif
 
 "Initial configuration

@@ -81,6 +81,11 @@ export EDITOR="/usr/bin/vim" #copythis
 export ANDROID_HOME=/home/matthias/programs/android/sdk
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
+export INFOPATH=$INFOPATH:/usr/local/texlive/2015/texmf-dist/doc/info
+export MANPATH=$MANPATH:/usr/local/texlive/2015/texmf-dist/doc/man
+
+export PATH=$PATH:/usr/local/texlive/2015/bin/x86_64-linux
+
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 export XDG_CONFIG_HOME="$HOME/.config"
