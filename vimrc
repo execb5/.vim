@@ -34,6 +34,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }                "better syntax highlight for C
 	Plug 'a.vim', { 'for': 'c' }                                    "Alternate Files quickly (.c --> .h etc)
 	Plug 'drmikehenry/vim-headerguard', { 'for': ['c', 'cpp'] }     "Vim plugin for adding header guards to C/C++ header files
+	Plug 'ravishi/vim-gnu-c'                                        "GNU C Style
 
 	"C++
 	Plug 'vim-jp/cpp-vim', { 'for': 'cpp' }                         "c or cpp syntax files
