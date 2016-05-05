@@ -46,6 +46,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'ryanoasis/vim-devicons'                                   "icons
 	Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }  "show git signs in nerdtree
 
+	"Pddl
+	Plug 'Tarrasch/pddl.vim'
+
 	"Colorschemes
 	Plug 'whatyouhide/vim-gotham'
 	Plug 'junegunn/seoul256.vim'
@@ -189,10 +192,10 @@ vmap <Space> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 "Run 256 colors on terminal
-"if $TERM == "xterm-256color" || $TERM == "rxvt-unicode-256color"
-	"set t_Co=256
-	set t_Co=16
-"endif
+if $TERM == "xterm-256color" || $TERM == "rxvt-unicode-256color"
+	set t_Co=256
+	"set t_Co=16
+endif
 
 "Initial configuration
 set relativenumber
@@ -234,7 +237,7 @@ if has('gui_running')
 else
 	"Non-GUI (terminal) colors
 	"colorscheme jellybeans
-	"colorscheme gotham
+	colorscheme gotham
 	"set background=light
 	"colorscheme PaperColor
 endif

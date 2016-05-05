@@ -12,3 +12,4 @@
 [alias]
 	st = status
 	co = checkout
+	l  = log --graph --abbrev-commit --date=relative
