@@ -26,6 +26,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'Townk/vim-autoclose'
 	Plug 'junegunn/vim-easy-align'
 	Plug 'suan/vim-instant-markdown'
+	Plug 'wakatime/vim-wakatime'                                    "Waka-time
 
 	"Rust
 	Plug 'rust-lang/rust.vim', { 'for': 'rust' }
@@ -45,9 +46,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'mhinz/vim-signify'                                        "show what changed in file
 	Plug 'ryanoasis/vim-devicons'                                   "icons
 	Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }  "show git signs in nerdtree
-
-	"Pddl
-	Plug 'Tarrasch/pddl.vim'
 
 	"Colorschemes
 	Plug 'whatyouhide/vim-gotham'
@@ -74,6 +72,9 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_disabled_filetypes=['html']
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_messages = {'level': 'warnings'}
+
+"Temporary, until I finish my database project
+let g:syntastic_cpp_compiler_options = '-std=c++11'
 
 "Airline config
 let g:airline_powerline_fonts = 1
@@ -158,6 +159,7 @@ imap <F2> :w<CR>a
 nmap <F3> :wq!<CR>
 nmap <F4> :q!<CR>
 nmap <F5> :noh<CR>
+map <F6> :setlocal spell! spelllang=en_us<CR>
 nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 map <leader>i mzgg=G`z
@@ -192,7 +194,7 @@ vmap <Space> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 "Run 256 colors on terminal
-if $TERM == "xterm-256color" || $TERM == "rxvt-unicode-256color"
+if $TERM == "xterm-256color" || $TERM == "rxvt-unicode-256color" || $TERM == "screen-256color"
 	set t_Co=256
 	"set t_Co=16
 endif

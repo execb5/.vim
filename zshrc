@@ -6,7 +6,7 @@ ZSH_THEME="rkj-repos"
 
 #ZSH_TMUX_AUTOSTART=true
 #ZSH_TMUX_AUTOCONNECT=false
-plugins=(git zsh-syntax-highlighting archlinux bundle tmux)
+plugins=(git zsh-syntax-highlighting archlinux bundle tmux zsh-wakatime)
 
 explain () { #copythis
 	if [ "$#" -eq 0 ]; then #copythis
