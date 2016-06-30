@@ -1,8 +1,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-#ZSH_THEME="custom"
-ZSH_THEME="rkj-repos"
+ZSH_THEME="custom"
+#ZSH_THEME="rkj-repos"
 
 #ZSH_TMUX_AUTOSTART=true
 #ZSH_TMUX_AUTOCONNECT=false
@@ -60,6 +60,8 @@ alias torrent='transmission-remote-cli'
 alias torrentexit='transmission-remote --exit'
 alias cava="/home/matthias/.local/bin/cava -i fifo -p /tmp/mpd.fifo"
 alias fetch="neofetch --image ~/pictures/kuro.png --crop_mode fill"
+alias weather="curl -4 'http://wttr.in/Porto+Alegre'"
+alias moon="curl -4 'http://wttr.in/Moon'"
 #alias mpsyt="optirun mpsyt"
 #alias mpv="optirun mpv"
 
