@@ -32,7 +32,7 @@ else
 		fi
 	fi
 
-	feh --bg-fill ~/pictures/wallpapers/planets.jpg
+	feh --bg-max ~/pictures/wallpapers/Ilya_Kuvshinov69.png
 
 fi
 

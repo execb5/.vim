@@ -1,0 +1,34 @@
+#! /bin/sh
+
+bspc config border_width        2
+bspc config window_gap         12
+
+bspc config split_ratio         0.52
+bspc config single_monocle      true
+bspc config borderless_monocle  true
+bspc config gapless_monocle     true
+bspc config focus_by_distance   true
+bspc config history_aware_focus true
+
+CONNECTED_VGA=`xrandr | awk '/VGA/{ print $2 }'`
+CONNECTED_HDMI=`xrandr | awk '/HDMI/{ print $2 }'`
+
+if [ "$CONNECTED_VGA" = "connected" -a "$CONNECTED_HDMI" = "connected" ]
+then
+	VGA_NUMBER=`xrandr | awk '/VGA/{ print $1 }'`
+	HDMI_NUMBER=`xrandr | awk '/HDMI/{ print $1 }'`
+	bspc monitor $HDMI_NUMBER -d I II III
+	bspc monitor $VGA_NUMBER -d IV V VI VII VIII IX X
+else
+	bspc monitor -d I II III IV V VI VII VIII IX X
+fi
+
+bspc rule -a Gimp desktop='^2' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+bspc rule -a ahoviewer state=floating
+bspc rule -a thunar state=floating
+bspc rule -a ristretto state=floating
+bspc rule -a steam desktop='^3' state=floating

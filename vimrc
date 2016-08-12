@@ -63,6 +63,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 "Detect *.md as markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+"Detect *.tex as latex
+autocmd BufNewFile,BufReadPost *.tex set filetype=tex
 
 "Temp, while there's still AI projects to do
 let g:syntastic_python_python_exec = '/usr/bin/python2'
