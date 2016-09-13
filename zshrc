@@ -59,7 +59,7 @@ alias torrentstart='transmission-daemon'
 alias torrent='transmission-remote-cli'
 alias torrentexit='transmission-remote --exit'
 alias cava="/home/matthias/.local/bin/cava -i fifo -p /tmp/mpd.fifo"
-alias fetch="neofetch --image ~/pictures/berserk01.jpg --crop_mode fill"
+alias fetch="neofetch --image ~/browserDownloads/MEGA/Rem/57555512_p0.jpg --crop_mode fill"
 alias weather="curl -4 'http://wttr.in/Porto+Alegre'"
 alias moon="curl -4 'http://wttr.in/Moon'"
 #alias mpsyt="optirun mpsyt"
@@ -89,10 +89,15 @@ export MANPATH=$MANPATH:/home/matthias/programs/texlive/2015/texmf-dist/doc/man
 
 export PATH=$PATH:/home/matthias/programs/texlive/2015/bin/x86_64-linux
 
+export PATH=$PATH:~/crosscompile/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/crosscompile/lib
+
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH=$PATH:/home/matthias/.config/bspwm/scripts
+
+export PATH=$PATH:/home/matthias/programs/idea-IU-162.1812.17/bin
 
 export SDL_VIDEO_FULLSCREEN_DISPLAY=1
 export SDL_VIDEO_FULLSCREEN_HEAD=1

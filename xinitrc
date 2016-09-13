@@ -32,7 +32,7 @@ else
 		fi
 	fi
 
-	feh --bg-max ~/pictures/wallpapers/Ilya_Kuvshinov69.png
+	feh --bg-max ~/pictures/wallpapers/Ilya_Kuvshinov67.png
 
 fi
 
@@ -44,6 +44,8 @@ eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
 compton -b
+
+megasync &
 
 sxhkd &
 panel &
