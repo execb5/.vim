@@ -11,10 +11,11 @@ call plug#begin('~/.vim/plugged')
 	Plug 'scrooloose/syntastic'
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'mileszs/ack.vim', { 'on': 'Ack' }
-	Plug 'majutsushi/tagbar'
+	Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 	Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-surround'
+	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-rails', { 'for': 'ruby' }
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'terryma/vim-multiple-cursors'
@@ -27,9 +28,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/vim-easy-align'
 	Plug 'suan/vim-instant-markdown'
 	Plug 'wakatime/vim-wakatime'                                    "Waka-time
-
-	"Rust
-	Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 	"C
 	Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }                "better syntax highlight for C
@@ -66,17 +64,15 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 "Detect *.tex as latex
 autocmd BufNewFile,BufReadPost *.tex set filetype=tex
 
-"Temp, while there's still AI projects to do
-let g:syntastic_python_python_exec = '/usr/bin/python2'
+"Use ag with ack vim
+"let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ackprg = 'ag --vimgrep'
 
 "To make Syntastic work
 let g:syntastic_auto_loc_list=1
 let g:syntastic_disabled_filetypes=['html']
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_messages = {'level': 'warnings'}
-
-"Temporary, until I finish my database project
-let g:syntastic_cpp_compiler_options = '-std=c++11'
 
 "Airline config
 let g:airline_powerline_fonts = 1
