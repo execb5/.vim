@@ -26,6 +26,10 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 	Plug 'tpope/vim-rails', { 'for': 'ruby' }
 
+	"Elm
+	Plug 'lambdatoast/elm.vim'
+	Plug 'elmcast/elm-vim'
+
 	"C
 	Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }                "better syntax highlight for C
 	Plug 'a.vim', { 'for': ['c', 'cpp'] }                           "Alternate Files quickly (.c --> .h etc)
@@ -63,6 +67,11 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_disabled_filetypes=['html']
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_messages = {'level': 'warnings'}
+
+"Elm syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:elm_syntastic_show_warnings = 1
 
 "Airline config
 let g:airline_powerline_fonts = 1
@@ -133,6 +142,10 @@ imap <right> <nop>
 "EasyAlign stuff
 vmap <Space> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+"Elm stuff
+nnoremap <leader>el :ElmEvalLine<CR>
+vnoremap <leader>es :<C-u>ElmEvalSelection<CR>
+nnoremap <leader>em :ElmMakeCurrentFile<CR>
 
 set t_Co=256
 
@@ -155,18 +168,19 @@ set viminfo+=n~/.viminfo
 set nowrap
 set hlsearch
 set tabpagemax=30
-set clipboard=unnamedplus
+set clipboard=unnamed
 set mouse=a
 set tabstop=8
 set shiftwidth=8
 set softtabstop=8
 set wildmenu
+set backspace=2
 "Choose which buffer to go
 nnoremap gb :ls<CR>:b<Space>
 set incsearch
 if has('gui_running')
 	"GUI colors
-	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono\ Plus\ Pomicons\ Book\ 9
+	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ Mono\ 9
 	set encoding=utf8
 	set guioptions-=m  "remove menu bar
 	set guioptions-=T  "remove toolbar

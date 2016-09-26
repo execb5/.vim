@@ -45,21 +45,8 @@ function extract() #copythis
 	fi #copythis
 } #copythis
 
-alias oct='octave --no-gui' #copythis
-alias ppsspp='primusrun ppsspp' #copythis
-alias roc='CACA_DRIVER=ncurses mplayer -vo caca -msglevel all=0' #copythis
 alias lsd='ls -d */' #copythis
 alias vi='vim' #copythis
-alias xmerge='xrdb -merge ~/.Xresources' #copythis
-alias xresup='xrdb ~/.Xresources' #copythis
-alias texmk='latexmk -pvc -pdf -f -silent' #copythis
-alias astah='java -jar ~/programs/astah_professional/astah-pro.jar'
-alias fuck='eval $(thefuck --alias)'
-alias torrentstart='transmission-daemon'
-alias torrent='transmission-remote-cli'
-alias torrentexit='transmission-remote --exit'
-alias cava="/home/matthias/.local/bin/cava -i fifo -p /tmp/mpd.fifo"
-alias fetch="neofetch --image ~/browserDownloads/MEGA/Rem/57555512_p0.jpg --crop_mode fill"
 alias weather="curl -4 'http://wttr.in/Porto+Alegre'"
 alias moon="curl -4 'http://wttr.in/Moon'"
 #alias mpsyt="optirun mpsyt"
@@ -75,27 +62,6 @@ alias moon="curl -4 'http://wttr.in/Moon'"
 #fi #copythis
 
 export EDITOR="/usr/bin/vim" #copythis
-
-export ANDROID_HOME=/home/matthias/programs/android/sdk
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-
-export INFOPATH=$INFOPATH:/home/matthias/programs/texlive/2015/texmf-dist/doc/info
-export MANPATH=$MANPATH:/home/matthias/programs/texlive/2015/texmf-dist/doc/man
-
-export PATH=$PATH:/home/matthias/programs/texlive/2015/bin/x86_64-linux
-
-export PATH=$PATH:~/crosscompile/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/crosscompile/lib
-
-export _JAVA_AWT_WM_NONREPARENTING=1
-
-export XDG_CONFIG_HOME="$HOME/.config"
-export PATH=$PATH:/home/matthias/.config/bspwm/scripts
-
-export PATH=$PATH:/home/matthias/programs/idea-IU-162.1812.17/bin
-
-export SDL_VIDEO_FULLSCREEN_DISPLAY=1
-export SDL_VIDEO_FULLSCREEN_HEAD=1
 
 source $ZSH/oh-my-zsh.sh
 
