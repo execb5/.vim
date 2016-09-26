@@ -1,5 +1,3 @@
-set nocompatible
-filetype off
 
 "Defining leader
 let mapleader = ","
@@ -11,7 +9,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'scrooloose/syntastic'
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'mileszs/ack.vim', { 'on': 'Ack' }
-	Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+	Plug 'majutsushi/tagbar'
 	Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-surround'
@@ -53,8 +51,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'nanotech/jellybeans.vim'
 
 call plug#end()
-
-filetype plugin indent on
 
 "NERDTree close when quitting
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

@@ -74,11 +74,6 @@ alias moon="curl -4 'http://wttr.in/Moon'"
 	#alias vimdiff='TERM=rxvt-unicode-256color vimdiff' #copythis
 #fi #copythis
 
-# RVM STUFF
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-[[ -r "$HOME/.rvm/scripts/completion" ]] && source "$HOME/.rvm/scripts/completion"
-
 export EDITOR="/usr/bin/vim" #copythis
 
 export ANDROID_HOME=/home/matthias/programs/android/sdk
@@ -104,5 +99,8 @@ export SDL_VIDEO_FULLSCREEN_HEAD=1
 
 source $ZSH/oh-my-zsh.sh
 
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
