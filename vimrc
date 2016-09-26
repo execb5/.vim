@@ -11,7 +11,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'scrooloose/syntastic'
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'mileszs/ack.vim', { 'on': 'Ack' }
-	Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+	Plug 'majutsushi/tagbar'
 	Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-surround'
