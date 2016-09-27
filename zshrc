@@ -45,6 +45,15 @@ function extract() #copythis
 	fi #copythis
 } #copythis
 
+
+pair () {
+    COMPUTER_IP=$(dscacheutil -q host -a name $1.local | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}') 
+        open vnc://$COMPUTER_IP
+}
+
+alias rw="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"
+
+
 alias lsd='ls -d */' #copythis
 alias vi='vim' #copythis
 alias weather="curl -4 'http://wttr.in/Porto+Alegre'"
