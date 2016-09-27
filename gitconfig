@@ -10,27 +10,28 @@
 [difftool]
 	prompt = false
 [alias]
-	st   = status
-	co   = checkout
+	st = status
+	co = checkout
+	l  = log --graph --abbrev-commit --date=relative
 
-	prb  = pull -r
+	prb = pull -r
 	prbm = pull --rebase origin master
 
-	a    = add -A
-	ap   = add -pa
+	a  = add -A
+	ap = add -pa
 
-	l    = log --graph --abbrev-commit --date=relative
-	ll   = log --graph --abbrev-commit --date=relative --name-status
-	lp   = log --graph --abbrev-commit --date=relative -p
+	l = log --graph --abbrev-commit --date=relative
+	ll = log --graph --abbrev-commit --date=relative --name-status
+	lp = log --graph --abbrev-commit --date=relative -p
 
 	boom = clean -fd
 
-	r    = reset HEAD
-	rh   = reset HEAD~1
+	r = reset HEAD
+	rh = reset HEAD~1
 
-	dc   = diff --cached
-	d    = diff
-	dns  = diff --ignore-space-change
+	dc = diff --cached
+	d = diff
+	dns = diff --ignore-space-change
 
-	pb   = "!f() { git push -u origin $(git rev-parse --abbrev-ref HEAD); }; f"
-	cs   = "!f() { EDITOR=vim git commit --author=\""${1}" <$(git config user.email)>\" -e -m [#"$2"]; }; f"
+	pb = "!f() { git push -u origin $(git rev-parse --abbrev-ref HEAD); }; f"
+	cs = "!f() { EDITOR=vim git commit --author=\""${1}" <$(git config user.email)>\" -e -m [#"$2"]; }; f"

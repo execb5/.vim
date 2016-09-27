@@ -25,6 +25,9 @@ call plug#begin('~/.vim/plugged')
 	"Ruby
 	Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 	Plug 'tpope/vim-rails', { 'for': 'ruby' }
+	"
+	"Coffee
+	Plug 'kchmck/vim-coffee-script'
 
 	"Elm
 	Plug 'lambdatoast/elm.vim'
