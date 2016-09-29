@@ -5,11 +5,9 @@ let mapleader = ","
 call plug#begin('~/.vim/plugged')
 
 	"Workflow
-	Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 	Plug 'scrooloose/syntastic'
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'mileszs/ack.vim', { 'on': 'Ack' }
-	Plug 'majutsushi/tagbar'
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-fugitive'
@@ -19,13 +17,11 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/vim-easy-align'
 	Plug 'wakatime/vim-wakatime'                                    "Waka-time
 
-	"Elixir
-	Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
-
 	"Ruby
-	Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 	Plug 'tpope/vim-rails', { 'for': 'ruby' }
-	"
+	Plug 'tpope/vim-endwise', { 'for': 'ruby' }
+	Plug 'skwp/vim-rspec', { 'for': 'ruby' }
+
 	"Coffee
 	Plug 'kchmck/vim-coffee-script'
 
@@ -35,17 +31,11 @@ call plug#begin('~/.vim/plugged')
 
 	"C
 	Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }                "better syntax highlight for C
-	Plug 'a.vim', { 'for': ['c', 'cpp'] }                           "Alternate Files quickly (.c --> .h etc)
-	Plug 'drmikehenry/vim-headerguard', { 'for': ['c', 'cpp'] }     "Vim plugin for adding header guards to C/C++ header files
-
-	"C++
-	Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }       "Additional Vim syntax highlighting for C++
 
 	"Pretify things
 	Plug 'vim-airline/vim-airline'
 	Plug 'mhinz/vim-signify'                                        "show what changed in file
 	Plug 'ryanoasis/vim-devicons'                                   "icons
-	Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }  "show git signs in nerdtree
 
 	"Colorschemes
 	Plug 'whatyouhide/vim-gotham'
@@ -54,9 +44,6 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
-"NERDTree close when quitting
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
 "Detect *.md as markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 "Detect *.tex as latex
@@ -64,6 +51,9 @@ autocmd BufNewFile,BufReadPost *.tex set filetype=tex
 
 "Use ag with ack vim
 let g:ackprg = 'ag --vimgrep'
+
+"Deactivate default mappings for vim-rspec
+let g:RspecKeymap=0
 
 "To make Syntastic work
 let g:syntastic_auto_loc_list=1
@@ -81,10 +71,6 @@ let g:airline_powerline_fonts = 1
 
 "Signify option
 let g:signify_vcs_list = [ 'git', 'svn' ]
-
-"vim-cpp-enhanced-highlight
-let g:cpp_class_scope_highlight = 1
-let g:cpp_experimental_template_highlight = 1
 
 "Functions
 function! MarkWindowSwap()
@@ -112,9 +98,6 @@ imap <F2> :w<CR>a
 nmap <F3> :wq!<CR>
 nmap <F4> :q!<CR>
 nmap <F5> :noh<CR>
-map <F6> :setlocal spell! spelllang=en_us<CR>
-nmap <F7> :NERDTreeToggle<CR>
-nmap <F8> :TagbarToggle<CR>
 map <leader>i mzgg=G`z
 "Keybindings using Leader
 nmap <Leader>w :w<CR>
