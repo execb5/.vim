@@ -6,7 +6,7 @@ ZSH_THEME="custom"
 
 #ZSH_TMUX_AUTOSTART=true
 #ZSH_TMUX_AUTOCONNECT=false
-plugins=(git zsh-syntax-highlighting archlinux bundle tmux zsh-wakatime nyan)
+plugins=(git zsh-syntax-highlighting archlinux bundle tmux zsh-wakatime nyan rails)
 
 explain () { #copythis
 	if [ "$#" -eq 0 ]; then #copythis

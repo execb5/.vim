@@ -10,31 +10,25 @@ call plug#begin('~/.vim/plugged')
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'mileszs/ack.vim', { 'on': 'Ack' }
 	Plug 'majutsushi/tagbar'
-	Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-fugitive'
-	Plug 'tpope/vim-rails', { 'for': 'ruby' }
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'terryma/vim-multiple-cursors'
-	Plug 'garbas/vim-snipmate'
-	Plug 'MarcWeber/vim-addon-mw-utils'                             "dependency for snipmate
-	Plug 'tomtom/tlib_vim'                                          "dependency for snipmate
-	Plug 'honza/vim-snippets'                                       "without this snipmate would be useless
-	Plug 'ervandew/supertab'
 	Plug 'Townk/vim-autoclose'
 	Plug 'junegunn/vim-easy-align'
-	Plug 'suan/vim-instant-markdown'
 	Plug 'wakatime/vim-wakatime'                                    "Waka-time
+
+	"Ruby
+	Plug 'tpope/vim-endwise', { 'for': 'ruby' }
+	Plug 'tpope/vim-rails', { 'for': 'ruby' }
 
 	"C
 	Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }                "better syntax highlight for C
 	Plug 'a.vim', { 'for': ['c', 'cpp'] }                           "Alternate Files quickly (.c --> .h etc)
 	Plug 'drmikehenry/vim-headerguard', { 'for': ['c', 'cpp'] }     "Vim plugin for adding header guards to C/C++ header files
-	Plug 'ravishi/vim-gnu-c', { 'for': 'c' }                        "GNU C Style
 
 	"C++
-	Plug 'vim-jp/cpp-vim', { 'for': 'cpp' }                         "c or cpp syntax files
 	Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }       "Additional Vim syntax highlighting for C++
 
 	"Pretify things
@@ -45,8 +39,6 @@ call plug#begin('~/.vim/plugged')
 
 	"Colorschemes
 	Plug 'whatyouhide/vim-gotham'
-	Plug 'junegunn/seoul256.vim'
-	Plug 'chriskempson/base16-vim'
 	Plug 'NLKNguyen/papercolor-theme'
 	Plug 'nanotech/jellybeans.vim'
 
@@ -61,7 +53,6 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.tex set filetype=tex
 
 "Use ag with ack vim
-"let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:ackprg = 'ag --vimgrep'
 
 "To make Syntastic work
@@ -72,20 +63,6 @@ let g:syntastic_quiet_messages = {'level': 'warnings'}
 
 "Airline config
 let g:airline_powerline_fonts = 1
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#show_tabs = 1
-"let g:airline#extensions#tabline#show_tab_nr = 1
-"let g:airline#extensions#tabline#tab_nr_type = 2
-"let g:airline#extensions#tabline#buffer_idx_mode = 1
-"nmap <leader>1 <Plug>AirlineSelectTab1
-"nmap <leader>2 <Plug>AirlineSelectTab2
-"nmap <leader>3 <Plug>AirlineSelectTab3
-"nmap <leader>4 <Plug>AirlineSelectTab4
-"nmap <leader>5 <Plug>AirlineSelectTab5
-"nmap <leader>6 <Plug>AirlineSelectTab6
-"nmap <leader>7 <Plug>AirlineSelectTab7
-"nmap <leader>8 <Plug>AirlineSelectTab8
-"nmap <leader>9 <Plug>AirlineSelectTab9
 
 "Signify option
 let g:signify_vcs_list = [ 'git', 'svn' ]
@@ -113,39 +90,6 @@ function! DoWindowSwap()
 	"Hide and open so that we aren't prompted and keep history
 	exe 'hide buf' markedBuf
 endfunction
-
-"Use ranger to open files
-function! RangeChooser()
-	let temp = tempname()
-	" The option "--choosefiles" was added in ranger 1.5.1. Use the next line
-	" with ranger 1.4.2 through 1.5.0 instead.
-	"exec 'silent !ranger --choosefile=' . shellescape(temp)
-	if has("gui_running")
-		exec 'silent !xterm -e ranger --choosefiles=' . shellescape(temp)
-	else
-		exec 'silent !ranger --choosefiles=' . shellescape(temp)
-	endif
-	if !filereadable(temp)
-		redraw!
-		" Nothing to read.
-		return
-	endif
-	let names = readfile(temp)
-	if empty(names)
-		redraw!
-		" Nothing to open.
-		return
-	endif
-	" Edit the first item.
-	exec 'edit ' . fnameescape(names[0])
-	" Add any remaning items to the arg list/buffer list.
-	for name in names[1:]
-		exec 'argadd ' . fnameescape(name)
-	endfor
-	redraw!
-endfunction
-command! -bar RangerChooser call RangeChooser()
-nnoremap <leader>r :<C-U>RangerChooser<CR>
 
 "Keybindings
 nmap <F2> :w<CR>
@@ -187,18 +131,14 @@ imap <right> <nop>
 vmap <Space> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-"Run 256 colors on terminal
-if $TERM == "xterm-256color" || $TERM == "rxvt-unicode-256color" || $TERM == "screen-256color"
-	set t_Co=256
-	"set t_Co=16
-endif
+set t_Co=256
 
 "Initial configuration
 set relativenumber
 set number
 set autoindent
-set list lcs=trail:·,precedes:«,extends:»,eol:¬,tab:▸\ 
-"set ls=2 "show status line even when there is only one file
+set list lcs=trail:·,precedes:«,extends:»,tab:▸\ ,eol:¬
+set ls=2 "show status line even when there is only one file
 set textwidth=72
 set showcmd
 set digraph
@@ -206,8 +146,8 @@ set visualbell
 set noerrorbells
 set noexpandtab
 set whichwrap=h,l
-set viminfo=%,'50 
-set viminfo+=\"100,:100 
+set viminfo=%,'50
+set viminfo+=\"100,:100
 set viminfo+=n~/.viminfo
 set nowrap
 set hlsearch
@@ -233,9 +173,9 @@ if has('gui_running')
 else
 	"Non-GUI (terminal) colors
 	"colorscheme jellybeans
-	colorscheme gotham
-	"set background=light
-	"colorscheme PaperColor
+	"colorscheme gotham
+	set background=light
+	colorscheme PaperColor
 endif
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.
