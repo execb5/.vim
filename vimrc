@@ -23,11 +23,11 @@ call plug#begin('~/.vim/plugged')
 	Plug 'skwp/vim-rspec', { 'for': 'ruby' }
 
 	"Coffee
-	Plug 'kchmck/vim-coffee-script'
+	Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 
 	"Elm
-	Plug 'lambdatoast/elm.vim'
-	Plug 'elmcast/elm-vim'
+	Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
+	Plug 'elmcast/elm-vim', { 'for': 'elm' }
 
 	"C
 	Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }                "better syntax highlight for C
