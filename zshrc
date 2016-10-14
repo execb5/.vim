@@ -6,7 +6,7 @@ ZSH_THEME="custom"
 
 #ZSH_TMUX_AUTOSTART=true
 #ZSH_TMUX_AUTOCONNECT=false
-plugins=(git zsh-syntax-highlighting archlinux bundle tmux zsh-wakatime nyan rails)
+plugins=(git zsh-syntax-highlighting archlinux bundle tmux zsh-wakatime nyan rails elixir)
 
 explain () { #copythis
 	if [ "$#" -eq 0 ]; then #copythis
@@ -58,17 +58,6 @@ alias lsd='ls -d */' #copythis
 alias vi='vim' #copythis
 alias weather="curl -4 'http://wttr.in/Porto+Alegre'"
 alias moon="curl -4 'http://wttr.in/Moon'"
-#alias mpsyt="optirun mpsyt"
-#alias mpv="optirun mpv"
-
-#if [ "$TERM" = "xterm" ] #copythis
-#then #copythis
-	#alias vim='TERM=xterm-256color vim' #copythis
-	#alias vimdiff='TERM=xterm-256color vimdiff' #copythis
-#else ##copythis
-	#alias vim='TERM=rxvt-unicode-256color vim' #copythis
-	#alias vimdiff='TERM=rxvt-unicode-256color vimdiff' #copythis
-#fi #copythis
 
 export EDITOR="/usr/bin/vim" #copythis
 
@@ -78,4 +67,5 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash

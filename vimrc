@@ -25,6 +25,9 @@ call plug#begin('~/.vim/plugged')
 	"Coffee
 	Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 
+	"Elixir
+	Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+
 	"Elm
 	Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
 	Plug 'elmcast/elm-vim', { 'for': 'elm' }
