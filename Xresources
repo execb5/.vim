@@ -1,6 +1,7 @@
 ! urxvt ----------------------------------------------------------------------
 
 urxvt.font:             xft: DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Pomicons:antialias=true:size=8
+!urxvt.font:             xft: DejaVu Sans Mono for Powerline Plus Nerd File Types Plus Font Awesome Plus Octicons Plus Pomicons:antialias=true:size=8
 urxvt.scrollBar:        false
 !urxvt.tintColor:        white
 !urxvt.fading:           15
@@ -142,89 +143,63 @@ rofi.key-run:
 ! Keybinding
 rofi.key-ssh:
 
-!!--Gotham theme--
-!*.foreground:   #98d1ce
-!*.background:   #0a0f14
-!*.cursorColor:  #98d1ce
+!--Gotham theme--
+*.foreground:   #98d1ce
+*.background:   #0a0f14
+*.cursorColor:  #98d1ce
 
-!*.color0:       #0a0f14
-!*.color8:       #10151b
+*.color0:       #0a0f14
+*.color8:       #10151b
 
-!*.color1:       #c33027
-!*.color9:       #d26939
+*.color1:       #c33027
+*.color9:       #d26939
 
-!*.color2:       #26a98b
-!*.color10:      #081f2d
+*.color2:       #26a98b
+*.color10:      #081f2d
 
-!*.color3:       #edb54b
-!*.color11:      #245361
+*.color3:       #edb54b
+*.color11:      #245361
 
-!*.color4:       #195465
-!*.color12:      #093748
+*.color4:       #195465
+*.color12:      #093748
 
-!*.color5:       #4e5165
-!*.color13:      #888ba5
+*.color5:       #4e5165
+*.color13:      #888ba5
 
-!*.color6:       #33859d
-!*.color14:      #599caa
+*.color6:       #33859d
+*.color14:      #599caa
 
-!*.color7:       #98d1ce
-!*.color15:      #d3ebe9
+*.color7:       #98d1ce
+*.color15:      #d3ebe9
 !
 
 
 
 
 ! PaperColor Theme
-
-URxvt.foreground: #4D4D4C
-
-URxvt.background: #EEEEEE
-
-! black
-
-URxvt.color0: #EDEDED
-
-URxvt.color8: #969694
-
-! red
-
-URxvt.color1: #D7005F
-
-URxvt.color9: #D7005F
-
-! green
-
-URxvt.color2: #718C00
-
-URxvt.color10: #718C00
-
-! yellow / orange
-
-URxvt.color3: #D75F00
-
-URxvt.color11: #D75F00
-
-! blue
-
-URxvt.color4: #4271AE
-
-URxvt.color12: #4271AE
-
-! magenta
-
-URxvt.color5: #8959A8
-
-URxvt.color13: #8959A8
-
-! cyan
-
-URxvt.color6: #3E999F
-
-URxvt.color14: #3E999F
-
-! white
-
-URxvt.color7: #4D4D4C
-
-URxvt.color15: #F5F5F5
+!URxvt.foreground: #4D4D4C
+!URxvt.background: #EEEEEE
+!! black
+!URxvt.color0: #EDEDED
+!URxvt.color8: #969694
+!! red
+!URxvt.color1: #D7005F
+!URxvt.color9: #D7005F
+!! green
+!URxvt.color2: #718C00
+!URxvt.color10: #718C00
+!! yellow / orange
+!URxvt.color3: #D75F00
+!URxvt.color11: #D75F00
+!! blue
+!URxvt.color4: #4271AE
+!URxvt.color12: #4271AE
+!! magenta
+!URxvt.color5: #8959A8
+!URxvt.color13: #8959A8
+!! cyan
+!URxvt.color6: #3E999F
+!URxvt.color14: #3E999F
+!! white
+!URxvt.color7: #4D4D4C
+!URxvt.color15: #F5F5F5

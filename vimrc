@@ -19,6 +19,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/vim-easy-align'
 	Plug 'wakatime/vim-wakatime'                                    "Waka-time
 
+	"Elixir
+	Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+
 	"Ruby
 	Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 	Plug 'tpope/vim-rails', { 'for': 'ruby' }
@@ -173,9 +176,9 @@ if has('gui_running')
 else
 	"Non-GUI (terminal) colors
 	"colorscheme jellybeans
-	"colorscheme gotham
-	set background=light
-	colorscheme PaperColor
+	colorscheme gotham
+	"set background=light
+	"colorscheme PaperColor
 endif
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.
