@@ -29,7 +29,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 
 	"Elm
-	Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
 	Plug 'elmcast/elm-vim', { 'for': 'elm' }
 
 	"C
@@ -46,6 +45,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'nanotech/jellybeans.vim'
 
 call plug#end()
+
+"Ignore stuff for ctrlp
+set exrc
 
 "Detect *.md as markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -68,6 +70,9 @@ let g:syntastic_quiet_messages = {'level': 'warnings'}
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:elm_syntastic_show_warnings = 1
+
+"Elm auto format on save
+let g:elm_format_autosave = 1
 
 "Airline config
 let g:airline_powerline_fonts = 1
@@ -157,7 +162,6 @@ set viminfo+=n~/.viminfo
 set nowrap
 set hlsearch
 set tabpagemax=30
-set clipboard=unnamed
 set mouse=a
 set tabstop=8
 set shiftwidth=8
