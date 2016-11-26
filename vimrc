@@ -19,7 +19,7 @@ call plug#begin('~/.vim/plugged')
 
 	"Ruby
 	Plug 'tpope/vim-rails', { 'for': 'ruby' }
-	Plug 'tpope/vim-endwise', { 'for': 'ruby' }
+	Plug 'tpope/vim-endwise'                                        "Should work for elixir also
 	Plug 'skwp/vim-rspec', { 'for': 'ruby' }
 
 	"Coffee
@@ -27,12 +27,14 @@ call plug#begin('~/.vim/plugged')
 
 	"Elixir
 	Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+	Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 
 	"Elm
 	Plug 'elmcast/elm-vim', { 'for': 'elm' }
 
-	"C
+	"C & C++
 	Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }                "better syntax highlight for C
+	Plug 'vim-scripts/a.vim', { 'for': ['c', 'c++'] }
 
 	"Pretify things
 	Plug 'vim-airline/vim-airline'
@@ -129,6 +131,7 @@ imap <F2> :w<CR>a
 nmap <F3> :wq!<CR>
 nmap <F4> :q!<CR>
 nmap <F5> :noh<CR>
+nmap <F6> :%! python -m json.tool<CR>
 map <leader>i mzgg=G`z
 "Keybindings using Leader
 nmap <Leader>w :w<CR>
@@ -147,15 +150,19 @@ cnoremap <C-k> <t_ku>
 cnoremap <C-a> <Home>
 cnoremap <C-l> <t_kr>
 cnoremap <C-h> <t_kl>
-"Disabling default keys to learn the hjkl
-"map <up> <nop>
-"map <down> <nop>
-"map <left> <nop>
-"map <right> <nop>
-"imap <up> <nop>
-"imap <down> <nop>
-"imap <left> <nop>
-"imap <right> <nop>
+"Disabling arrow keys to learn the hjkl
+nnoremap <Up> <nop>
+nnoremap <Down> <nop>
+nnoremap <Left> <nop>
+nnoremap <Right> <nop>
+inoremap <Up> <nop>
+inoremap <Down> <nop>
+inoremap <Left> <nop>
+inoremap <Right> <nop>
+vnoremap <Up> <nop>
+vnoremap <Down> <nop>
+vnoremap <Left> <nop>
+vnoremap <Right> <nop>
 "EasyAlign stuff
 vmap <Space> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
@@ -163,8 +170,6 @@ nmap ga <Plug>(EasyAlign)
 nnoremap <leader>el :ElmEvalLine<CR>
 vnoremap <leader>es :<C-u>ElmEvalSelection<CR>
 nnoremap <leader>em :ElmMakeCurrentFile<CR>
-
-set t_Co=256
 
 "Initial configuration
 set relativenumber
@@ -194,9 +199,21 @@ set backspace=2
 "Choose which buffer to go
 nnoremap gb :ls<CR>:b<Space>
 set incsearch
+
+"Run 256 colors on terminal
+if $TERM == "xterm-256color" || $TERM == "rxvt-unicode-256color" || $TERM == "screen-256color"
+	set t_Co=256
+endif
+
+"Get true color working on iterm with tmux
+if (has("termguicolors"))
+	set termguicolors
+	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+
 if has('gui_running')
-	"GUI colors
-	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ Mono\ 9
+	"GUI settings
 	set encoding=utf8
 	set guioptions-=m  "remove menu bar
 	set guioptions-=T  "remove toolbar
@@ -214,21 +231,3 @@ set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.
 
 syn on
-
-"Transparent background
-"hi Normal ctermbg=NONE
-"hi Comment ctermbg=NONE
-"hi Constant ctermbg=NONE
-"hi Special ctermbg=NONE
-"hi Identifier ctermbg=NONE
-"hi Statement ctermbg=NONE
-"hi PreProc ctermbg=NONE
-"hi Type ctermbg=NONE
-"hi Underlined ctermbg=NONE
-"hi Todo ctermbg=NONE
-"hi String ctermbg=NONE
-"hi Function ctermbg=NONE
-"hi Conditional ctermbg=NONE
-"hi Repeat ctermbg=NONE
-"hi Operator ctermbg=NONE
-"hi Structure ctermbg=NONE

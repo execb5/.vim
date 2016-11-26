@@ -69,3 +69,5 @@ export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+
+source ~/.bin/tmuxinator.zsh
