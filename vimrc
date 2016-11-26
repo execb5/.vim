@@ -22,9 +22,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-endwise'                                        "Should work for elixir also
 	Plug 'skwp/vim-rspec', { 'for': 'ruby' }
 
-	"Coffee
-	Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
-
 	"Elixir
 	Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 	Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
