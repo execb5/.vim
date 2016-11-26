@@ -5,6 +5,7 @@
 	default = simple
 [core]
 	editor = vim
+	pager = diff-so-fancy | less --tabs=4 -R
 [diff]
 	tool = vimdiff
 [difftool]
@@ -34,3 +35,6 @@
 
 	pb   = "!f() { git push -u origin $(git rev-parse --abbrev-ref HEAD); }; f"
 	cs   = "!f() { EDITOR=vim git commit --author=\""${1}" <$(git config user.email)>\" -e -m [#"$2"]; }; f"
+	grog = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
+	please = push --force-with-lease
+	it = !git init && git commit -m "root" --allow-empty

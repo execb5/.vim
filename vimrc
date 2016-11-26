@@ -5,11 +5,9 @@ let mapleader = ","
 call plug#begin('~/.vim/plugged')
 
 	"Workflow
-	Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 	Plug 'scrooloose/syntastic'
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'mileszs/ack.vim', { 'on': 'Ack' }
-	Plug 'majutsushi/tagbar'
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-fugitive'
@@ -19,26 +17,30 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/vim-easy-align'
 	Plug 'wakatime/vim-wakatime'                                    "Waka-time
 
+	"Ruby
+	Plug 'tpope/vim-rails', { 'for': 'ruby' }
+	Plug 'tpope/vim-endwise'                                        "Should work for elixir also
+	Plug 'skwp/vim-rspec', { 'for': 'ruby' }
+
+	"Coffee
+	Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+
 	"Elixir
 	Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+	Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 
-	"Ruby
-	Plug 'tpope/vim-endwise', { 'for': 'ruby' }
-	Plug 'tpope/vim-rails', { 'for': 'ruby' }
+	"Elm
+	Plug 'elmcast/elm-vim', { 'for': 'elm' }
 
-	"C
+	"C & C++
 	Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }                "better syntax highlight for C
-	Plug 'a.vim', { 'for': ['c', 'cpp'] }                           "Alternate Files quickly (.c --> .h etc)
-	Plug 'drmikehenry/vim-headerguard', { 'for': ['c', 'cpp'] }     "Vim plugin for adding header guards to C/C++ header files
-
-	"C++
-	Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }       "Additional Vim syntax highlighting for C++
+	Plug 'vim-scripts/a.vim', { 'for': ['c', 'c++'] }
 
 	"Pretify things
 	Plug 'vim-airline/vim-airline'
 	Plug 'mhinz/vim-signify'                                        "show what changed in file
 	Plug 'ryanoasis/vim-devicons'                                   "icons
-	Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }  "show git signs in nerdtree
+	Plug 'mhinz/vim-startify'
 
 	"Colorschemes
 	Plug 'whatyouhide/vim-gotham'
@@ -47,8 +49,30 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
-"NERDTree close when quitting
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"Startify options
+let g:startify_custom_header = [
+	\ '____________________________________________________________/\\\__________/\\\\\\\\\\\\\\\___/\\\\______________        ',
+	\ ' ___________________________________________________________\/\\\_________\/\\\///////////___\///\\______________       ',
+	\ '  ___________________________________________________________\/\\\_________\/\\\_______________/\\/_______________      ',
+	\ '   _____/\\\\\\\\___/\\\____/\\\_____/\\\\\\\\______/\\\\\\\\_\/\\\_________\/\\\\\\\\\\\\_____\//_____/\\\\\\\\\\_     ',
+	\ '    ___/\\\/////\\\_\///\\\/\\\/____/\\\/////\\\___/\\\//////__\/\\\\\\\\\___\////////////\\\__________\/\\\//////__    ',
+	\ '     __/\\\\\\\\\\\____\///\\\/_____/\\\\\\\\\\\___/\\\_________\/\\\////\\\_____________\//\\\_________\/\\\\\\\\\\_   ',
+	\ '      _\//\\///////______/\\\/\\\___\//\\///////___\//\\\________\/\\\__\/\\\__/\\\________\/\\\_________\////////\\\_  ',
+	\ '       __\//\\\\\\\\\\__/\\\/\///\\\__\//\\\\\\\\\\__\///\\\\\\\\_\/\\\\\\\\\__\//\\\\\\\\\\\\\/___________/\\\\\\\\\\_ ',
+	\ '        ___\//////////__\///____\///____\//////////_____\////////__\/////////____\/////////////____________\//////////__',
+	\ '__/\\\________/\\\_________________________________________/\\\\\\\\\______________/\\\\\\\____                         ',
+	\ ' _\/\\\_______\/\\\_______________________________________/\\\///////\\\__________/\\\/////\\\__                        ',
+	\ '  _\//\\\______/\\\___/\\\________________________________\/\\\_____\/\\\_________/\\\____\//\\\_                       ',
+	\ '   __\//\\\____/\\\___\///_____/\\\\\__/\\\\\______________\///\\\\\\\\\/_________\/\\\_____\/\\\_                      ',
+	\ '    ___\//\\\__/\\\_____/\\\__/\\\///\\\\\///\\\_____________/\\\///////\\\________\/\\\_____\/\\\_                     ',
+	\ '     ____\//\\\/\\\_____\/\\\_\/\\\_\//\\\__\/\\\____________/\\\______\//\\\_______\/\\\_____\/\\\_                    ',
+	\ '      _____\//\\\\\______\/\\\_\/\\\__\/\\\__\/\\\___________\//\\\______/\\\________\//\\\____/\\\__                   ',
+	\ '       ______\//\\\_______\/\\\_\/\\\__\/\\\__\/\\\____________\///\\\\\\\\\/____/\\\__\///\\\\\\\/___                  ',
+	\ '        _______\///________\///__\///___\///___\///_______________\/////////_____\///_____\///////_____                 ',
+	\ ]
+
+"Ignore stuff for ctrlp
+set exrc
 
 "Detect *.md as markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -58,21 +82,28 @@ autocmd BufNewFile,BufReadPost *.tex set filetype=tex
 "Use ag with ack vim
 let g:ackprg = 'ag --vimgrep'
 
+"Deactivate default mappings for vim-rspec
+let g:RspecKeymap=0
+
 "To make Syntastic work
 let g:syntastic_auto_loc_list=1
 let g:syntastic_disabled_filetypes=['html']
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_messages = {'level': 'warnings'}
 
+"Elm syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:elm_syntastic_show_warnings = 1
+
+"Elm auto format on save
+let g:elm_format_autosave = 1
+
 "Airline config
 let g:airline_powerline_fonts = 1
 
 "Signify option
 let g:signify_vcs_list = [ 'git', 'svn' ]
-
-"vim-cpp-enhanced-highlight
-let g:cpp_class_scope_highlight = 1
-let g:cpp_experimental_template_highlight = 1
 
 "Functions
 function! MarkWindowSwap()
@@ -100,9 +131,7 @@ imap <F2> :w<CR>a
 nmap <F3> :wq!<CR>
 nmap <F4> :q!<CR>
 nmap <F5> :noh<CR>
-map <F6> :setlocal spell! spelllang=en_us<CR>
-nmap <F7> :NERDTreeToggle<CR>
-nmap <F8> :TagbarToggle<CR>
+nmap <F6> :%! python -m json.tool<CR>
 map <leader>i mzgg=G`z
 "Keybindings using Leader
 nmap <Leader>w :w<CR>
@@ -121,20 +150,26 @@ cnoremap <C-k> <t_ku>
 cnoremap <C-a> <Home>
 cnoremap <C-l> <t_kr>
 cnoremap <C-h> <t_kl>
-"Disabling default keys to learn the hjkl
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
+"Disabling arrow keys to learn the hjkl
+nnoremap <Up> <nop>
+nnoremap <Down> <nop>
+nnoremap <Left> <nop>
+nnoremap <Right> <nop>
+inoremap <Up> <nop>
+inoremap <Down> <nop>
+inoremap <Left> <nop>
+inoremap <Right> <nop>
+vnoremap <Up> <nop>
+vnoremap <Down> <nop>
+vnoremap <Left> <nop>
+vnoremap <Right> <nop>
 "EasyAlign stuff
 vmap <Space> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
-
-set t_Co=256
+"Elm stuff
+nnoremap <leader>el :ElmEvalLine<CR>
+vnoremap <leader>es :<C-u>ElmEvalSelection<CR>
+nnoremap <leader>em :ElmMakeCurrentFile<CR>
 
 "Initial configuration
 set relativenumber
@@ -149,24 +184,36 @@ set visualbell
 set noerrorbells
 set noexpandtab
 set whichwrap=h,l
-set viminfo=%,'50
+"set viminfo=%,'50        "Remembers opened buffers
 set viminfo+=\"100,:100
 set viminfo+=n~/.viminfo
 set nowrap
 set hlsearch
 set tabpagemax=30
-set clipboard=unnamedplus
 set mouse=a
 set tabstop=8
 set shiftwidth=8
 set softtabstop=8
 set wildmenu
+set backspace=2
 "Choose which buffer to go
 nnoremap gb :ls<CR>:b<Space>
 set incsearch
+
+"Run 256 colors on terminal
+if $TERM == "xterm-256color" || $TERM == "rxvt-unicode-256color" || $TERM == "screen-256color"
+	set t_Co=256
+endif
+
+"Get true color working on iterm with tmux
+if (has("termguicolors"))
+	set termguicolors
+	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+
 if has('gui_running')
-	"GUI colors
-	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono\ Plus\ Pomicons\ Book\ 9
+	"GUI settings
 	set encoding=utf8
 	set guioptions-=m  "remove menu bar
 	set guioptions-=T  "remove toolbar
@@ -184,21 +231,3 @@ set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.
 
 syn on
-
-"Transparent background
-"hi Normal ctermbg=NONE
-"hi Comment ctermbg=NONE
-"hi Constant ctermbg=NONE
-"hi Special ctermbg=NONE
-"hi Identifier ctermbg=NONE
-"hi Statement ctermbg=NONE
-"hi PreProc ctermbg=NONE
-"hi Type ctermbg=NONE
-"hi Underlined ctermbg=NONE
-"hi Todo ctermbg=NONE
-"hi String ctermbg=NONE
-"hi Function ctermbg=NONE
-"hi Conditional ctermbg=NONE
-"hi Repeat ctermbg=NONE
-"hi Operator ctermbg=NONE
-"hi Structure ctermbg=NONE
