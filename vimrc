@@ -17,6 +17,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/vim-easy-align'
 	Plug 'wakatime/vim-wakatime'                                    "Waka-time
 
+	"Css
+	Plug 'ap/vim-css-color'
+
 	"Ruby
 	Plug 'tpope/vim-rails', { 'for': 'ruby' }
 	Plug 'tpope/vim-endwise'                                        "Should work for elixir also
@@ -38,11 +41,15 @@ call plug#begin('~/.vim/plugged')
 	Plug 'mhinz/vim-signify'                                        "show what changed in file
 	Plug 'ryanoasis/vim-devicons'                                   "icons
 	Plug 'mhinz/vim-startify'
+	Plug 'junegunn/goyo.vim'                                        "Distraction free
+	Plug 'junegunn/limelight.vim'                                   "Hyperfocus-writing
 
 	"Colorschemes
 	Plug 'whatyouhide/vim-gotham'
 	Plug 'NLKNguyen/papercolor-theme'
 	Plug 'nanotech/jellybeans.vim'
+	Plug 'dracula/vim'
+	Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -70,6 +77,12 @@ let g:startify_custom_header = [
 
 "Ignore stuff for ctrlp
 set exrc
+" Ctrl P custom ignore"
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.git|deps|node_modules|_build)$',
+  \ 'file': '\v\.(DS_Store)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 
 "Detect *.md as markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -94,7 +107,8 @@ let g:syntastic_auto_loc_list = 1
 let g:elm_syntastic_show_warnings = 1
 
 "Elm auto format on save
-let g:elm_format_autosave = 1
+"let g:elm_format_autosave = 1
+map <leader>m :ElmFormat<CR>
 
 "Airline config
 let g:airline_powerline_fonts = 1
@@ -174,7 +188,6 @@ set number
 set autoindent
 set list lcs=trail:·,precedes:«,extends:»,tab:▸\ ,eol:¬
 set ls=2 "show status line even when there is only one file
-set textwidth=72
 set showcmd
 set digraph
 set visualbell
@@ -188,6 +201,8 @@ set nowrap
 set hlsearch
 set tabpagemax=30
 set mouse=a
+map <ScrollWheelUp> <C-r>
+map <ScrollWheelDown> u
 set tabstop=8
 set shiftwidth=8
 set softtabstop=8
@@ -203,11 +218,11 @@ if $TERM == "xterm-256color" || $TERM == "rxvt-unicode-256color" || $TERM == "sc
 endif
 
 "Get true color working on iterm with tmux
-if (has("termguicolors"))
-	set termguicolors
-	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-endif
+"if (has("termguicolors"))
+	"set termguicolors
+	"let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+	"let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"endif
 
 if has('gui_running')
 	"GUI settings
@@ -220,11 +235,48 @@ if has('gui_running')
 else
 	"Non-GUI (terminal) colors
 	"colorscheme jellybeans
-	colorscheme gotham
+	colorscheme dracula
+	"colorscheme gotham
 	"set background=light
 	"colorscheme PaperColor
 endif
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"I have to organize this later... so lazy
 syn on
+set background=dark
+colorscheme gruvbox
+hi vertsplit ctermfg=238 ctermbg=235
+hi LineNr ctermfg=237
+hi StatusLine ctermfg=235 ctermbg=245
+hi StatusLineNC ctermfg=235 ctermbg=237
+hi Search ctermbg=58 ctermfg=15
+hi Default ctermfg=1
+hi clear SignColumn
+hi SignColumn ctermbg=235
+hi GitGutterAdd ctermbg=235 ctermfg=245
+hi GitGutterChange ctermbg=235 ctermfg=245
+hi GitGutterDelete ctermbg=235 ctermfg=245
+hi GitGutterChangeDelete ctermbg=235 ctermfg=245
+hi EndOfBuffer ctermfg=237 ctermbg=235
+
+set statusline=%=&P\ %f\ %m
+set fillchars=vert:\ ,stl:\ ,stlnc:\ 
+set laststatus=2
+set noshowmode

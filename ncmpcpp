@@ -81,7 +81,7 @@ visualizer_in_stereo = "yes"
 visualizer_type = "wave" (spectrum/wave)
 
 # Playlist
-song_columns_list_format = "(3f)[black]{n} (40)[default]{t|f} (25)[red]{a} (30)[blue]{b} (4f)[black]{l}"
+song_columns_list_format = "(3f)[red]{n} (40)[default]{t|f} (25)[red]{a} (30)[blue]{b} (4f)[red]{l}"
 #"$L(9)[black]{l} (20)[red]{a} (30)[blue]{b} $L(20)[default]{t}"
 now_playing_prefix = "$b"
 now_playing_suffix = "$/b"

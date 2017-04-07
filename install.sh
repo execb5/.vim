@@ -14,12 +14,14 @@ ln -sf $(pwd)/xinitrc ~/.xinitrc
 echo "xinitrc symlinked"
 ln -sf $(pwd)/Xresources ~/.Xresources
 echo ".Xdefaults symlinked"
+ln -sf $(pwd)/gitignore ~/.gitignore
+echo ".gitignore symlinked"
 
 if [ "$(ls -A $(pwd)/execb5.github.io/)" ]; then
         echo "Home page already installed!"
 else
-	git clone http://github.com/execb5/execb5.github.io.git
-	echo "Home page cloned and ready to be set in a browser"
+        git clone http://github.com/execb5/execb5.github.io.git
+        echo "Home page cloned and ready to be set in a browser"
 fi
 
 
@@ -62,12 +64,12 @@ read MPD
 
 if [ "$MPD" = "y" ]
 then
-	[ -d ~/.mpd ] || mkdir ~/.mpd
-	ln -sf $(pwd)/mpd.conf ~/.mpd/mpd.conf
-	touch ~/.mpd/mpd.db
-	touch ~/.mpd/mpd.log
-	touch ~/.mpd/mpdstate
-	mkdir ~/.mpd/playlists
+        [ -d ~/.mpd ] || mkdir ~/.mpd
+        ln -sf $(pwd)/mpd.conf ~/.mpd/mpd.conf
+        touch ~/.mpd/mpd.db
+        touch ~/.mpd/mpd.log
+        touch ~/.mpd/mpdstate
+        mkdir ~/.mpd/playlists
 fi
 
 echo "Configure ncmpcpp? (y/n)"
@@ -75,8 +77,8 @@ read NCMPCPP
 
 if [ "$NCMPCPP" = "y" ]
 then
-	[ -d ~/.ncmpcpp ] || mkdir ~/.ncmpcpp
-	ln -sf $(pwd)/ncmpcpp ~/.ncmpcpp/config
+        [ -d ~/.ncmpcpp ] || mkdir ~/.ncmpcpp
+        ln -sf $(pwd)/ncmpcpp ~/.ncmpcpp/config
 fi
 
 echo "Do you want to use the custom Xresources? (y/n)"
