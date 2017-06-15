@@ -14,7 +14,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'terryma/vim-multiple-cursors'
 	Plug 'Townk/vim-autoclose'
-	Plug 'junegunn/vim-easy-align'
 	Plug 'wakatime/vim-wakatime'                                    "Waka-time
 
 	"Css
@@ -36,8 +35,12 @@ call plug#begin('~/.vim/plugged')
 	Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }                "better syntax highlight for C
 	Plug 'vim-scripts/a.vim', { 'for': ['c', 'c++'] }
 
+	"Coffee
+	Plug 'kchmck/vim-coffee-script'
+
 	"Pretify things
 	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
 	Plug 'mhinz/vim-signify'                                        "show what changed in file
 	Plug 'ryanoasis/vim-devicons'                                   "icons
 	Plug 'mhinz/vim-startify'
@@ -79,10 +82,10 @@ let g:startify_custom_header = [
 set exrc
 " Ctrl P custom ignore"
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.git|deps|node_modules|_build)$',
-  \ 'file': '\v\.(DS_Store)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
+	\ 'dir':  '\v[\/](\.git|deps|node_modules|_build)$',
+	\ 'file': '\v\.(DS_Store)$',
+	\ 'link': 'some_bad_symbolic_links',
+	\ }
 
 "Detect *.md as markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -213,9 +216,9 @@ nnoremap gb :ls<CR>:b<Space>
 set incsearch
 
 "Run 256 colors on terminal
-if $TERM == "xterm-256color" || $TERM == "rxvt-unicode-256color" || $TERM == "screen-256color"
-	set t_Co=256
-endif
+"if $TERM == "xterm-256color" || $TERM == "rxvt-unicode-256color" || $TERM == "screen-256color"
+	"set t_Co=256
+"endif
 
 "Get true color working on iterm with tmux
 "if (has("termguicolors"))
@@ -235,10 +238,11 @@ if has('gui_running')
 else
 	"Non-GUI (terminal) colors
 	"colorscheme jellybeans
-	colorscheme dracula
+	"colorscheme dracula
 	"colorscheme gotham
 	"set background=light
 	"colorscheme PaperColor
+	"let g:airline_theme='papercolor'
 endif
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.
@@ -275,8 +279,3 @@ hi GitGutterChange ctermbg=235 ctermfg=245
 hi GitGutterDelete ctermbg=235 ctermfg=245
 hi GitGutterChangeDelete ctermbg=235 ctermfg=245
 hi EndOfBuffer ctermfg=237 ctermbg=235
-
-set statusline=%=&P\ %f\ %m
-set fillchars=vert:\ ,stl:\ ,stlnc:\ 
-set laststatus=2
-set noshowmode
