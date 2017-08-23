@@ -45,11 +45,11 @@ function extract() #copythis
 	fi #copythis
 } #copythis
 
-
-pair () {
-	COMPUTER_IP=$(dscacheutil -q host -a name $1.local | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
-	open vnc://$COMPUTER_IP
+function macfeh() {
+	open -b "drabweb.macfeh" "$@"
 }
+
+pair () {open vnc://$1}
 
 alias rw="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"
 alias Markdown="/Users/matthias/programs/Markdown_1.0.1/Markdown.pl"
@@ -60,7 +60,9 @@ alias vi='vim' #copythis
 alias weather="curl -4 'http://wttr.in/Porto+Alegre'"
 alias moon="curl -4 'http://wttr.in/Moon'"
 alias lenny_face='echo "( ͡° ͜ʖ ͡°)"'
+alias lenny_wall='echo "┬┴┬┴┤ ͜ʖ ͡°)"'
 alias httpserver='ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => Dir.pwd); trap('"'"'INT'"'"') { s.shutdown }; s.start"'
+alias lc='colorls -r'
 
 export EDITOR="/usr/bin/vim" #copythis
 
@@ -72,10 +74,6 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 export PATH=$PATH:/Users/matthias/.cache/rebar3/bin
-
-export PATH=$PATH:/usr/local/texlive/2016/bin/x86_64-darwin
-export INFOPATH=$INFOPATH:/usr/local/texlive/2016/texmf-dist/doc/info
-export MANPATH=$MANPATH:/usr/local/texlive/2016/texmf-dist/doc/man
 
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash

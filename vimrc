@@ -15,6 +15,12 @@ call plug#begin('~/.vim/plugged')
 	Plug 'terryma/vim-multiple-cursors'
 	Plug 'Townk/vim-autoclose'
 	Plug 'wakatime/vim-wakatime'                                    "Waka-time
+	Plug 'tpope/vim-speeddating'
+
+	"Org
+	Plug 'jceb/vim-orgmode', { 'for': 'org' }
+	Plug 'vim-scripts/SyntaxRange', { 'for': 'org' }
+	Plug 'mattn/calendar-vim', { 'for': 'org' }
 
 	"Css
 	Plug 'ap/vim-css-color'
@@ -53,6 +59,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'nanotech/jellybeans.vim'
 	Plug 'dracula/vim'
 	Plug 'morhetz/gruvbox'
+	Plug 'rakr/vim-one'
 
 call plug#end()
 
@@ -177,9 +184,6 @@ vnoremap <Up> <nop>
 vnoremap <Down> <nop>
 vnoremap <Left> <nop>
 vnoremap <Right> <nop>
-"EasyAlign stuff
-vmap <Space> <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
 "Elm stuff
 nnoremap <leader>el :ElmEvalLine<CR>
 vnoremap <leader>es :<C-u>ElmEvalSelection<CR>
@@ -227,23 +231,16 @@ set incsearch
 	"let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "endif
 
-if has('gui_running')
-	"GUI settings
-	set encoding=utf8
-	set guioptions-=m  "remove menu bar
-	set guioptions-=T  "remove toolbar
-	set guioptions-=r  "remove right-hand scroll bar
-	set guioptions-=L  "remove left-hand scroll bar
-	colorscheme gotham
-else
-	"Non-GUI (terminal) colors
-	"colorscheme jellybeans
-	"colorscheme dracula
-	"colorscheme gotham
-	"set background=light
-	"colorscheme PaperColor
-	"let g:airline_theme='papercolor'
-endif
+"colorscheme jellybeans
+"colorscheme dracula
+"colorscheme gotham
+"set background=light
+"colorscheme PaperColor
+"let g:airline_theme='papercolor'
+"colorscheme one
+"set background=dark
+"let g:airline_theme='one'
+
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.
 
