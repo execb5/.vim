@@ -42,7 +42,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-scripts/a.vim', { 'for': ['c', 'c++'] }
 
 	"Coffee
-	Plug 'kchmck/vim-coffee-script'
+	Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 
 	"Pretify things
 	Plug 'vim-airline/vim-airline'
@@ -56,10 +56,8 @@ call plug#begin('~/.vim/plugged')
 	"Colorschemes
 	Plug 'whatyouhide/vim-gotham'
 	Plug 'NLKNguyen/papercolor-theme'
-	Plug 'nanotech/jellybeans.vim'
-	Plug 'dracula/vim'
 	Plug 'morhetz/gruvbox'
-	Plug 'rakr/vim-one'
+	Plug 'ayu-theme/ayu-vim'
 
 call plug#end()
 
@@ -122,6 +120,8 @@ map <leader>m :ElmFormat<CR>
 
 "Airline config
 let g:airline_powerline_fonts = 1
+"let g:airline_left_sep = ''
+"let g:airline_right_sep = ''
 
 "Signify option
 let g:signify_vcs_list = [ 'git', 'svn' ]
@@ -159,7 +159,6 @@ nmap <Leader>w :w<CR>
 nmap <Leader>q :wq<CR>
 nmap <silent> <leader>yw :call MarkWindowSwap()<CR>
 nmap <silent> <leader>pw :call DoWindowSwap()<CR>
-nnoremap <leader>nt :call NerdPreviewToggle()<cr>
 "Easier command line navigation
 noremap <C-J> <C-W>j
 noremap <C-K> <C-W>k
@@ -194,7 +193,7 @@ set relativenumber
 set number
 set autoindent
 set list lcs=trail:·,precedes:«,extends:»,tab:▸\ ,eol:¬
-set ls=2 "show status line even when there is only one file
+"set ls=2 "show status line even when there is only one file
 set showcmd
 set digraph
 set visualbell
@@ -219,60 +218,13 @@ set backspace=2
 nnoremap gb :ls<CR>:b<Space>
 set incsearch
 
-"Run 256 colors on terminal
-"if $TERM == "xterm-256color" || $TERM == "rxvt-unicode-256color" || $TERM == "screen-256color"
-	"set t_Co=256
-"endif
-
 "Get true color working on iterm with tmux
-"if (has("termguicolors"))
-	"set termguicolors
-	"let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-	"let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-"endif
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
-"colorscheme jellybeans
-"colorscheme dracula
-"colorscheme gotham
-"set background=light
-"colorscheme PaperColor
-"let g:airline_theme='papercolor'
-"colorscheme one
-"set background=dark
-"let g:airline_theme='one'
+set background=dark
+colorscheme gruvbox
 
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"I have to organize this later... so lazy
-syn on
-set background=dark
-colorscheme gruvbox
-hi vertsplit ctermfg=238 ctermbg=235
-hi LineNr ctermfg=237
-hi StatusLine ctermfg=235 ctermbg=245
-hi StatusLineNC ctermfg=235 ctermbg=237
-hi Search ctermbg=58 ctermfg=15
-hi Default ctermfg=1
-hi clear SignColumn
-hi SignColumn ctermbg=235
-hi GitGutterAdd ctermbg=235 ctermfg=245
-hi GitGutterChange ctermbg=235 ctermfg=245
-hi GitGutterDelete ctermbg=235 ctermfg=245
-hi GitGutterChangeDelete ctermbg=235 ctermfg=245
-hi EndOfBuffer ctermfg=237 ctermbg=235

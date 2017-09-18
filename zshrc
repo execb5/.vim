@@ -63,6 +63,7 @@ alias lenny_face='echo "( ͡° ͜ʖ ͡°)"'
 alias lenny_wall='echo "┬┴┬┴┤ ͜ʖ ͡°)"'
 alias httpserver='ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => Dir.pwd); trap('"'"'INT'"'"') { s.shutdown }; s.start"'
 alias lc='colorls -r'
+alias tmux="TERM=screen-256color tmux"
 
 export EDITOR="/usr/bin/vim" #copythis
 
