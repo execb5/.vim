@@ -31,7 +31,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'skwp/vim-rspec', { 'for': 'ruby' }
 
 	"Elixir
-	Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+	Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 	Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 
 	"Elm
@@ -187,6 +187,8 @@ vnoremap <Right> <nop>
 nnoremap <leader>el :ElmEvalLine<CR>
 vnoremap <leader>es :<C-u>ElmEvalSelection<CR>
 nnoremap <leader>em :ElmMakeCurrentFile<CR>
+"New escape
+imap jk <Esc>:w<CR>
 
 "Initial configuration
 set relativenumber
@@ -219,9 +221,9 @@ nnoremap gb :ls<CR>:b<Space>
 set incsearch
 
 "Get true color working on iterm with tmux
-set termguicolors
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"set termguicolors
+"let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 set background=dark
 colorscheme gruvbox
