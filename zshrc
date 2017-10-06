@@ -6,7 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 #ZSH_TMUX_AUTOSTART=true
 #ZSH_TMUX_AUTOCONNECT=false
-plugins=(git zsh-syntax-highlighting archlinux bundle tmux zsh-wakatime nyan rails elixir)
+plugins=(git zsh-syntax-highlighting bundle tmux zsh-wakatime nyan rails elixir)
 
 explain () { #copythis
 	if [ "$#" -eq 0 ]; then #copythis
@@ -52,9 +52,7 @@ function macfeh() {
 pair () {open vnc://$1}
 
 alias rw="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"
-alias Markdown="/Users/matthias/programs/Markdown_1.0.1/Markdown.pl"
 
-alias texmk='latexmk -pvc -pdf -f -silent'
 alias lsd='ls -d */' #copythis
 alias vi='vim' #copythis
 alias weather="curl -4 'http://wttr.in/Porto+Alegre'"
@@ -75,6 +73,8 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 export PATH=$PATH:/Users/matthias/.cache/rebar3/bin
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
@@ -83,3 +83,9 @@ source ~/.bin/tmuxinator.zsh
 
 autoload -U promptinit; promptinit
 prompt pure
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/matthias/programs/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/matthias/programs/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/matthias/programs/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/matthias/programs/google-cloud-sdk/completion.zsh.inc'; fi
