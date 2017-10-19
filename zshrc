@@ -81,11 +81,18 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 source ~/.bin/tmuxinator.zsh
 
-autoload -U promptinit; promptinit
-prompt pure
+export ANDROID_HOME=~/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/tools
+
+ssh-add -K ~/.ssh/id_rsa
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/matthias/programs/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/matthias/programs/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/matthias/programs/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/matthias/programs/google-cloud-sdk/completion.zsh.inc'; fi
+
+autoload -U promptinit; promptinit
+prompt pure
