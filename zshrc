@@ -85,8 +85,9 @@ export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:"/Users/matthias/.local/bin"
 
-ssh-add -K ~/.ssh/id_rsa
+#ssh-add -K ~/.ssh/id_rsa
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/matthias/programs/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/matthias/programs/google-cloud-sdk/path.zsh.inc'; fi

@@ -181,7 +181,7 @@ nnoremap <leader>el :ElmEvalLine<CR>
 vnoremap <leader>es :<C-u>ElmEvalSelection<CR>
 nnoremap <leader>em :ElmMakeCurrentFile<CR>
 "New escape
-imap jk <Esc>:w<CR>
+imap jk <Esc>
 
 "Initial configuration
 set relativenumber
@@ -215,17 +215,17 @@ set incsearch
 set colorcolumn=80
 
 "Get true color working on iterm with tmux
-set termguicolors
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"set termguicolors
+"let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "
 "let ayucolor="mirage" " for mirage version of theme
 "colorscheme ayu
 
-"set background=dark
-"colorscheme gruvbox
+set background=dark
+colorscheme gruvbox
 
-colorscheme gotham
+"colorscheme gotham
 
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.
