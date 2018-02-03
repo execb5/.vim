@@ -17,7 +17,8 @@ visualizer_in_stereo = "yes"
 #
 
 # Visualizer
-visualizer_type = "wave" (spectrum/wave)
+visualizer_type = "ellipse" (spectrum/wave/ellipse/wave_filled)
+visualizer_look = "+|"
 
 # Playlist
 song_columns_list_format = "(3f)[red]{n} (40)[default]{t|f} (25)[red]{a} (30)[blue]{b} (4f)[red]{l}"

@@ -5,7 +5,7 @@ let mapleader = ","
 call plug#begin('~/.vim/plugged')
 
 	"Workflow
-	Plug 'scrooloose/syntastic'
+	Plug 'w0rp/ale'
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'mileszs/ack.vim', { 'on': 'Ack' }
 	Plug 'tpope/vim-repeat'
@@ -16,6 +16,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'Townk/vim-autoclose'
 	Plug 'wakatime/vim-wakatime'                                    "Waka-time
 	Plug 'tpope/vim-speeddating'
+	Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 
 	"Org
 	Plug 'jceb/vim-orgmode', { 'for': 'org' }
@@ -23,16 +24,17 @@ call plug#begin('~/.vim/plugged')
 	Plug 'mattn/calendar-vim', { 'for': 'org' }
 
 	"Css
-	Plug 'ap/vim-css-color'
+	Plug 'ap/vim-css-color', { 'for': ['css', 'sass'] }
 
 	"Ruby
 	Plug 'tpope/vim-rails', { 'for': 'ruby' }
-	Plug 'tpope/vim-endwise'                                        "Should work for elixir also
+	Plug 'tpope/vim-endwise', { 'for': ['ruby', 'elixir'] }         "Should work for elixir also
 	Plug 'skwp/vim-rspec', { 'for': 'ruby' }
 
 	"Elixir
 	Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 	Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
+	Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
 
 	"Elm
 	Plug 'elmcast/elm-vim', { 'for': 'elm' }
@@ -41,8 +43,15 @@ call plug#begin('~/.vim/plugged')
 	Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }                "better syntax highlight for C
 	Plug 'vim-scripts/a.vim', { 'for': ['c', 'c++'] }
 
-	"Coffee
-	Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+	"C#
+	Plug 'OmniSharp/omnisharp-vim', { 'for': 'c#' }
+
+	"Markdown
+	Plug 'suan/vim-instant-markdown', { 'for': 'markdown' }
+
+	"Javascript
+	Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+	Plug 'leshill/vim-json', { 'for': 'json' }
 
 	"Pretify things
 	Plug 'vim-airline/vim-airline'
@@ -58,6 +67,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'NLKNguyen/papercolor-theme'
 	Plug 'morhetz/gruvbox'
 	Plug 'ayu-theme/ayu-vim'
+	Plug 'rakr/vim-one'
+
+	Plug 'johngrib/vim-game-snake'
 
 call plug#end()
 
@@ -80,10 +92,11 @@ let g:startify_custom_header = [
 set exrc
 " Ctrl P custom ignore"
 let g:ctrlp_custom_ignore = {
-	\ 'dir':  '\v[\/](\.git|deps|node_modules|_build)$',
+	\ 'dir':  '\v[\/](\.git|deps|node_modules|public|_build|elm-stuff)$',
 	\ 'file': '\v\.(DS_Store)$',
 	\ 'link': 'some_bad_symbolic_links',
 	\ }
+let g:ctrlp_show_hidden = 1
 
 "Detect *.md as markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -96,20 +109,9 @@ let g:ackprg = 'ag --vimgrep'
 "Deactivate default mappings for vim-rspec
 let g:RspecKeymap=0
 
-"To make Syntastic work
-let g:syntastic_auto_loc_list=1
-let g:syntastic_disabled_filetypes=['html']
-let g:syntastic_enable_signs=1
-let g:syntastic_quiet_messages = {'level': 'warnings'}
-
-"Elm syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:elm_syntastic_show_warnings = 1
-
 "Elm auto format on save
 "let g:elm_format_autosave = 1
-map <leader>m :ElmFormat<CR>
+"map <leader>m :ElmFormat<CR>
 
 "Airline config
 let g:airline_powerline_fonts = 1
@@ -118,6 +120,10 @@ let g:airline_powerline_fonts = 1
 
 "Signify option
 let g:signify_vcs_list = [ 'git', 'svn' ]
+
+"Instant markdown options
+let g:instant_markdown_autostart = 0
+"let g:instant_markdown_open_to_the_world = 1
 
 "Functions
 function! MarkWindowSwap()
@@ -140,18 +146,15 @@ function! DoWindowSwap()
 endfunction
 
 "Keybindings
-nmap <F2> :w<CR>
-imap <F2> :w<CR>a
-nmap <F3> :wq!<CR>
-nmap <F4> :q!<CR>
-nmap <F5> :noh<CR>
-nmap <F6> :%! python -m json.tool<CR>
 map <leader>i mzgg=G`z
 "Keybindings using Leader
 nmap <Leader>w :w<CR>
 nmap <Leader>q :wq<CR>
+nmap <Leader>h :noh<CR>
+nmap <Leader>j :%! python -m json.tool<CR>
 nmap <silent> <leader>yw :call MarkWindowSwap()<CR>
 nmap <silent> <leader>pw :call DoWindowSwap()<CR>
+map <leader>c :CtrlPClearAllCaches<CR>
 "Easier command line navigation
 noremap <C-J> <C-W>j
 noremap <C-K> <C-W>k
@@ -180,8 +183,9 @@ vnoremap <Right> <nop>
 nnoremap <leader>el :ElmEvalLine<CR>
 vnoremap <leader>es :<C-u>ElmEvalSelection<CR>
 nnoremap <leader>em :ElmMakeCurrentFile<CR>
-"New escape
-imap jk <Esc>
+" Make `jj` and `jk` throw you into normal mode
+inoremap jj <esc>
+inoremap jk <esc>
 
 "Initial configuration
 set relativenumber
@@ -214,16 +218,24 @@ nnoremap gb :ls<CR>:b<Space>
 set incsearch
 set colorcolumn=80
 
+"Mac terminals are bad and they should feel bad
+set ttyfast
+set lazyredraw
+
 "Get true color working on iterm with tmux
-"set termguicolors
-"let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-"let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "
 "let ayucolor="mirage" " for mirage version of theme
 "colorscheme ayu
 
+"set background=dark
+"colorscheme gruvbox
+
+let g:airline_theme='one'
+colorscheme one
 set background=dark
-colorscheme gruvbox
 
 "colorscheme gotham
 

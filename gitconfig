@@ -1,12 +1,18 @@
 [user]
 	email = matthiasnunes@gmail.com
 	name = Matthias Nunes
+	signingkey = F5506AC1BD47C17116CF821DB6D8776ABB9B339E
+[commit]
+	gpgsign = true
+[rebase]
+	gpgsign = true
 [push]
 	default = simple
 [core]
 	editor = vim
 	pager = diff-so-fancy | less --tabs=4 -R
 	excludesfile = /Users/matthias/.gitignore
+	ignorecase = false
 [diff]
 	tool = vimdiff
 [difftool]

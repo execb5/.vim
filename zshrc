@@ -3,10 +3,11 @@ export ZSH=$HOME/.oh-my-zsh
 
 #ZSH_THEME="custom"
 #ZSH_THEME="rkj-repos"
+#ZSH_THEME="spaceship"
 
 #ZSH_TMUX_AUTOSTART=true
 #ZSH_TMUX_AUTOCONNECT=false
-plugins=(git zsh-syntax-highlighting bundle tmux zsh-wakatime nyan rails elixir)
+plugins=(git zsh-syntax-highlighting bundle tmux zsh-wakatime nyan rails elixir kubectl)
 
 explain () { #copythis
 	if [ "$#" -eq 0 ]; then #copythis
@@ -86,14 +87,16 @@ export PATH=$PATH:$ANDROID_HOME
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:"/Users/matthias/.local/bin"
+export PATH=$PATH:"/usr/local/bin"
+export PATH=$PATH:$HOME/.cargo/bin
 
 #ssh-add -K ~/.ssh/id_rsa
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/matthias/programs/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/matthias/programs/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/matthias/programs/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/matthias/programs/google-cloud-sdk/completion.zsh.inc'; fi
-
 autoload -U promptinit; promptinit
 prompt pure
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/matthias/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/matthias/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/matthias/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/matthias/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
