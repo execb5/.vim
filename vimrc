@@ -11,17 +11,21 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-fugitive'
+	Plug 'tpope/vim-unimpaired'
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'terryma/vim-multiple-cursors'
 	Plug 'Townk/vim-autoclose'
 	Plug 'wakatime/vim-wakatime'                                    "Waka-time
 	Plug 'tpope/vim-speeddating'
 	Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
+	Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+	Plug 'chrisbra/NrrwRgn'
 
 	"Org
 	Plug 'jceb/vim-orgmode', { 'for': 'org' }
 	Plug 'vim-scripts/SyntaxRange', { 'for': 'org' }
 	Plug 'mattn/calendar-vim', { 'for': 'org' }
+	Plug 'vim-scripts/utl.vim', { 'for': 'org' }
 
 	"Css
 	Plug 'ap/vim-css-color', { 'for': ['css', 'sass'] }
@@ -61,6 +65,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'mhinz/vim-startify'
 	Plug 'junegunn/goyo.vim'                                        "Distraction free
 	Plug 'junegunn/limelight.vim'                                   "Hyperfocus-writing
+	Plug 'machakann/vim-highlightedyank'
 
 	"Colorschemes
 	Plug 'whatyouhide/vim-gotham'
@@ -68,8 +73,13 @@ call plug#begin('~/.vim/plugged')
 	Plug 'morhetz/gruvbox'
 	Plug 'ayu-theme/ayu-vim'
 	Plug 'rakr/vim-one'
+	Plug 'arcticicestudio/nord-vim'
+	Plug 'liuchengxu/space-vim-dark'
+	Plug 'chriskempson/base16-vim'
+	Plug 'dracula/vim'
 
-	Plug 'johngrib/vim-game-snake'
+	"Random
+	Plug 'johngrib/vim-game-snake', { 'on': 'VimGameSnake' }
 
 call plug#end()
 
@@ -92,7 +102,7 @@ let g:startify_custom_header = [
 set exrc
 " Ctrl P custom ignore"
 let g:ctrlp_custom_ignore = {
-	\ 'dir':  '\v[\/](\.git|deps|node_modules|public|_build|elm-stuff)$',
+	\ 'dir':  '\v[\/](\.git|deps|node_modules|public|_build|elm-stuff|obj)$',
 	\ 'file': '\v\.(DS_Store)$',
 	\ 'link': 'some_bad_symbolic_links',
 	\ }
@@ -108,10 +118,6 @@ let g:ackprg = 'ag --vimgrep'
 
 "Deactivate default mappings for vim-rspec
 let g:RspecKeymap=0
-
-"Elm auto format on save
-"let g:elm_format_autosave = 1
-"map <leader>m :ElmFormat<CR>
 
 "Airline config
 let g:airline_powerline_fonts = 1
@@ -144,17 +150,25 @@ function! DoWindowSwap()
 	"Hide and open so that we aren't prompted and keep history
 	exe 'hide buf' markedBuf
 endfunction
+"
 
+"ack wont jump to first result by default
+cnoreabbrev Ack Ack!
 "Keybindings
-map <leader>i mzgg=G`z
+if !exists('##TextYankPost')
+	map y <Plug>(highlightedyank)
+endif
 "Keybindings using Leader
+nnoremap <Leader>a :Ack!<Space>
+map <leader>i mzgg=G`z
 nmap <Leader>w :w<CR>
-nmap <Leader>q :wq<CR>
+nmap <Leader>q :q<CR>
 nmap <Leader>h :noh<CR>
 nmap <Leader>j :%! python -m json.tool<CR>
+nmap <Leader>t :TagbarToggle<CR>
+nmap <Leader>g :GundoToggle<CR>
 nmap <silent> <leader>yw :call MarkWindowSwap()<CR>
 nmap <silent> <leader>pw :call DoWindowSwap()<CR>
-map <leader>c :CtrlPClearAllCaches<CR>
 "Easier command line navigation
 noremap <C-J> <C-W>j
 noremap <C-K> <C-W>k
@@ -166,7 +180,7 @@ cnoremap <C-k> <t_ku>
 cnoremap <C-a> <Home>
 cnoremap <C-l> <t_kr>
 cnoremap <C-h> <t_kl>
-"Disabling arrow keys to learn the hjkl
+"Disabling arrow keys
 nnoremap <Up> <nop>
 nnoremap <Down> <nop>
 nnoremap <Left> <nop>
@@ -179,12 +193,7 @@ vnoremap <Up> <nop>
 vnoremap <Down> <nop>
 vnoremap <Left> <nop>
 vnoremap <Right> <nop>
-"Elm stuff
-nnoremap <leader>el :ElmEvalLine<CR>
-vnoremap <leader>es :<C-u>ElmEvalSelection<CR>
-nnoremap <leader>em :ElmMakeCurrentFile<CR>
-" Make `jj` and `jk` throw you into normal mode
-inoremap jj <esc>
+" Make `jk` throw you into normal mode
 inoremap jk <esc>
 
 "Initial configuration
@@ -216,28 +225,41 @@ set backspace=2
 "Choose which buffer to go
 nnoremap gb :ls<CR>:b<Space>
 set incsearch
-set colorcolumn=80
+set colorcolumn=72,80,120
 
 "Mac terminals are bad and they should feel bad
 set ttyfast
 set lazyredraw
+"Old regular expression behaviour; makes vim faster sometimes
+set re=1"
 
 "Get true color working on iterm with tmux
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "
-"let ayucolor="mirage" " for mirage version of theme
+"let g:airline_theme='ayu_mirage'
+"let ayucolor="dark"
+"let ayucolor="mirage"
 "colorscheme ayu
 
-"set background=dark
-"colorscheme gruvbox
-
-let g:airline_theme='one'
-colorscheme one
 set background=dark
+colorscheme gruvbox
+
+"colorscheme one
+"set background=dark
+
+"let g:airline_theme='nord'
+"colorscheme nord
+"let g:nord_italic = 1
 
 "colorscheme gotham
+
+"let g:airline_theme='base16_eighties'
+"colorscheme base16-eighties
+
+"let g:airline_theme='dracula'
+"colorscheme dracula
 
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.

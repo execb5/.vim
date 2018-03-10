@@ -7,7 +7,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 #ZSH_TMUX_AUTOSTART=true
 #ZSH_TMUX_AUTOCONNECT=false
-plugins=(git zsh-syntax-highlighting bundle tmux zsh-wakatime nyan rails elixir kubectl)
+plugins=(git zsh-syntax-highlighting tmux zsh-wakatime nyan elixir kubectl zsh-autosuggestions)
 
 explain () { #copythis
 	if [ "$#" -eq 0 ]; then #copythis
@@ -50,6 +50,10 @@ function macfeh() {
 	open -b "drabweb.macfeh" "$@"
 }
 
+function jiracard() {
+	echo "[CG-$@](https://campgladiator.atlassian.net/browse/CG-$@)"
+}
+
 pair () {open vnc://$1}
 
 alias rw="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"
@@ -61,8 +65,9 @@ alias moon="curl -4 'http://wttr.in/Moon'"
 alias lenny_face='echo "( ͡° ͜ʖ ͡°)"'
 alias lenny_wall='echo "┬┴┬┴┤ ͜ʖ ͡°)"'
 alias httpserver='ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => Dir.pwd); trap('"'"'INT'"'"') { s.shutdown }; s.start"'
-alias lc='colorls -r'
 alias tmux="TERM=screen-256color tmux"
+alias dri='docker rmi -f `docker images -a`'
+alias drc='docker rm -f `docker ps -qa`'
 
 export EDITOR="/usr/bin/vim" #copythis
 
