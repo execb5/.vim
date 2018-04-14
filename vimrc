@@ -114,7 +114,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.tex set filetype=tex
 
 "Use ag with ack vim
-let g:ackprg = 'ag --vimgrep'
+let g:ackprg = 'rg --vimgrep'
 
 "Deactivate default mappings for vim-rspec
 let g:RspecKeymap=0
@@ -246,8 +246,8 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set background=dark
 colorscheme gruvbox
 
-"colorscheme one
 "set background=dark
+"colorscheme one
 
 "let g:airline_theme='nord'
 "colorscheme nord
