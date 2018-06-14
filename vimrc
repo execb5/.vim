@@ -12,14 +12,13 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-unimpaired'
+	Plug 'tpope/vim-speeddating'
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'terryma/vim-multiple-cursors'
 	Plug 'Townk/vim-autoclose'
 	Plug 'wakatime/vim-wakatime'                                    "Waka-time
-	Plug 'tpope/vim-speeddating'
-	Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
+	Plug 'simnalamburt/vim-mundo'
 	Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
-	Plug 'chrisbra/NrrwRgn'
 
 	"Org
 	Plug 'jceb/vim-orgmode', { 'for': 'org' }
@@ -77,6 +76,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'liuchengxu/space-vim-dark'
 	Plug 'chriskempson/base16-vim'
 	Plug 'dracula/vim'
+	Plug 'drewtempelmeyer/palenight.vim'
 
 	"Random
 	Plug 'johngrib/vim-game-snake', { 'on': 'VimGameSnake' }
@@ -85,18 +85,25 @@ call plug#end()
 
 "Startify options
 let g:startify_custom_header = [
-	\ '         _     _      _              _             _             _             _______   ',
-	\ '        /\ \ /_/\    /\ \           /\ \         /\ \           / /\          / ___  /\  ',
-	\ '       /  \ \\ \ \   \ \_\         /  \ \       /  \ \         / /  \        / /\__\ \ \ ',
-	\ '      / /\ \ \\ \ \__/ / /        / /\ \ \     / /\ \ \       / / /\ \      / / /   \_\/ ',
-	\ '     / / /\ \_\\ \__ \/_/        / / /\ \_\   / / /\ \ \     / / /\ \ \    / / /         ',
-	\ '    / /_/_ \/_/ \/_/\__/\       / /_/_ \/_/  / / /  \ \_\   / / /\ \_\ \   \ \ \         ',
-	\ '   / /____/\     _/\/__\ \     / /____/\    / / /    \/_/  / / /\ \ \___\   \ \ \        ',
-	\ '  / /\____\/    / _/_/\ \ \   / /\____\/   / / /          / / /  \ \ \__/    \ \ \       ',
-	\ ' / / /______   / / /   \ \ \ / / /______  / / /________  / / /____\_\ \  ____/ / /       ',
-	\ ' / /_______\ / / /    /_/ // / /_______\/ / /_________\/ / /__________\/_____/ /        ',
-	\ '/__________/ \/_/     \_\/ \/__________/\/____________/\/_____________/\_____\/         ',
+	\ ' ██▒   █▓ ██▓ ███▄ ▄███▓                         ',
+	\ '▓██░   █▒▓██▒▓██▒▀█▀ ██▒                         ',
+	\ ' ▓██  █▒░▒██▒▓██    ▓██░                         ',
+	\ '  ▒██ █░░░██░▒██    ▒██                          ',
+	\ '   ▒▀█░  ░██░▒██▒   ░██▒            \_`-)|_      ',
+	\ '   ░ ▐░  ░▓  ░ ▒░   ░  ░         ,""       \     ',
+	\ '   ░ ░░   ▒ ░░  ░      ░       ,"  ## |   ಠ ಠ.   ',
+	\ '     ░░   ▒ ░░      ░        ," ##   ,-\__    `. ',
+	\ '      ░   ░         ░      ,"       /     `--._;)',
+	\ '     ░                   ,"     ## /             ',
 	\ ]
+
+
+"\ '██╗   ██╗██╗███╗   ███╗     █████╗    ██╗           \_`-)|_      ',
+"\ '██║   ██║██║████╗ ████║    ██╔══██╗  ███║        ,""       \     ',
+"\ '██║   ██║██║██╔████╔██║    ╚█████╔╝  ╚██║      ,"  ## |   ಠ ಠ.   ',
+"\ '╚██╗ ██╔╝██║██║╚██╔╝██║    ██╔══██╗   ██║    ," ##   ,-\__    `. ',
+"\ ' ╚████╔╝ ██║██║ ╚═╝ ██║    ╚█████╔╝██╗██║  ,"       /     `--._;)',
+"\ '  ╚═══╝  ╚═╝╚═╝     ╚═╝     ╚════╝ ╚═╝╚═╝,"     ## /             ',
 
 "Ignore stuff for ctrlp
 set exrc
@@ -112,6 +119,10 @@ let g:ctrlp_show_hidden = 1
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 "Detect *.tex as latex
 autocmd BufNewFile,BufReadPost *.tex set filetype=tex
+
+" Enable persistent undo so that undo history persists across vim sessions
+set undofile
+set undodir=~/.vim/undo
 
 "Use ag with ack vim
 let g:ackprg = 'rg --vimgrep'
@@ -150,7 +161,6 @@ function! DoWindowSwap()
 	"Hide and open so that we aren't prompted and keep history
 	exe 'hide buf' markedBuf
 endfunction
-"
 
 "ack wont jump to first result by default
 cnoreabbrev Ack Ack!
@@ -166,7 +176,7 @@ nmap <Leader>q :q<CR>
 nmap <Leader>h :noh<CR>
 nmap <Leader>j :%! python -m json.tool<CR>
 nmap <Leader>t :TagbarToggle<CR>
-nmap <Leader>g :GundoToggle<CR>
+nmap <Leader>m :MundoToggle<CR>
 nmap <silent> <leader>yw :call MarkWindowSwap()<CR>
 nmap <silent> <leader>pw :call DoWindowSwap()<CR>
 "Easier command line navigation
@@ -227,6 +237,9 @@ nnoremap gb :ls<CR>:b<Space>
 set incsearch
 set colorcolumn=72,80,120
 
+"Better encryption
+set cm=blowfish2
+
 "Mac terminals are bad and they should feel bad
 set ttyfast
 set lazyredraw
@@ -243,8 +256,8 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "let ayucolor="mirage"
 "colorscheme ayu
 
-set background=dark
-colorscheme gruvbox
+"set background=dark
+"colorscheme gruvbox
 
 "set background=dark
 "colorscheme one
@@ -257,6 +270,9 @@ colorscheme gruvbox
 
 "let g:airline_theme='base16_eighties'
 "colorscheme base16-eighties
+
+let g:airline_theme='base16'
+colorscheme base16-default-dark
 
 "let g:airline_theme='dracula'
 "colorscheme dracula

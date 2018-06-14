@@ -51,7 +51,7 @@ function macfeh() {
 }
 
 function jiracard() {
-	echo "[CG-$@](https://campgladiator.atlassian.net/browse/CG-$@)"
+	echo "[$@](https://campgladiator.atlassian.net/browse/$@)"
 }
 
 pair () {open vnc://$1}
@@ -67,13 +67,14 @@ alias lenny_wall='echo "┬┴┬┴┤ ͜ʖ ͡°)"'
 alias httpserver='ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => Dir.pwd); trap('"'"'INT'"'"') { s.shutdown }; s.start"'
 alias tmux="TERM=screen-256color tmux"
 alias dri='docker rmi -f `docker images -a`'
-alias drc='docker rm -f `docker ps -qa`'
+alias drc='docker rm -fv `docker ps -qa`'
 
 export EDITOR="/usr/bin/vim" #copythis
 
 source $ZSH/oh-my-zsh.sh
 
 export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.vim/aux_scripts:$PATH"
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -94,6 +95,11 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:"/Users/matthias/.local/bin"
 export PATH=$PATH:"/usr/local/bin"
 export PATH=$PATH:$HOME/.cargo/bin
+
+export GOPATH=$HOME/repos/go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
 
 #ssh-add -K ~/.ssh/id_rsa
 
