@@ -44,7 +44,8 @@ call plug#begin('~/.vim/plugged')
 
 	"C & C++
 	Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }                "better syntax highlight for C
-	Plug 'vim-scripts/a.vim', { 'for': ['c', 'c++'] }
+	Plug 'vim-scripts/a.vim', { 'for': ['c', 'cpp'] }
+	Plug 'drmikehenry/vim-headerguard', { 'for': ['c', 'cpp'] }
 
 	"C#
 	Plug 'OmniSharp/omnisharp-vim', { 'for': 'c#' }
@@ -191,18 +192,10 @@ cnoremap <C-a> <Home>
 cnoremap <C-l> <t_kr>
 cnoremap <C-h> <t_kl>
 "Disabling arrow keys
-nnoremap <Up> <nop>
-nnoremap <Down> <nop>
-nnoremap <Left> <nop>
-nnoremap <Right> <nop>
-inoremap <Up> <nop>
-inoremap <Down> <nop>
-inoremap <Left> <nop>
-inoremap <Right> <nop>
-vnoremap <Up> <nop>
-vnoremap <Down> <nop>
-vnoremap <Left> <nop>
-vnoremap <Right> <nop>
+nnoremap <Up> :resize +2<CR>
+nnoremap <Down> :resize -2<CR>
+nnoremap <Left> :vertical resize +2<CR>
+nnoremap <Right> :vertical resize -2<CR>
 " Make `jk` throw you into normal mode
 inoremap jk <esc>
 
