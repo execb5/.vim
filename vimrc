@@ -1,5 +1,4 @@
-
-"Defining leader
+"Defining Leader
 let mapleader = ","
 
 call plug#begin('~/.vim/plugged')
@@ -13,26 +12,22 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-unimpaired'
 	Plug 'tpope/vim-speeddating'
+	Plug 'tpope/vim-endwise', { 'for': ['ruby', 'elixir'] }
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'terryma/vim-multiple-cursors'
 	Plug 'Townk/vim-autoclose'
-	Plug 'wakatime/vim-wakatime'                                    "Waka-time
+	Plug 'wakatime/vim-wakatime'
 	Plug 'simnalamburt/vim-mundo'
 	Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+	Plug 'junegunn/vim-easy-align'
+	Plug 'wsdjeg/FlyGrep.vim'
+	"Plug 'metakirby5/codi.vim', { 'on': 'Codi' }
 
 	"Org
 	Plug 'jceb/vim-orgmode', { 'for': 'org' }
 	Plug 'vim-scripts/SyntaxRange', { 'for': 'org' }
 	Plug 'mattn/calendar-vim', { 'for': 'org' }
 	Plug 'vim-scripts/utl.vim', { 'for': 'org' }
-
-	"Css
-	Plug 'ap/vim-css-color', { 'for': ['css', 'sass'] }
-
-	"Ruby
-	Plug 'tpope/vim-rails', { 'for': 'ruby' }
-	Plug 'tpope/vim-endwise', { 'for': ['ruby', 'elixir'] }         "Should work for elixir also
-	Plug 'skwp/vim-rspec', { 'for': 'ruby' }
 
 	"Elixir
 	Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
@@ -47,24 +42,15 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-scripts/a.vim', { 'for': ['c', 'cpp'] }
 	Plug 'drmikehenry/vim-headerguard', { 'for': ['c', 'cpp'] }
 
-	"C#
-	Plug 'OmniSharp/omnisharp-vim', { 'for': 'c#' }
-
 	"Markdown
 	Plug 'suan/vim-instant-markdown', { 'for': 'markdown' }
-
-	"Javascript
-	Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-	Plug 'leshill/vim-json', { 'for': 'json' }
 
 	"Pretify things
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'mhinz/vim-signify'                                        "show what changed in file
-	Plug 'ryanoasis/vim-devicons'                                   "icons
+	"Plug 'ryanoasis/vim-devicons'                                   "icons
 	Plug 'mhinz/vim-startify'
-	Plug 'junegunn/goyo.vim'                                        "Distraction free
-	Plug 'junegunn/limelight.vim'                                   "Hyperfocus-writing
 	Plug 'machakann/vim-highlightedyank'
 
 	"Colorschemes
@@ -78,6 +64,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'chriskempson/base16-vim'
 	Plug 'dracula/vim'
 	Plug 'drewtempelmeyer/palenight.vim'
+	Plug 'w0ng/vim-hybrid'
 
 	"Random
 	Plug 'johngrib/vim-game-snake', { 'on': 'VimGameSnake' }
@@ -98,14 +85,6 @@ let g:startify_custom_header = [
 	\ '     ░                   ,"     ## /             ',
 	\ ]
 
-
-"\ '██╗   ██╗██╗███╗   ███╗     █████╗    ██╗           \_`-)|_      ',
-"\ '██║   ██║██║████╗ ████║    ██╔══██╗  ███║        ,""       \     ',
-"\ '██║   ██║██║██╔████╔██║    ╚█████╔╝  ╚██║      ,"  ## |   ಠ ಠ.   ',
-"\ '╚██╗ ██╔╝██║██║╚██╔╝██║    ██╔══██╗   ██║    ," ##   ,-\__    `. ',
-"\ ' ╚████╔╝ ██║██║ ╚═╝ ██║    ╚█████╔╝██╗██║  ,"       /     `--._;)',
-"\ '  ╚═══╝  ╚═╝╚═╝     ╚═╝     ╚════╝ ╚═╝╚═╝,"     ## /             ',
-
 "Ignore stuff for ctrlp
 set exrc
 " Ctrl P custom ignore"
@@ -123,21 +102,25 @@ autocmd BufNewFile,BufReadPost *.tex set filetype=tex
 
 " Enable persistent undo so that undo history persists across vim sessions
 set undofile
-set undodir=~/.vim/undo
+set undodir=~/.vimundo
 
 "Use ag with ack vim
 let g:ackprg = 'rg --vimgrep'
 
-"Deactivate default mappings for vim-rspec
-let g:RspecKeymap=0
-
 "Airline config
-let g:airline_powerline_fonts = 1
-"let g:airline_left_sep = ''
-"let g:airline_right_sep = ''
+"let g:airline_powerline_fonts = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 
 "Signify option
 let g:signify_vcs_list = [ 'git', 'svn' ]
+
+" File browser config
+let g:netrw_liststyle = 3 "netrw tree style view
+let g:netrw_banner = 0 "hide banner
+let g:netrw_browse_split = 2 "open file in new window
+let g:netrw_winsize = 25 "set netrw width
+let g:netrw_altv = 1 "change from left splitting to right splitting
 
 "Instant markdown options
 let g:instant_markdown_autostart = 0
@@ -165,21 +148,26 @@ endfunction
 
 "ack wont jump to first result by default
 cnoreabbrev Ack Ack!
+
+"Flygrep test
+nnoremap <Space>s/ :FlyGrep<cr>
+
 "Keybindings
 if !exists('##TextYankPost')
 	map y <Plug>(highlightedyank)
 endif
 "Keybindings using Leader
 nnoremap <Leader>a :Ack!<Space>
-map <leader>i mzgg=G`z
+map <Leader>i mzgg=G`z
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
 nmap <Leader>h :noh<CR>
 nmap <Leader>j :%! python -m json.tool<CR>
 nmap <Leader>t :TagbarToggle<CR>
 nmap <Leader>m :MundoToggle<CR>
-nmap <silent> <leader>yw :call MarkWindowSwap()<CR>
-nmap <silent> <leader>pw :call DoWindowSwap()<CR>
+nmap <silent> <Leader>yw :call MarkWindowSwap()<CR>
+nmap <silent> <Leader>pw :call DoWindowSwap()<CR>
+nnoremap <Leader>d :FindDefinition<CR>
 "Easier command line navigation
 noremap <C-J> <C-W>j
 noremap <C-K> <C-W>k
@@ -200,6 +188,7 @@ nnoremap <Right> :vertical resize -2<CR>
 inoremap jk <esc>
 
 "Initial configuration
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 set relativenumber
 set number
 set autoindent
@@ -244,31 +233,8 @@ set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "
-"let g:airline_theme='ayu_mirage'
-"let ayucolor="dark"
-"let ayucolor="mirage"
-"colorscheme ayu
-
-"set background=dark
-"colorscheme gruvbox
-
-"set background=dark
-"colorscheme one
-
-"let g:airline_theme='nord'
-"colorscheme nord
-"let g:nord_italic = 1
-
-"colorscheme gotham
-
-"let g:airline_theme='base16_eighties'
-"colorscheme base16-eighties
-
-let g:airline_theme='base16'
-colorscheme base16-default-dark
-
-"let g:airline_theme='dracula'
-"colorscheme dracula
+set background=dark
+colorscheme hybrid
 
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.

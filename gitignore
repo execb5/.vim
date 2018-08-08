@@ -1,3 +1,4 @@
 .tool-versions
 .DS_Store
 .vscode/
+.elixir_ls/

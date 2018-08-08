@@ -66,10 +66,15 @@ alias lenny_face='echo "( ͡° ͜ʖ ͡°)"'
 alias lenny_wall='echo "┬┴┬┴┤ ͜ʖ ͡°)"'
 alias httpserver='ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => Dir.pwd); trap('"'"'INT'"'"') { s.shutdown }; s.start"'
 alias tmux="TERM=screen-256color tmux"
-alias dri='docker rmi -f `docker images -a`'
+alias dri='docker rmi -f `docker images -aq`'
 alias drc='docker rm -fv `docker ps -qa`'
+alias cat='bat'
+alias gay='pair fernando'
+alias macho='pair eduardo'
+alias lindo='pair marcus'
+alias medconf="$EDITOR ~/.mednafen/mednafen-09x.cfg"
 
-export EDITOR="/usr/bin/vim" #copythis
+export EDITOR="/usr/local/bin/vim" #copythis
 
 source $ZSH/oh-my-zsh.sh
 
@@ -95,6 +100,7 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:"/Users/matthias/.local/bin"
 export PATH=$PATH:"/usr/local/bin"
 export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/.local/bin
 
 export GOPATH=$HOME/repos/go
 export GOROOT=/usr/local/opt/go/libexec
