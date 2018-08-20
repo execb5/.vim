@@ -175,5 +175,32 @@ set lazyredraw
 set re=1"
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.
+set laststatus=2
+
+
+
+
+" statusline
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
+set statusline=
+set statusline+=%#Statement#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#Conceal#
+set statusline+=\ %f
+set statusline+=%h%m%r
+set statusline+=%=
+set statusline+=%#Statement#
+set statusline+=\ %y
+set statusline+=\ %3.3p%%
+set statusline+=\ %-10.(%l:%c%V%)
+set statusline+=\ %P
 
 colorscheme noctu

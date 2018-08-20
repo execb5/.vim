@@ -73,6 +73,7 @@ alias gay='pair fernando'
 alias macho='pair eduardo'
 alias lindo='pair marcus'
 alias medconf="$EDITOR ~/.mednafen/mednafen-09x.cfg"
+alias neofetch="neofetch --ascii_distro windows"
 
 export EDITOR="/usr/local/bin/vim" #copythis
 
