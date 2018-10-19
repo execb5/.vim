@@ -16,8 +16,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'terryma/vim-multiple-cursors'
 	Plug 'Townk/vim-autoclose'
-	Plug 'wakatime/vim-wakatime'
-	Plug 'simnalamburt/vim-mundo'
 	Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 	Plug 'junegunn/vim-easy-align'
 	Plug 'wsdjeg/FlyGrep.vim'
@@ -30,7 +28,7 @@ call plug#begin('~/.vim/plugged')
 
 	" Elixir
 	Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
-	Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
+	"Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 	Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
 
 	" Elm
@@ -78,7 +76,7 @@ let g:startify_custom_header = [
 
 " Ctrl P custom ignore"
 let g:ctrlp_custom_ignore = {
-	\ 'dir':  '\v[\/](\.git|deps|node_modules|public|_build|elm-stuff|obj)$',
+	\ 'dir':  '\v[\/](\.git|deps|node_modules|public|.elixir_ls|_build|elm-stuff|obj)$',
 	\ 'file': '\v\.(DS_Store)$',
 	\ 'link': 'some_bad_symbolic_links',
 	\ }
@@ -90,6 +88,13 @@ cnoreabbrev Ack Ack!
 
 " Signify option
 let g:signify_vcs_list = [ 'git', 'svn' ]
+
+" ALE options
+let g:ale_completion_enabled = 1
+autocmd FileType elixir nnoremap <c-]> :ALEGoToDefinition<cr>
+let g:ale_fixers = {}
+let g:ale_fixers.elixir = ['mix_format']
+let g:ale_elixir_elixir_ls_release = '/Users/matthias/programs/elixir-ls/rel'
 
 
 
@@ -130,7 +135,6 @@ cnoremap <C-h> <t_kl>
 " Keybinds for plugins
 nnoremap <Leader>a :Ack!<Space>
 nmap <Leader>t :TagbarToggle<CR>
-nmap <Leader>m :MundoToggle<CR>
 map y <Plug>(highlightedyank)
 nnoremap <Space>s/ :FlyGrep<CR>
 
@@ -181,18 +185,19 @@ set laststatus=2
 
 
 " statusline
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
+"function! GitBranch()
+  "return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+"endfunction
 
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
+"function! StatuslineGit()
+  "let l:branchname = GitBranch()
+  "return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+"endfunction
 
+"set statusline=
+"set statusline+=%#Statement#
+"set statusline+=%{StatuslineGit()}
 set statusline=
-set statusline+=%#Statement#
-set statusline+=%{StatuslineGit()}
 set statusline+=%#Conceal#
 set statusline+=\ %f
 set statusline+=%h%m%r
@@ -204,3 +209,9 @@ set statusline+=\ %-10.(%l:%c%V%)
 set statusline+=\ %P
 
 colorscheme noctu
+
+"highlight Comment cterm=italic
+"highlight htmlArg cterm=italic
+"highlight xmlAttrib cterm=italic
+"highlight Type cterm=italic
+"highlight Normal ctermbg=none
