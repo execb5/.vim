@@ -40,6 +40,31 @@ function extract() #copythis
 	fi #copythis
 } #copythis
 
+function wow() { #copythis
+	echo "                Y.                      _             " #copythis
+	echo "                YiL                   .\`\`\`.           " #copythis
+	echo "  much files    Yii;                .; .;;\`.          " #copythis
+	echo "                YY;ii._           .;\`.;;;; :          " #copythis
+	echo " such shell     iiYYYYYYiiiii;;;;i\` ;;::;;;;          " #copythis
+	echo "            _.;YYYYYYiiiiiiYYYii  .;;.   ;;;          " #copythis
+	echo "wow      .YYYYYYYYYYiiYYYYYYYYYYYYii;\`  ;;;;          " #copythis
+	echo "       .YYYYYYY\$\$YYiiYY\$\$\$\$iiiYYYYYY;.ii;\`..          " #copythis
+	echo "      :YYY\$!.  TYiiYY\$\$\$\$\$YYYYYYYiiYYYYiYYii.         " #copythis
+	echo "      Y\$MM\$:   :YYYYYY\$! \`\` 4YYYYYiiiYYYYiiYY.        " #copythis
+	echo "   \`. :MM\$\$b.,dYY\$\$Yii  :\'   :YYYYllYiiYYYiYY         " #copythis
+	echo "_.._ :\`4MM\$!YYYYYYYYYii,.__.diii\$\$YYYYYYYYYYY         " #copythis
+	echo ".,._ \$b\`P\`      4\$\$\$\$\$iiiiiiii\$\$\$\$YY\$\$\$\$\$\$YiY;        " #copythis
+	echo "   \`,.\`\$:       :\$\$\$\$\$\$\$\$\$YYYYY\$\$\$\$\$\$\$\$\$YYiiYYL       " #copythis
+	echo "     \`;\$\$.    .;PPb\$\`.,.\`\`T\$\$YY\$\$\$\$YYYYYYiiiYYU:      " #copythis
+	echo "    ;\$P\$;;: ;;;;i\$y\$ !Y\$\$\$b;\$\$\$Y\$YY\$\$YYYiiiYYiYY      " #copythis
+	echo "    \$Fi\$\$ .. \`\`:iii.\`- :YYYYY\$\$YY\$\$\$\$\$YYYiiYiYYY      " #copythis
+	echo "    :Y\$\$rb \`\`\`\`  \`_..;;i;YYY\$YY\$\$\$\$\$\$\$YYYYYYYiYY:     " #copythis
+	echo "     :\$\$\$\$\$i;;iiiiidYYYYYYYYYY\$\$\$\$\$\$YYYYYYYiiYYYY.    " #copythis
+	echo "      \`\$\$\$\$\$\$\$YYYYYYYYYYYYY\$\$\$\$\$\$YYYYYYYYiiiYYYYYY    " #copythis
+	echo "      .i!\$\$\$\$\$\$YYYYYYYYY\$\$\$\$\$\$YYY\$\$YYiiiiiiYYYYYYY    " #copythis
+	echo "     :YYiii\$\$\$\$\$\$\$YYYYYYY\$\$\$\$YY\$\$\$\$YYiiiiiYYYYYYi\'    " #copythis
+} #copythis
+
 function macfeh() {
 	open -b "drabweb.macfeh" "$@"
 }
@@ -64,7 +89,7 @@ alias dri='docker rmi -f `docker images -aq`'
 alias drc='docker rm -fv `docker ps -qa`'
 alias cat='bat'
 alias gay='pair fernando'
-alias macho='pair eduardo'
+alias macho='pair cunha'
 alias lindo='pair marcus'
 alias medconf="$EDITOR ~/.mednafen/mednafen-09x.cfg"
 alias neofetch="neofetch --ascii_distro windows"
@@ -88,6 +113,8 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 source ~/.bin/tmuxinator.zsh
 
+#export JAVA_HOME=~/.asdf/installs/java/9.0.1
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME
 export PATH=$PATH:$ANDROID_HOME/platform-tools
@@ -114,7 +141,11 @@ if [ -f '/Users/matthias/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/matthias/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/matthias/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
-autoload -Uz compinit
-compinit
-# Completion for kitty
-kitty + complete setup zsh | source /dev/stdin
+which kitty > /dev/null 2>&1
+ret=$?
+if [ $ret -eq 0 ]; then
+	autoload -Uz compinit
+	compinit
+	# Completion for kitty
+	kitty + complete setup zsh | source /dev/stdin
+fi

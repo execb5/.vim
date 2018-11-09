@@ -1,5 +1,5 @@
 " Defining Leader
-let mapleader = ","
+let mapleader = " "
 
 call plug#begin('~/.vim/plugged')
 
@@ -52,6 +52,7 @@ call plug#begin('~/.vim/plugged')
 
 	" Random
 	Plug 'johngrib/vim-game-snake', { 'on': 'VimGameSnake' }
+	Plug 'ap/vim-css-color'
 
 call plug#end()
 
@@ -88,13 +89,6 @@ cnoreabbrev Ack Ack!
 
 " Signify option
 let g:signify_vcs_list = [ 'git', 'svn' ]
-
-" ALE options
-let g:ale_completion_enabled = 1
-autocmd FileType elixir nnoremap <c-]> :ALEGoToDefinition<cr>
-let g:ale_fixers = {}
-let g:ale_fixers.elixir = ['mix_format']
-let g:ale_elixir_elixir_ls_release = '/Users/matthias/programs/elixir-ls/rel'
 
 
 

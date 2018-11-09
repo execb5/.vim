@@ -1,1 +1,1 @@
-let maplocalleader = ','
+let maplocalleader = ' '
