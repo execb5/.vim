@@ -65,6 +65,12 @@ function wow() { #copythis
 	echo "     :YYiii\$\$\$\$\$\$\$YYYYYYY\$\$\$\$YY\$\$\$\$YYiiiiiYYYYYYi\'    " #copythis
 } #copythis
 
+function kubectl_unset() {
+	kubectl config unset clusters.$@
+	kubectl config unset users.$@
+	kubectl config unset contexts.staging-realm.k8s.local
+}
+
 function macfeh() {
 	open -b "drabweb.macfeh" "$@"
 }
@@ -122,7 +128,7 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:"/Users/matthias/.local/bin"
 export PATH=$PATH:"/usr/local/bin"
 export PATH=$PATH:$HOME/.cargo/bin
-export PATH=$PATH:$HOME/.local/bin
+#export PATH=$PATH:$HOME/.local/bin
 
 export GOPATH=$HOME/repos/go
 export GOROOT=/usr/local/opt/go/libexec

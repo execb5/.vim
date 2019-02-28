@@ -13,12 +13,14 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-unimpaired'
 	Plug 'tpope/vim-speeddating'
 	Plug 'tpope/vim-endwise', { 'for': ['ruby', 'elixir'] }
-	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'terryma/vim-multiple-cursors'
 	Plug 'Townk/vim-autoclose'
 	Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 	Plug 'junegunn/vim-easy-align'
 	Plug 'wsdjeg/FlyGrep.vim'
+	Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+	Plug '/usr/local/opt/fzf'
+  
 
 	" Org
 	Plug 'jceb/vim-orgmode', { 'for': 'org' }
@@ -28,8 +30,11 @@ call plug#begin('~/.vim/plugged')
 
 	" Elixir
 	Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
-	"Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
+	Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 	Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
+
+	" Alda
+	Plug 'daveyarwood/vim-alda', { 'for': 'alda' }
 
 	" Elm
 	Plug 'elmcast/elm-vim', { 'for': 'elm' }
@@ -41,6 +46,13 @@ call plug#begin('~/.vim/plugged')
 
 	" Markdown
 	Plug 'suan/vim-instant-markdown', { 'for': 'markdown' }
+	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
+
+	" Csv
+	Plug 'chrisbra/csv.vim', { 'for': 'csv' }
+
+	" PHP
+	Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 
 	" Pretify things
 	Plug 'mhinz/vim-signify'                                        " show what changed in file
@@ -53,6 +65,7 @@ call plug#begin('~/.vim/plugged')
 	" Random
 	Plug 'johngrib/vim-game-snake', { 'on': 'VimGameSnake' }
 	Plug 'ap/vim-css-color'
+	Plug 'johngrib/vim-game-code-break', { 'on': 'VimGameCodeBreak' }
 
 call plug#end()
 
@@ -75,20 +88,15 @@ let g:startify_custom_header = [
 	\ '       ░                   ,"     ## /             ',
 	\ ]
 
-" Ctrl P custom ignore"
-let g:ctrlp_custom_ignore = {
-	\ 'dir':  '\v[\/](\.git|deps|node_modules|public|.elixir_ls|_build|elm-stuff|obj)$',
-	\ 'file': '\v\.(DS_Store)$',
-	\ 'link': 'some_bad_symbolic_links',
-	\ }
-let g:ctrlp_show_hidden = 1
-
 let g:ackprg = 'rg --vimgrep' " Use rg with ack vim
 " ack wont jump to first result by default
 cnoreabbrev Ack Ack!
 
 " Signify option
 let g:signify_vcs_list = [ 'git', 'svn' ]
+
+" Fzf
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
 
 
 
@@ -131,6 +139,11 @@ nnoremap <Leader>a :Ack!<Space>
 nmap <Leader>t :TagbarToggle<CR>
 map y <Plug>(highlightedyank)
 nnoremap <Space>s/ :FlyGrep<CR>
+nnoremap <Leader>p :FZF<CR>
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " Mouse wheel will move throught time and not space
 map <ScrollWheelUp> <C-r>
@@ -170,7 +183,7 @@ set colorcolumn=72,80,120
 set cm=blowfish2 " Better encryption
 set ttyfast
 set lazyredraw
-set re=1"
+set re=1
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.
 set laststatus=2
