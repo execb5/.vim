@@ -1,13 +1,4 @@
 {
     "languageserver": {
-        "elixir": {
-            "args": [],
-            "command": "/Users/matthias/programs/elixir-ls/rel/language_server.sh",
-            "filetypes": [
-                "elixir"
-            ],
-            "initializationOptions": {},
-            "settings": {}
-        }
     }
 }

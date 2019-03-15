@@ -33,11 +33,12 @@ ln -sf $(pwd)/mpd.conf ~/.mpd/mpd.conf
 touch ~/.mpd/mpd.db
 touch ~/.mpd/mpd.log
 touch ~/.mpd/mpdstate
-mkdir ~/.mpd/playlists
+[ -d ~/.mpd/playlists ] || mkdir ~/.mpd/playlists
 
 [ -d ~/.ncmpcpp ] || mkdir ~/.ncmpcpp
 ln -sf $(pwd)/ncmpcpp ~/.ncmpcpp/config
 
-mkdir ~/.vimtmp
+[ -d ~/.vimtmp ] || mkdir ~/.vimtmp
+[ -d ~/.vimundo ] || mkdir ~/.vimundo
 echo ".vimtmp directory created"
 

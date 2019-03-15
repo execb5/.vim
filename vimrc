@@ -15,12 +15,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-endwise', { 'for': ['ruby', 'elixir'] }
 	Plug 'terryma/vim-multiple-cursors'
 	Plug 'Townk/vim-autoclose'
-	Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 	Plug 'junegunn/vim-easy-align'
 	Plug 'wsdjeg/FlyGrep.vim'
-	Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-	Plug '/usr/local/opt/fzf'
-  
+	"Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
 	" Org
 	Plug 'jceb/vim-orgmode', { 'for': 'org' }
@@ -94,9 +91,6 @@ cnoreabbrev Ack Ack!
 
 " Signify option
 let g:signify_vcs_list = [ 'git', 'svn' ]
-
-" Fzf
-let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
 
 
 
@@ -191,19 +185,6 @@ set laststatus=2
 
 
 
-" statusline
-"function! GitBranch()
-  "return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-"endfunction
-
-"function! StatuslineGit()
-  "let l:branchname = GitBranch()
-  "return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-"endfunction
-
-"set statusline=
-"set statusline+=%#Statement#
-"set statusline+=%{StatuslineGit()}
 set statusline=
 set statusline+=%#Conceal#
 set statusline+=\ %f
@@ -216,9 +197,3 @@ set statusline+=\ %-10.(%l:%c%V%)
 set statusline+=\ %P
 
 colorscheme noctu
-
-"highlight Comment cterm=italic
-"highlight htmlArg cterm=italic
-"highlight xmlAttrib cterm=italic
-"highlight Type cterm=italic
-"highlight Normal ctermbg=none
