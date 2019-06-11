@@ -19,9 +19,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/vim-easy-align'
 	Plug 'wsdjeg/FlyGrep.vim'
 	Plug 'kien/ctrlp.vim'
-	"Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-	"Plug '/usr/local/opt/fzf'
-  
 
 	" Org
 	Plug 'jceb/vim-orgmode', { 'for': 'org' }
@@ -34,9 +31,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 	Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
 
-	" Alda
-	Plug 'daveyarwood/vim-alda', { 'for': 'alda' }
-
 	" Elm
 	Plug 'elmcast/elm-vim', { 'for': 'elm' }
 
@@ -48,12 +42,6 @@ call plug#begin('~/.vim/plugged')
 	" Markdown
 	Plug 'suan/vim-instant-markdown', { 'for': 'markdown' }
 	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
-
-	" Csv
-	Plug 'chrisbra/csv.vim', { 'for': 'csv' }
-
-	" PHP
-	Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 
 	" Pretify things
 	Plug 'mhinz/vim-signify'                                        " show what changed in file
@@ -95,9 +83,6 @@ cnoreabbrev Ack Ack!
 
 " Signify option
 let g:signify_vcs_list = [ 'git', 'svn' ]
-
-" Fzf
-let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
 
 
 
@@ -192,19 +177,6 @@ set laststatus=2
 
 
 
-" statusline
-"function! GitBranch()
-  "return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-"endfunction
-
-"function! StatuslineGit()
-  "let l:branchname = GitBranch()
-  "return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-"endfunction
-
-"set statusline=
-"set statusline+=%#Statement#
-"set statusline+=%{StatuslineGit()}
 set statusline=
 set statusline+=%#Conceal#
 set statusline+=\ %f
