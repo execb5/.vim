@@ -101,6 +101,8 @@ export PATH="$HOME/.vim/aux_scripts:$PATH"
 . $HOME/.asdf/completions/asdf.bash
 . $HOME/.asdf/plugins/java/asdf-java-wrapper.zsh
 
+export PATH="$(yarn global bin):$PATH"
+
 fpath=( "$HOME/.zfunctions" $fpath )
 
 autoload -U promptinit; promptinit
