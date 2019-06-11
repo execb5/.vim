@@ -1,205 +1,36 @@
-! urxvt ----------------------------------------------------------------------
-
-urxvt.font:             xft: DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Pomicons:antialias=true:size=8
-!urxvt.font:             xft: DejaVu Sans Mono for Powerline Plus Nerd File Types Plus Font Awesome Plus Octicons Plus Pomicons:antialias=true:size=8
-urxvt.scrollBar:        false
-!urxvt.tintColor:        white
-!urxvt.fading:           15
-!urxvt.fadeColor:        black
-!urxvt.shading:          25
-!urxvt.inheritPixmap:    true
-!urxvt.pointerColor:     black
-!urxvt.pointerColor2:    white
+URxvt*scrollTtyOutput:	false
+URxvt*scrollWithBuffer:	true
+URxvt*scrollTtyKeypress:	true
+URxvt.secondaryScreen:	1
+URxvt.secondaryScroll:	0
+URxvt.internalBorder:	25
+URxvt.perl-ext-common:	default,matcher,fullscreen
+URxvt.url-launcher:	/usr/bin/xdg-open
+URxvt.matcher.button:	1
+URxvt.scrollBar:	false
+URxvt.font:	xft:PxPlus IBM VGA8:style=Regular:size=12,xft:Iosevka Term,Iosevka Term Extralight:style=Extralight,Regular
+URxvt.keysym.F1:	\002
+URxvt.keysym.F11:	perl:fullscreen:switch
 *.cursorBlink: true
-
-!Open links
-URxvt.url-launcher: /usr/bin/firefox
-URxvt.matcher.button: 1
-
-Xft.rgba: none
-
-rofi.color-enabled:                  true
-rofi.color-window:                   #273238, #273238, #1e2529
-rofi.color-normal:                   #273238, #c1c1c1, #273238, #394249, #ffffff
-rofi.color-active:                   #273238, #80cbc4, #273238, #394249, #80cbc4
-rofi.color-urgent:                   #273238, #ff1844, #273238, #394249, #ff1844
-! Window opacity
-rofi.opacity:                        100
-! Window width
-rofi.width:                          50
-! Number of lines
-rofi.lines:                          10
-rofi.font:                           mono 12
-rofi.fullscreen:                     false
-rofi.fake-transparency:              false
-! Keybinding
-rofi.kb-primary-paste:               Control+Shift+v,Shift+Insert
-! Keybinding
-rofi.kb-secondary-paste:             Control+v,Insert
-! Keybinding
-rofi.kb-clear-line:                  Control+u
-! Keybinding
-rofi.kb-move-front:                  Control+a
-! Keybinding
-rofi.kb-move-end:                    Control+e
-! Keybinding
-rofi.kb-move-word-back:              Alt+b
-! Keybinding
-rofi.kb-move-word-forward:           Alt+f
-! Keybinding
-rofi.kb-move-char-back:              Left,Control+b
-! Keybinding
-rofi.kb-move-char-forward:           Right,Control+f
-! Keybinding
-rofi.kb-remove-word-back:            Control+Alt+h
-! Keybinding
-rofi.kb-remove-word-forward:         Control+Alt+d
-! Keybinding
-rofi.kb-remove-char-forward:         Delete,Control+d
-! Keybinding
-rofi.kb-remove-char-back:            BackSpace,Control+h
-! Keybinding
-rofi.kb-accept-entry:                Control+j,Control+m,Return,KP_Enter
-! Keybinding
-rofi.kb-accept-custom:               Control+Return
-! Keybinding
-rofi.kb-accept-entry-continue:       Shift+Return
-! Keybinding
-rofi.kb-mode-next:                   Shift+Right,Control+Tab
-! Keybinding
-rofi.kb-mode-previous:               Shift+Left,Control+Shift+Tab
-! Keybinding
-rofi.kb-toggle-case-sensitivity:     grave,dead_grave
-! Keybinding
-rofi.kb-delete-entry:                Shift+Delete
-! Keybinding
-rofi.kb-row-left:                    Control+Page_Up
-! Keybinding
-rofi.kb-row-right:                   Control+Page_Down
-! Keybinding
-rofi.kb-row-up:                      Up,Control+p,Shift+Tab
-! Keybinding
-rofi.kb-row-down:                    Down,Control+n
-! Keybinding
-rofi.kb-row-tab:                     Tab
-! Keybinding
-rofi.kb-page-prev:                   Page_Up
-! Keybinding
-rofi.kb-page-next:                   Page_Down
-! Keybinding
-rofi.kb-row-first:                   Home,KP_Home
-! Keybinding
-rofi.kb-row-last:                    End,KP_End
-! Keybinding
-rofi.kb-row-select:                  Control+space
-! Keybinding
-rofi.kb-cancel:                      Escape,Control+bracketleft
-! Keybinding
-rofi.kb-custom-1:                    Alt+1
-! Keybinding
-rofi.kb-custom-2:                    Alt+2
-! Keybinding
-rofi.kb-custom-3:                    Alt+3
-! Keybinding
-rofi.kb-custom-4:                    Alt+4
-! Keybinding
-rofi.kb-custom-5:                    Alt+5
-! Keybinding
-rofi.kb-custom-6:                    Alt+6
-! Keybinding
-rofi.kb-custom-7:                    Alt+7
-! Keybinding
-rofi.kb-custom-8:                    Alt+8
-! Keybinding
-rofi.kb-custom-9:                    Alt+9
-! Keybinding
-rofi.kb-custom-10:                   Alt+0
-! Keybinding
-rofi.kb-custom-11:                   Alt+Shift+1
-! Keybinding
-rofi.kb-custom-12:                   Alt+Shift+2
-! Keybinding
-rofi.kb-custom-13:                   Alt+Shift+3
-! Keybinding
-rofi.kb-custom-14:                   Alt+Shift+4
-! Keybinding
-rofi.kb-custom-15:                   Alt+Shift+5
-! Keybinding
-rofi.kb-custom-16:                   Alt+Shift+6
-! Keybinding
-rofi.kb-custom-18:                   Alt+Shift+8
-! Keybinding
-rofi.kb-custom-17:                   Alt+Shift+7
-! Keybinding
-rofi.kb-custom-19:                   Alt+Shift+9
-! Keybinding
-rofi.kb-screenshot:                  Alt+Shift+S
-! Keybinding
-rofi.kb-toggle-sort:                 Alt+grave
-! Keybinding
-rofi.key-window:
-! Keybinding
-rofi.key-run:
-! Keybinding
-rofi.key-ssh:
-
-!--Gotham theme--
-*.foreground:   #98d1ce
-*.background:   #0a0f14
-*.cursorColor:  #98d1ce
-
-*.color0:       #0a0f14
-*.color8:       #10151b
-
-*.color1:       #c33027
-*.color9:       #d26939
-
-*.color2:       #26a98b
-*.color10:      #081f2d
-
-*.color3:       #edb54b
-*.color11:      #245361
-
-*.color4:       #195465
-*.color12:      #093748
-
-*.color5:       #4e5165
-*.color13:      #888ba5
-
-*.color6:       #33859d
-*.color14:      #599caa
-
-*.color7:       #98d1ce
-*.color15:      #d3ebe9
-!
-
-
-
-
-! PaperColor Theme
-!URxvt.foreground: #4D4D4C
-!URxvt.background: #EEEEEE
-!! black
-!URxvt.color0: #EDEDED
-!URxvt.color8: #969694
-!! red
-!URxvt.color1: #D7005F
-!URxvt.color9: #D7005F
-!! green
-!URxvt.color2: #718C00
-!URxvt.color10: #718C00
-!! yellow / orange
-!URxvt.color3: #D75F00
-!URxvt.color11: #D75F00
-!! blue
-!URxvt.color4: #4271AE
-!URxvt.color12: #4271AE
-!! magenta
-!URxvt.color5: #8959A8
-!URxvt.color13: #8959A8
-!! cyan
-!URxvt.color6: #3E999F
-!URxvt.color14: #3E999F
-!! white
-!URxvt.color7: #4D4D4C
-!URxvt.color15: #F5F5F5
+!*.foreground:	#b7bcba
+!*.background:	#161719
+!*.cursorColor:	#b7bcba
+!*.color0:	#2a2e33
+!*.color8:	#1d1f22
+!*.color1:	#b84d51
+!*.color9:	#8d2e32
+!*.color2:	#b3bf5a
+!*.color10:	#798431
+!*.color3:	#e4b55e
+!*.color11:	#e58a50
+!*.color4:	#6e90b0
+!*.color12:	#4b6b88
+!*.color5:	#a17eac
+!*.color13:	#6e5079
+!*.color6:	#7fbfb4
+!*.color14:	#4d7b74
+!*.color7:	#b5b9b6
+!*.color15:	#5a626a
+!*.colorBD:	#b7bcba
+!#include "/home/execb5/programs/Xresources-themes/base16-gruvbox-dark-pale.Xresources"
+#include "/home/execb5/programs/Xresources-themes/base16-monokai.Xresources"
