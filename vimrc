@@ -18,8 +18,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 	Plug 'junegunn/vim-easy-align'
 	Plug 'wsdjeg/FlyGrep.vim'
-	Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-	Plug '/usr/local/opt/fzf'
+	Plug 'kien/ctrlp.vim'
+	"Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+	"Plug '/usr/local/opt/fzf'
   
 
 	" Org
