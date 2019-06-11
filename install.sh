@@ -10,6 +10,10 @@ ln -sf $(pwd)/tmux.conf ~/.tmux.conf
 echo "tmux.conf symlinked"
 ln -sf $(pwd)/gitignore ~/.gitignore
 echo ".gitignore symlinked"
+ln -sf $(pwd)/Xresources ~/.Xresources
+echo "Xresources symlinked"
+xrdb -merge ~/.Xresources
+echo "Xresources merged"
 
 vim +PlugInstall +qall
 echo "Plugins installed!"
@@ -17,12 +21,11 @@ echo "Plugins installed!"
 echo "Setting oh my zsh..."
 [ -d ~/.oh-my-zsh ] || git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 [ -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+[ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ] || git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 echo "oh my zsh configured!"
 
 ln -sf $(pwd)/zshrc ~/.zshrc
 echo "zshrc symlinked"
-ln -sf $(pwd)/custom.zsh-theme ~/.oh-my-zsh/themes/custom.zsh-theme
-echo "zsh-theme symlinked"
 
 grep copythis zshrc >> ~/.bashrc
 echo ".bashrc configuration created/appended"
@@ -40,4 +43,6 @@ ln -sf $(pwd)/ncmpcpp ~/.ncmpcpp/config
 
 mkdir ~/.vimtmp
 echo ".vimtmp directory created"
+mkdir ~/.vimundo
+echo ".vimundo directory created"
 
