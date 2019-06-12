@@ -77,6 +77,8 @@ function jiracard() {
 
 pair () {open vnc://$1}
 
+[ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)"
+
 alias lsd='ls -d */' #copythis
 alias vi='vim' #copythis
 alias weather="curl -4 'http://wttr.in/Porto+Alegre'"

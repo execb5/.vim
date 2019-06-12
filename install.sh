@@ -12,6 +12,9 @@ ln -sf $(pwd)/latexmkrc ~/.latexmkrc
 echo "latexmkrc symlinked"
 ln -sf $(pwd)/gitignore ~/.gitignore
 echo ".gitignore symlinked"
+mkdir ~/.ssh
+ln -sf $(pwd)/ssh_config ~/.ssh/config
+echo ".ssh_config symlinked"
 ln -sf $(pwd)/Xresources ~/.Xresources
 echo "Xresources symlinked"
 xrdb -merge ~/.Xresources
