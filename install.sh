@@ -8,6 +8,8 @@ ln -sf $(pwd)/gitconfig ~/.gitconfig
 echo "gitconfig symlinked"
 ln -sf $(pwd)/tmux.conf ~/.tmux.conf
 echo "tmux.conf symlinked"
+ln -sf $(pwd)/latexmkrc ~/.latexmkrc
+echo "latexmkrc symlinked"
 ln -sf $(pwd)/gitignore ~/.gitignore
 echo ".gitignore symlinked"
 ln -sf $(pwd)/Xresources ~/.Xresources
