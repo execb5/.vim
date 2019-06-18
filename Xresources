@@ -12,5 +12,7 @@ URxvt.scrollBar:	false
 URxvt.font:	xft:PxPlus IBM VGA8:style=Regular:size=12,xft:Iosevka Term,Iosevka Term Extralight:style=Extralight,Regular
 URxvt.keysym.F1:	\002
 URxvt.keysym.F11:	perl:fullscreen:switch
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 *.cursorBlink: true
-#include "/home/execb5/programs/Xresources-themes/base16-monokai.Xresources"
+#include "/home/execb5/programs/Xresources-themes/xcolors-hybrid.Xresources"
