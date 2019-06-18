@@ -34,6 +34,9 @@ call plug#begin('~/.vim/plugged')
 	" Elm
 	Plug 'elmcast/elm-vim', { 'for': 'elm' }
 
+	" Terraform
+	Plug 'hashivim/vim-terraform'
+
 	" C & C++
 	Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }                " better syntax highlight for C
 	Plug 'vim-scripts/a.vim', { 'for': ['c', 'cpp'] }

@@ -86,7 +86,6 @@ alias moon="curl -4 'http://wttr.in/Moon'"
 alias lenny_face='echo "( ͡° ͜ʖ ͡°)"'
 alias lenny_wall='echo "┬┴┬┴┤ ͜ʖ ͡°)"'
 alias httpserver='ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => Dir.pwd); trap('"'"'INT'"'"') { s.shutdown }; s.start"'
-alias tmux="TERM=screen-256color tmux"
 alias dri='docker rmi -f `docker images -aq`'
 alias drc='docker rm -fv `docker ps -qa`'
 alias cat='bat'
@@ -96,8 +95,11 @@ export EDITOR="/usr/bin/vim" #copythis
 
 source $ZSH/oh-my-zsh.sh
 
+source ~/.bin/tmuxinator.zsh
+
 export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.vim/aux_scripts:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
