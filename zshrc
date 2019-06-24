@@ -65,6 +65,32 @@ function wow() { #copythis
 	echo "     :YYiii\$\$\$\$\$\$\$YYYYYYY\$\$\$\$YY\$\$\$\$YYiiiiiYYYYYYi\'    " #copythis
 } #copythis
 
+function tradewars() {
+echo "[40m       [97m.                   [31m.         [97m.          [97m.                              [97m " #copythis
+echo "                        [31m.  [34m│                           [97m.                       [97m " #copythis
+echo "  [97m.        [90m│            [34m│[31m. [34m│[31m.   [97m.                               [97m.              [97m " #copythis
+echo "           [90m│           [34m╷││┌┤│           [37m│                                      [97m " #copythis
+echo "       [31m.   [90m│[31m.│[90m ╒[90m▐[34m•   ▄▄[34;104m█▓▒[94m███[94;40m▄▄   •[37m▐╕  ││                                      [97m " #copythis
+echo " [90m─══[90m░░░░░░░░░░░░░░░░░░▒▓█[37;100m░▒▓█[47;34m--[37;40m█████[47;34m-=USS=-[37;100m██▓▒░[90;40m█[90m╛        [97m.                    [97m " #copythis
+echo "   [31m:[34m╙─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─╜[31m:                    [97m.        [97m " #copythis
+echo "   [31m. [34m┌┼─┼[94;44m═╪═╪═╪═╪═╪═╪═╪═╪═╪═╪═╪═╪═╪═╪═╪═╪═╪═╪═╪[34;40m╕ [31m.                             [97m " #copythis
+echo "    [90m╒░░░░░░░░░░░░░░░░░▒▓█[37;100m░▒▓███████[47;34m-[37;40m███████[47;34m--[37;100m▓▒░[37;40m╪═┐          [97m.               [97m. [97m " #copythis
+echo "       │   │    ╘▐   [34m▀▀[34;104m█▓▒[94m███[94;40m▀▀   [37;100m▐[37;40m╛   │   [37;100m▐[37;40m┘  │                               [97m " #copythis
+echo "       ┘              [90m▐▒▓█[37;100m░▒▓[37;40m▌                           [97m.                     [97m " #copythis
+echo "  [97m.                   [90m░[34m•[90m▓█[34m•[37;100m▒▓[34;40m•        [97m.                                        [97m " #copythis
+echo "            [97m.         [90m░▒▓█[37;100m░▒▓[37;40m█                                                 [97m " #copythis
+echo "                     [31m.[90m░[31m ▄▄▄▄ [37m█[31m.                                            [97m.   [97m " #copythis
+echo "                      [90m░▒▓█[37;100m░▒▓[37;40m█                                                 [97m " #copythis
+echo "       [97m.              [90m░[34m•[90m▓█[34m•[37;100m▒▓[34;40m•                                                 [97m " #copythis
+echo "                      [90m░▒▓█[37;100m░▒▓[37;40m█                                          [97m.      [97m " #copythis
+echo "            [97m.        [31m.[90m░[31m ▀▀▀▀ [37m█[31m.      [97m.                                         [97m " #copythis
+echo "    [97m.                 [90m░▒▓█[37;100m░▒▓[37;40m█                                                 [97m " #copythis
+echo "                      [90m░▒[34m█[90m█[37;100m░[94m█[37m▓[37;40m█                    [97m.                       [97m.    [97m " #copythis
+echo "  [97m.              [97m.   [31m.[90m┘║[34m█[90m█[37;100m░[94m█[90;40m│[37m└[31m.           [97m.                                    [97m " #copythis
+echo "                       [90m│ │  [37m│                                                  [97m " #copythis
+echo "[0m" #copythis
+}
+
 function kubectl_unset() {
 	kubectl config unset clusters.$@
 	kubectl config unset users.$@
@@ -105,6 +131,11 @@ export PATH="$HOME/.local/bin:$PATH"
 . $HOME/.asdf/completions/asdf.bash
 . $HOME/.asdf/plugins/java/asdf-java-wrapper.zsh
 
+export PATH="$HOME/Downloads/treetagger/cmd:$PATH"
+export PATH="$HOME/Downloads/treetagger/bin:$PATH"
+export TREETAGGER="$HOME/Downloads/treetagger/cmd"
+export TREETAGGER_HOME="$HOME/Downloads/treetagger"
+#
 export PATH="$(yarn global bin):$PATH"
 
 fpath=( "$HOME/.zfunctions" $fpath )
