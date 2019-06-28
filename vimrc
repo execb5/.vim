@@ -18,7 +18,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 	Plug 'junegunn/vim-easy-align'
 	Plug 'wsdjeg/FlyGrep.vim'
-	Plug 'kien/ctrlp.vim'
+	Plug 'ctrlpvim/ctrlp.vim'
 
 	" Org
 	Plug 'jceb/vim-orgmode', { 'for': 'org' }
@@ -53,11 +53,15 @@ call plug#begin('~/.vim/plugged')
 
 	" Colorschemes
 	Plug 'noahfrederick/vim-noctu'
+	Plug 'logico-software/typewriter'
 
 	" Random
 	Plug 'johngrib/vim-game-snake', { 'on': 'VimGameSnake' }
 	Plug 'ap/vim-css-color'
 	Plug 'johngrib/vim-game-code-break', { 'on': 'VimGameCodeBreak' }
+	Plug 'junegunn/goyo.vim'
+	Plug 'junegunn/limelight.vim'
+
 
 call plug#end()
 
@@ -68,16 +72,16 @@ call plug#end()
 
 " Startify options
 let g:startify_custom_header = [
-	\ '   ██▒   █▓ ██▓ ███▄ ▄███▓                         ',
-	\ '  ▓██░   █▒▓██▒▓██▒▀█▀ ██▒                         ',
-	\ '   ▓██  █▒░▒██▒▓██    ▓██░                         ',
-	\ '    ▒██ █░░░██░▒██    ▒██                          ',
-	\ '     ▒▀█░  ░██░▒██▒   ░██▒            \_`-)|_      ',
-	\ '     ░ ▐░  ░▓  ░ ▒░   ░  ░         ,""       \     ',
-	\ '     ░ ░░   ▒ ░░  ░      ░       ,"  ## |   ಠ ಠ.   ',
-	\ '       ░░   ▒ ░░      ░        ," ##   ,-\__    `. ',
+	\ '   ██▒   █▓ ██▓ ███▄ ▄███▓',
+	\ '  ▓██░   █▒▓██▒▓██▒▀█▀ ██▒',
+	\ '   ▓██  █▒░▒██▒▓██    ▓██░',
+	\ '    ▒██ █░░░██░▒██    ▒██',
+	\ '     ▒▀█░  ░██░▒██▒   ░██▒            \_`-)|_',
+	\ '     ░ ▐░  ░▓  ░ ▒░   ░  ░         ,""       \',
+	\ '     ░ ░░   ▒ ░░  ░      ░       ,"  ## |   ಠ ಠ.',
+	\ '       ░░   ▒ ░░      ░        ," ##   ,-\__    `.',
 	\ '        ░   ░         ░      ,"       /     `--._;)',
-	\ '       ░                   ,"     ## /             ',
+	\ '       ░                   ,"     ## /',
 	\ ]
 
 let g:ackprg = 'rg --vimgrep' " Use rg with ack vim
@@ -86,6 +90,9 @@ cnoreabbrev Ack Ack!
 
 " Signify option
 let g:signify_vcs_list = [ 'git', 'svn' ]
+
+" Ctrlp options
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 
 
@@ -191,7 +198,9 @@ set statusline+=\ %3.3p%%
 set statusline+=\ %-10.(%l:%c%V%)
 set statusline+=\ %P
 
-colorscheme noctu
+"colorscheme noctu
+colorscheme typewriter-night
+"colorscheme typewriter
 
 "highlight Comment cterm=italic
 "highlight htmlArg cterm=italic

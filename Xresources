@@ -20,4 +20,6 @@ URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.cursorBlink: true
 URxvt.pointerBlank: true
-#include "/home/execb5/programs/Xresources-themes/xcolors-hybrid.Xresources"
+!#include "/home/execb5/programs/Xresources-themes/xcolors-hybrid.Xresources"
+#include "/home/execb5/Downloads/typewriter-night.Xresources"
+!#include "/home/execb5/Downloads/typewriter.Xresources"

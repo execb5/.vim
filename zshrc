@@ -135,6 +135,9 @@ export PATH="$HOME/Downloads/treetagger/cmd:$PATH"
 export PATH="$HOME/Downloads/treetagger/bin:$PATH"
 export TREETAGGER="$HOME/Downloads/treetagger/cmd"
 export TREETAGGER_HOME="$HOME/Downloads/treetagger"
+
+export GOPATH=$HOME/repos/go
+export PATH=$HOME/repos/go/bin:$PATH
 #
 export PATH="$(yarn global bin):$PATH"
 
