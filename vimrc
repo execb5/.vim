@@ -34,6 +34,12 @@ call plug#begin('~/.vim/plugged')
 	" Elm
 	Plug 'elmcast/elm-vim', { 'for': 'elm' }
 
+	" R
+	Plug 'jalvesaq/Nvim-R', { 'for': 'R' }
+
+	" csv
+	Plug 'chrisbra/csv.vim'
+
 	" Terraform
 	Plug 'hashivim/vim-terraform'
 
@@ -93,6 +99,48 @@ let g:signify_vcs_list = [ 'git', 'svn' ]
 
 " Ctrlp options
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+
+
+
+" Display Ale errors
+function! LinterStatus() abort
+	let l:counts = ale#statusline#Count(bufnr(''))
+	let l:all_errors = l:counts.error + l:counts.style_error
+	let l:all_non_errors = l:counts.total - l:all_errors
+	return l:counts.total == 0 ? '' : printf(
+	\ 'W:%d E:%d',
+	\ l:all_non_errors,
+	\ l:all_errors
+	\)
+endfunction
+
+" Status line
+function! BuildStatusLine(show_word = 0)
+	set statusline=
+	set statusline+=\ %#Search#%{CurrentMode()}
+	set statusline+=\%#Normal#
+	set statusline+=\ %#SpellCap#%{FugitiveHead()}
+	set statusline+=%#Conceal#
+	set statusline+=\ %f
+	set statusline+=%h%m%r
+	set statusline+=%=
+	set statusline+=%#Statement#
+	set statusline+=\ %y
+	if a:show_word
+		set statusline+=\ %{wordcount().words}\ words,
+	endif
+	set statusline+=\ %3.3p%%
+	set statusline+=\ %-10.(%l:%c%V%)
+	set statusline+=\ %P
+	set statusline+=\ %#SpellRare#%{LinterStatus()}
+endfunction
+
+" Current mode
+let g:mode_map={ 'n' : 'Normal', 'no' : 'N·Operator Pending', 'v' : 'Visual', 'V' : 'V·Line', '^V' : 'V·Block', 's' : 'Select', 'S': 'S·Line', '^S' : 'S·Block', 'i' : 'Insert', 'R' : 'Replace', 'Rv' : 'V·Replace', 'c' : 'Command', 'cv' : 'Vim Ex', 'ce' : 'Ex', 'r' : 'Prompt', 'rm' : 'More', 'r?' : 'Confirm', '!' : 'Shell', 't' : 'Terminal '}
+function! CurrentMode() abort
+	return toupper(get(g:mode_map, mode(), 'V-Block '))
+endfunction
 
 
 
@@ -183,27 +231,16 @@ set re=1
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.
 set laststatus=2
+set noshowmode
 
 
 
 
-set statusline=
-set statusline+=%#Conceal#
-set statusline+=\ %f
-set statusline+=%h%m%r
-set statusline+=%=
-set statusline+=%#Statement#
-set statusline+=\ %y
-set statusline+=\ %3.3p%%
-set statusline+=\ %-10.(%l:%c%V%)
-set statusline+=\ %P
+" Status Line
+call BuildStatusLine()
 
-"colorscheme noctu
-colorscheme typewriter-night
-"colorscheme typewriter
 
-"highlight Comment cterm=italic
-"highlight htmlArg cterm=italic
-"highlight xmlAttrib cterm=italic
-"highlight Type cterm=italic
-"highlight Normal ctermbg=none
+
+
+" Theme
+colorscheme noctu

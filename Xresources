@@ -9,17 +9,12 @@ URxvt.perl-ext-common:	default,matcher,fullscreen
 URxvt.url-launcher:	/usr/bin/xdg-open
 URxvt.matcher.button:	1
 URxvt.scrollBar:	false
-!URxvt.font:	xft:PxPlus IBM VGA8:style=Regular:size=12,xft:Iosevka Term,Iosevka Term Extralight:style=Extralight,Regular
 URxvt.font:	xft:Misc Tamsyn:style=Regular:pixelsize=17,xft:Iosevka Term,Iosevka Term Extralight:style=Extralight,Regular
 URxvt.boldFont:	xft:Misc Tamsyn:style=Bold:pixelsize=17,xft:Iosevka Term:style=Bold
-!URxvt*font:	-misc-tamsyn-medium-r-normal--17-120-100-100-c-0-iso8859-1
-!URxvt*boldFont:	-misc-tamsyn-bold-r-normal--17-120-100-100-c-0-iso8859-1
 URxvt.keysym.F1:	\002
 URxvt.keysym.F11:	perl:fullscreen:switch
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.cursorBlink: true
 URxvt.pointerBlank: true
-!#include "/home/execb5/programs/Xresources-themes/xcolors-hybrid.Xresources"
 #include "/home/execb5/Downloads/typewriter-night.Xresources"
-!#include "/home/execb5/Downloads/typewriter.Xresources"

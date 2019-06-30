@@ -91,17 +91,9 @@ echo "                       [90m│ │  [37m│                             
 echo "[0m" #copythis
 }
 
-function kubectl_unset() {
-	kubectl config unset clusters.$@
-	kubectl config unset users.$@
-	kubectl config unset contexts.staging-realm.k8s.local
-}
+(cat ~/.cache/wal/sequences &)
 
-function jiracard() {
-	echo "[$@](https://campgladiator.atlassian.net/browse/$@)"
-}
-
-pair () {open vnc://$1}
+source ~/.cache/wal/colors-tty.sh
 
 [ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)"
 

@@ -5,3 +5,5 @@ set textwidth=72
 set expandtab
 
 let g:instant_markdown_autostart = 0
+
+call BuildStatusLine(1)
