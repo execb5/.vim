@@ -41,10 +41,10 @@ call plug#begin('~/.vim/plugged')
 	Plug 'chrisbra/csv.vim'
 
 	" Terraform
-	Plug 'hashivim/vim-terraform'
+	Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 
 	" C & C++
-	Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }                " better syntax highlight for C
+	Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }
 	Plug 'vim-scripts/a.vim', { 'for': ['c', 'cpp'] }
 	Plug 'drmikehenry/vim-headerguard', { 'for': ['c', 'cpp'] }
 
@@ -53,20 +53,19 @@ call plug#begin('~/.vim/plugged')
 	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
 
 	" Pretify things
-	Plug 'mhinz/vim-signify'                                        " show what changed in file
+	Plug 'mhinz/vim-signify'
 	Plug 'mhinz/vim-startify'
 	Plug 'machakann/vim-highlightedyank'
+	Plug 'ap/vim-css-color'
 
 	" Colorschemes
 	Plug 'noahfrederick/vim-noctu'
-	Plug 'logico-software/typewriter'
 
 	" Random
 	Plug 'johngrib/vim-game-snake', { 'on': 'VimGameSnake' }
-	Plug 'ap/vim-css-color'
 	Plug 'johngrib/vim-game-code-break', { 'on': 'VimGameCodeBreak' }
-	Plug 'junegunn/goyo.vim'
-	Plug 'junegunn/limelight.vim'
+	Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+	Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
 
 
 call plug#end()
@@ -103,19 +102,68 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 
 
 
-" Display Ale errors
+" Functions
+
+" Get status from ALE
 function! LinterStatus() abort
 	let l:counts = ale#statusline#Count(bufnr(''))
 	let l:all_errors = l:counts.error + l:counts.style_error
 	let l:all_non_errors = l:counts.total - l:all_errors
 	return l:counts.total == 0 ? '' : printf(
-	\ 'W:%d E:%d',
+	\ '[W:%d E:%d]',
 	\ l:all_non_errors,
 	\ l:all_errors
 	\)
 endfunction
 
-" Status line
+" Detect trailing whitespace
+function! StatuslineTrailingSpaceWarning()
+	if !exists("b:statusline_trailing_space_warning")
+
+		if !&modifiable
+			let b:statusline_trailing_space_warning = ''
+			return b:statusline_trailing_space_warning
+		endif
+
+		if search('\s\+$', 'nw') != 0
+			let b:statusline_trailing_space_warning = '[\s]'
+		else
+			let b:statusline_trailing_space_warning = ''
+		endif
+	endif
+	return b:statusline_trailing_space_warning
+endfunction
+
+" Detect mixed identation or mismatch with expandtab
+function! StatuslineTabWarning()
+	if !exists("b:statusline_tab_warning")
+	let b:statusline_tab_warning = ''
+
+		if !&modifiable
+			return b:statusline_tab_warning
+		endif
+
+		let tabs = search('^\t', 'nw') != 0
+
+		"find spaces that arent used as alignment in the first indent column
+		let spaces = search('^ \{' . &ts . ',}[^\t]', 'nw') != 0
+
+		if tabs && spaces
+			let b:statusline_tab_warning =  '[mixed-indenting]'
+		elseif (spaces && !&et) || (tabs && &et)
+			let b:statusline_tab_warning = '[&et]'
+		endif
+	endif
+	return b:statusline_tab_warning
+endfunction
+
+" Get current mode
+let g:mode_map={ 'n' : 'Normal', 'no' : 'N·Operator Pending', 'v' : 'Visual', 'V' : 'V·Line', '^V' : 'V·Block', 's' : 'Select', 'S': 'S·Line', '^S' : 'S·Block', 'i' : 'Insert', 'R' : 'Replace', 'Rv' : 'V·Replace', 'c' : 'Command', 'cv' : 'Vim Ex', 'ce' : 'Ex', 'r' : 'Prompt', 'rm' : 'More', 'r?' : 'Confirm', '!' : 'Shell', 't' : 'Terminal '}
+function! CurrentMode() abort
+	return toupper(get(g:mode_map, mode(), 'V-Block '))
+endfunction
+
+" Build status line
 function! BuildStatusLine(show_word = 0)
 	set statusline=
 	set statusline+=\ %#Search#%{CurrentMode()}
@@ -124,22 +172,31 @@ function! BuildStatusLine(show_word = 0)
 	set statusline+=%#Conceal#
 	set statusline+=\ %f
 	set statusline+=%h%m%r
+
 	set statusline+=%=
+
 	set statusline+=%#Statement#
+	"set statusline+=\ [%{&ff}]
 	set statusline+=\ %y
+
 	if a:show_word
 		set statusline+=\ %{wordcount().words}\ words,
 	endif
+
 	set statusline+=\ %3.3p%%
 	set statusline+=\ %-10.(%l:%c%V%)
 	set statusline+=\ %P
-	set statusline+=\ %#SpellRare#%{LinterStatus()}
-endfunction
 
-" Current mode
-let g:mode_map={ 'n' : 'Normal', 'no' : 'N·Operator Pending', 'v' : 'Visual', 'V' : 'V·Line', '^V' : 'V·Block', 's' : 'Select', 'S': 'S·Line', '^S' : 'S·Block', 'i' : 'Insert', 'R' : 'Replace', 'Rv' : 'V·Replace', 'c' : 'Command', 'cv' : 'Vim Ex', 'ce' : 'Ex', 'r' : 'Prompt', 'rm' : 'More', 'r?' : 'Confirm', '!' : 'Shell', 't' : 'Terminal '}
-function! CurrentMode() abort
-	return toupper(get(g:mode_map, mode(), 'V-Block '))
+	set statusline+=\ %#error#%{LinterStatus()}
+	set statusline+=%*
+
+	set statusline+=%#error#
+	set statusline+=%{StatuslineTrailingSpaceWarning()}
+	set statusline+=%*
+
+	set statusline+=%#error#
+	set statusline+=%{StatuslineTabWarning()}
+	set statusline+=%*
 endfunction
 
 
@@ -199,6 +256,8 @@ map <ScrollWheelDown> u
 " Initial configuration
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown " Detect *.md as markdown
 autocmd BufNewFile,BufReadPost *.tex set filetype=tex " Detect *.tex as latex
+autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
+autocmd cursorhold,bufwritepost * unlet! b:statusline_tab_warning
 set relativenumber
 set number
 set autoindent
@@ -233,14 +292,8 @@ set directory=~/.vimtmp,.
 set laststatus=2
 set noshowmode
 
-
-
-
-" Status Line
 call BuildStatusLine()
 
-
-
-
-" Theme
 colorscheme noctu
+
+highlight EndOfBuffer ctermfg=black  guifg=black
