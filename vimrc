@@ -240,11 +240,6 @@ nnoremap <Leader>a :Ack!<Space>
 nmap <Leader>t :TagbarToggle<CR>
 map y <Plug>(highlightedyank)
 nnoremap <Space>s/ :FlyGrep<CR>
-nnoremap <Leader>p :FZF<CR>
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
 
 " Mouse wheel will move throught time and not space
 map <ScrollWheelUp> <C-r>
