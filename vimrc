@@ -300,7 +300,6 @@ set incsearch
 set colorcolumn=72,80,120
 set cm=blowfish2 " Better encryption
 set ttyfast
-set lazyredraw
 set re=1
 set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.
