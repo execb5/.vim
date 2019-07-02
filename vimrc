@@ -243,6 +243,7 @@ map <Leader>i mzgg=G`z
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
 nmap <Leader>h :noh<CR>
+nmap <Leader>e :e<CR>
 nmap <Leader>j :%! python -m json.tool<CR>
 noremap <C-J> <C-W>j
 noremap <C-K> <C-W>k
