@@ -7,17 +7,16 @@ call plug#begin('~/.vim/plugged')
 	Plug 'w0rp/ale'
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'mileszs/ack.vim', { 'on': 'Ack' }
-	Plug 'tpope/vim-repeat'
-	Plug 'tpope/vim-surround'
-	Plug 'tpope/vim-fugitive'
-	Plug 'tpope/vim-unimpaired'
-	Plug 'tpope/vim-speeddating'
 	Plug 'tpope/vim-endwise', { 'for': ['ruby', 'elixir'] }
-	Plug 'terryma/vim-multiple-cursors'
+	Plug 'tpope/vim-fugitive'
+	Plug 'tpope/vim-repeat'
+	Plug 'tpope/vim-rhubarb'
+	Plug 'tpope/vim-speeddating'
+	Plug 'tpope/vim-surround'
+	Plug 'tpope/vim-unimpaired'
 	Plug 'Townk/vim-autoclose'
 	Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 	Plug 'junegunn/vim-easy-align'
-	Plug 'wsdjeg/FlyGrep.vim'
 	Plug 'ctrlpvim/ctrlp.vim'
 
 	" Org
@@ -49,7 +48,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'drmikehenry/vim-headerguard', { 'for': ['c', 'cpp'] }
 
 	" Markdown
-	Plug 'suan/vim-instant-markdown', { 'for': 'markdown' }
 	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
 
 	" Pretify things
@@ -104,7 +102,6 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 
 " Functions
 
-" Get status from ALE
 function! LinterStatus() abort
 	let l:counts = ale#statusline#Count(bufnr(''))
 	let l:all_errors = l:counts.error + l:counts.style_error
@@ -116,7 +113,6 @@ function! LinterStatus() abort
 	\)
 endfunction
 
-" Detect trailing whitespace
 function! StatuslineTrailingSpaceWarning()
 	if !exists("b:statusline_trailing_space_warning")
 
@@ -134,7 +130,6 @@ function! StatuslineTrailingSpaceWarning()
 	return b:statusline_trailing_space_warning
 endfunction
 
-" Detect mixed identation or mismatch with expandtab
 function! StatuslineTabWarning()
 	if !exists("b:statusline_tab_warning")
 	let b:statusline_tab_warning = ''
@@ -157,7 +152,6 @@ function! StatuslineTabWarning()
 	return b:statusline_tab_warning
 endfunction
 
-" Get current mode
 let g:mode_map={
 	\ 'n'  : 'Normal',
 	\ 'no' : 'N·Operator Pending',
@@ -183,7 +177,6 @@ function! CurrentMode() abort
 	return toupper(get(g:mode_map, mode(), 'V-Block '))
 endfunction
 
-" Build status line
 function! BuildStatusLine(show_word = 0)
 	set statusline=
 	set statusline+=\ %#Search#%{CurrentMode()}
@@ -217,6 +210,16 @@ function! BuildStatusLine(show_word = 0)
 	set statusline+=%#error#
 	set statusline+=%{StatuslineTabWarning()}
 	set statusline+=%*
+endfunction
+
+function! StripTrailingWhitespace()
+	if !&binary && &filetype != 'diff'
+		normal mz
+		normal Hmy
+		%s/\s\+$//e
+		normal 'yz<CR>
+		normal `z
+	endif
 endfunction
 
 
@@ -260,7 +263,6 @@ cnoremap <C-h> <t_kl>
 nnoremap <Leader>a :Ack!<Space>
 nmap <Leader>t :TagbarToggle<CR>
 map y <Plug>(highlightedyank)
-nnoremap <Space>s/ :FlyGrep<CR>
 
 " Mouse wheel will move throught time and not space
 map <ScrollWheelUp> <C-r>
@@ -274,6 +276,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown " Detect *.md as markd
 autocmd BufNewFile,BufReadPost *.tex set filetype=tex " Detect *.tex as latex
 autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
 autocmd cursorhold,bufwritepost * unlet! b:statusline_tab_warning
+set path+=**
 set relativenumber
 set number
 set autoindent
