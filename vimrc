@@ -65,6 +65,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 	Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
 
+	" Spell files
+	Plug 'mateusbraga/vim-spell-pt-br'
 
 call plug#end()
 
@@ -248,6 +250,7 @@ nmap <Leader>q :q<CR>
 nmap <Leader>h :noh<CR>
 nmap <Leader>e :e<CR>
 nmap <Leader>j :%! python -m json.tool<CR>
+nmap <Leader>c :!ctags -R .<CR>
 noremap <C-J> <C-W>j
 noremap <C-K> <C-W>k
 noremap <C-H> <C-W>h
@@ -263,6 +266,7 @@ cnoremap <C-h> <t_kl>
 nnoremap <Leader>a :Ack!<Space>
 nmap <Leader>t :TagbarToggle<CR>
 map y <Plug>(highlightedyank)
+nnoremap <Leader>p :CtrlPTag<CR>
 
 " Mouse wheel will move throught time and not space
 map <ScrollWheelUp> <C-r>
@@ -309,6 +313,8 @@ set backupdir=~/.vimtmp,.
 set directory=~/.vimtmp,.
 set laststatus=2
 set noshowmode
+set ignorecase
+set smartcase
 
 call BuildStatusLine()
 
