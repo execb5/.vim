@@ -8,6 +8,8 @@
 	gpgsign = true
 [push]
 	default = simple
+[pull]
+	rebase = true
 [core]
 	editor = vim
 	pager = diff-so-fancy | less --tabs=4 -R

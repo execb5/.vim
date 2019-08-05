@@ -99,7 +99,27 @@ let g:signify_vcs_list = [ 'git', 'svn' ]
 " Ctrlp options
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
+" Tagbar
+let g:tagbar_type_terraform = {
+	\ 'ctagstype' : 'terraform',
+	\ 'kinds' : [
+	\ 'r:resources',
+	\ 'm:modules',
+	\ 'o:outputs',
+	\ 'v:variables',
+	\ 'f:tfvars'
+	\ ],
+	\ 'sort' : 0
+	\ }
 
+let g:tagbar_type_markdown = {
+	\ 'ctagstype' : 'markdown',
+	\ 'kinds' : [
+	\ 'h:Heading_L1',
+	\ 'i:Heading_L2',
+	\ 'k:Heading_L3'
+	\ ]
+	\ }
 
 
 " Functions
