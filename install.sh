@@ -1,4 +1,9 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+#set -o xtrace
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -12,13 +17,21 @@ ln -sf $(pwd)/latexmkrc ~/.latexmkrc
 echo "latexmkrc symlinked"
 ln -sf $(pwd)/gitignore ~/.gitignore
 echo ".gitignore symlinked"
-mkdir ~/.ssh
+mkdir -p ~/.ssh
 ln -sf $(pwd)/ssh_config ~/.ssh/config
 echo ".ssh_config symlinked"
 ln -sf $(pwd)/Xresources ~/.Xresources
 echo "Xresources symlinked"
 xrdb -merge ~/.Xresources
 echo "Xresources merged"
+
+[ -d ~/.ctags.d ] || mkdir ~/.ctags.d
+for f in $(pwd)/ctags/*.ctags
+do
+	tag_file=${f##*/}
+	ln -sf $f ~/.ctags.d/$tag_file
+	echo "$tag_file symlinked"
+done
 
 vim +PlugInstall +qall
 echo "Plugins installed!"
@@ -41,13 +54,13 @@ ln -sf $(pwd)/mpd.conf ~/.mpd/mpd.conf
 touch ~/.mpd/mpd.db
 touch ~/.mpd/mpd.log
 touch ~/.mpd/mpdstate
-mkdir ~/.mpd/playlists
+mkdir -p ~/.mpd/playlists
 
 [ -d ~/.ncmpcpp ] || mkdir ~/.ncmpcpp
 ln -sf $(pwd)/ncmpcpp ~/.ncmpcpp/config
 
-mkdir ~/.vimtmp
-echo ".vimtmp directory created"
-mkdir ~/.vimundo
-echo ".vimundo directory created"
+mkdir -p ~/.vimtmp
+echo ".vimtmp directory set up"
+mkdir -p ~/.vimundo
+echo ".vimundo directory set up"
 

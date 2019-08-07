@@ -33,6 +33,8 @@ call plug#begin('~/.vim/plugged')
 	" Elm
 	Plug 'elmcast/elm-vim', { 'for': 'elm' }
 
+	Plug 'vim-scripts/groovy.vim', { 'for': 'groovy' }
+
 	" R
 	Plug 'jalvesaq/Nvim-R', { 'for': 'R' }
 

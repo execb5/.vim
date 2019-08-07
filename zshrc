@@ -118,6 +118,8 @@ export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.vim/aux_scripts:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
+export JAVA_HOME="$HOME/.asdf/installs/java/openjdk-11.0.1"
+
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 . $HOME/.asdf/plugins/java/asdf-java-wrapper.zsh
