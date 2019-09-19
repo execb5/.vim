@@ -30,14 +30,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 	Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
 
-	" Elm
-	Plug 'elmcast/elm-vim', { 'for': 'elm' }
-
-	Plug 'vim-scripts/groovy.vim', { 'for': 'groovy' }
-
-	" R
-	Plug 'jalvesaq/Nvim-R', { 'for': 'R' }
-
 	" csv
 	Plug 'chrisbra/csv.vim'
 
@@ -337,6 +329,10 @@ set laststatus=2
 set noshowmode
 set ignorecase
 set smartcase
+
+if has('patch-8.1.0360')
+	set diffopt=filler,internal,algorithm:histogram,indent-heuristic
+endif
 
 call BuildStatusLine()
 
