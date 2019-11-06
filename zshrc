@@ -129,8 +129,11 @@ export PATH="$HOME/Downloads/treetagger/bin:$PATH"
 export TREETAGGER="$HOME/Downloads/treetagger/cmd"
 export TREETAGGER_HOME="$HOME/Downloads/treetagger"
 
+#export https_proxy=http://web-proxy.corp.hp.com:8080/
+
 export GOPATH=$HOME/repos/go
-export PATH=$HOME/repos/go/bin:$PATH
+export GOBIN=$GOPATH/bin
+export PATH=$GOBIN:$PATH
 #
 export PATH="$(yarn global bin):$PATH"
 

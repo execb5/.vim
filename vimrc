@@ -30,6 +30,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 	Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
 
+	" Go
+	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 	" csv
 	Plug 'chrisbra/csv.vim'
 
@@ -329,6 +332,7 @@ set laststatus=2
 set noshowmode
 set ignorecase
 set smartcase
+set clipboard=unnamed
 
 if has('patch-8.1.0360')
 	set diffopt=filler,internal,algorithm:histogram,indent-heuristic
