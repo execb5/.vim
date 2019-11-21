@@ -52,6 +52,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'mhinz/vim-startify'
 	Plug 'machakann/vim-highlightedyank'
 	Plug 'ap/vim-css-color'
+	Plug 'thiagoalessio/rainbow_levels.vim', { 'on': 'RainbowLevelsToggle' }
+	Plug 'psliwka/vim-smoothie'
 
 	" Colorschemes
 	Plug 'noahfrederick/vim-noctu'
@@ -283,6 +285,7 @@ cnoremap <C-h> <t_kl>
 nnoremap <Leader>a :Ack!<Space>
 nmap <Leader>t :TagbarToggle<CR>
 map y <Plug>(highlightedyank)
+map <leader>l :RainbowLevelsToggle<CR>
 nnoremap <Leader>p :CtrlPTag<CR>
 
 " Mouse wheel will move throught time and not space
