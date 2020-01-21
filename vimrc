@@ -53,7 +53,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'machakann/vim-highlightedyank'
 	Plug 'ap/vim-css-color'
 	Plug 'thiagoalessio/rainbow_levels.vim', { 'on': 'RainbowLevelsToggle' }
-	Plug 'psliwka/vim-smoothie'
 
 	" Colorschemes
 	Plug 'noahfrederick/vim-noctu'
@@ -122,7 +121,6 @@ let g:tagbar_type_markdown = {
 
 
 " Functions
-
 function! LinterStatus() abort
 	let l:counts = ale#statusline#Count(bufnr(''))
 	let l:all_errors = l:counts.error + l:counts.style_error
@@ -263,7 +261,7 @@ nnoremap <Down> :resize -2<CR>
 nnoremap <Left> :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
 inoremap jk <esc>
-map <Leader>i mzgg=G`z
+nmap <Leader>i mzgg=G`z
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
 nmap <Leader>h :noh<CR>

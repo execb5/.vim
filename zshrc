@@ -122,7 +122,7 @@ export JAVA_HOME="$HOME/.asdf/installs/java/openjdk-11.0.1"
 
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
-. $HOME/.asdf/plugins/java/asdf-java-wrapper.zsh
+#. $HOME/.asdf/plugins/java/asdf-java-wrapper.zsh
 
 export PATH="$HOME/Downloads/treetagger/cmd:$PATH"
 export PATH="$HOME/Downloads/treetagger/bin:$PATH"
