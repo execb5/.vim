@@ -103,6 +103,7 @@ alias weather="curl -4 'http://wttr.in/Porto+Alegre'" #copythis
 alias moon="curl -4 'http://wttr.in/Moon'" #copythis
 alias lenny_face='echo "( ͡° ͜ʖ ͡°)"' #copythis
 alias lenny_wall='echo "┬┴┬┴┤ ͜ʖ ͡°)"' #copythis
+alias shrug='echo "¯\_(ツ)_/¯"' #copythis
 alias httpserver='ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => Dir.pwd); trap('"'"'INT'"'"') { s.shutdown }; s.start"' #copythis
 alias dri='docker rmi -f `docker images -aq`' #copythis
 alias drc='docker rm -fv `docker ps -qa`' #copythis
@@ -118,11 +119,12 @@ export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.vim/aux_scripts:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
-export JAVA_HOME="$HOME/.asdf/installs/java/openjdk-11.0.1"
+export GOPATH=$HOME/repos/go
+export GOBIN=$GOPATH/bin
+export PATH=$GOBIN:$PATH
 
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
-#. $HOME/.asdf/plugins/java/asdf-java-wrapper.zsh
 
 export PATH="$HOME/Downloads/treetagger/cmd:$PATH"
 export PATH="$HOME/Downloads/treetagger/bin:$PATH"
@@ -139,16 +141,6 @@ export PATH="$(yarn global bin):$PATH"
 
 fpath=( "$HOME/.zfunctions" $fpath )
 
-autoload -U promptinit; promptinit
-PURE_PROMPT_SYMBOL=λ
-prompt pure
+if [ /home/execb5/.asdf/shims/kubectl ]; then source <(kubectl completion zsh); fi
 
-
-
-if [ /usr/bin/kubectl ]; then source <(kubectl completion zsh); fi
-
-PATH="/home/execb5/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/execb5/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/execb5/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/execb5/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/execb5/perl5"; export PERL_MM_OPT;
+eval "$(starship init zsh)"

@@ -10,12 +10,28 @@ URxvt.perl-ext-common:		default,matcher,fullscreen
 URxvt.url-launcher:		/usr/bin/xdg-open
 URxvt.matcher.button:		1
 URxvt.scrollBar:		false
-URxvt.font:			xft:Misc Tamsyn:style=Regular:pixelsize=17,xft:Iosevka Term,Iosevka Term Extralight:style=Extralight,Regular
-URxvt.boldFont:			xft:Misc Tamsyn:style=Bold:pixelsize=17,xft:Iosevka Term:style=Bold
+!/home/execb5/.fonts/scientificaItalic.ttf: scientifica:style=Medium
+!/home/execb5/.fonts/scientifica.ttf: scientifica:style=Medium
+!/home/execb5/.fonts/scientificaBold.ttf: scientifica:style=Bold
+!URxvt.font:			xft:Misc Tamsyn:style=Regular:pixelsize=17,xft:DejaVuSansMono Nerd Font Mono:style=Book
+!URxvt.boldFont:			xft:Misc Tamsyn:style=Bold:pixelsize=17,xft:DejaVuSansMono Nerd Font Mono:style=Bold
+URxvt.font:			xft:Cozette:style=Medium:pixelsize=17
+!URxvt.font:			xft:scientifica:style=Medium:pixelsize=16,xft:DejaVuSansMono Nerd Font Mono:style=Book,xft:Iosevka Term,Iosevka Nerd Font Mono:style=Extralight,Regular,xft:DejaVuSansMono Nerd Font Mono:style=Book
+!URxvt.boldFont:			xft:scientifica:style=Bold:pixelsize=16,xft:DejaVuSansMono Nerd Font Mono:style=Bold,xft:Iosevka Term,Iosevka Nerd Font Mono:style=Extralight,Regular,xft:DejaVuSansMono Nerd Font Mono:style=Bold
+!URxvt.font:			xft:PxPlus IBM VGA8:style=Regular:pixelsize=15,xft:Iosevka Term,Iosevka Nerd Font Mono:style=Extralight,Regular,xft:DejaVuSansMono Nerd Font Mono:style=Book
+!URxvt.boldFont:			xft:PxPlus IBM VGA8\-2x:style=Regular:pixelsize=15,xft:Iosevka Term,Iosevka Nerd Font Mono:style=Extralight,Regular,xft:DejaVuSansMono Nerd Font Mono:style=Bold
+!URxvt.font:			xft:Iosevka Term,Iosevka Term Light:style=Light,Regular:pixelsize=14,xft:DejaVuSansMono Nerd Font Mono:style=Book
+!URxvt.boldFont:			xft:Iosevka Term:style=Bold:pixelsize=14,xft:DejaVuSansMono Nerd Font Mono:style=Bold
+!URxvt.font:			xft:DejaVuSansMono Nerd Font Mono:style=Book:pixelsize=13
+!URxvt.boldFont:			xft:DejaVuSansMono Nerd Font Mono:style=Bold:pixelsize=17
+!URxvt.font:			xft:FantasqueSansMono Nerd Font Mono:style=Regular:pixelsize=13
+!URxvt.boldFont:			xft:FantasqueSansMono Nerd Font Mono:style=Bold:pixelsize=17
+!URxvt.font:			xft:Inconsolata Nerd Font Mono:style=Regular:pixelsize=13
+!URxvt.boldFont:			xft:Inconsolata Nerd Font Mono:style=Bold:pixelsize=17
 URxvt.keysym.F1:		\002
 URxvt.keysym.F11:		perl:fullscreen:switch
 URxvt.keysym.Shift-Control-V:	eval:paste_clipboard
 URxvt.keysym.Shift-Control-C:	eval:selection_to_clipboard
 URxvt.cursorBlink:		true
 URxvt.pointerBlank:		true
-#include "/home/execb5/Downloads/typewriter-night.Xresources"
+

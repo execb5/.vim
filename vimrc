@@ -47,6 +47,12 @@ call plug#begin('~/.vim/plugged')
 	" Markdown
 	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
 
+	" Processing
+	Plug 'sophacles/vim-processing'
+
+	" Wakatime
+	Plug 'wakatime/vim-wakatime'
+
 	" Pretify things
 	Plug 'mhinz/vim-signify'
 	Plug 'mhinz/vim-startify'
@@ -56,6 +62,7 @@ call plug#begin('~/.vim/plugged')
 
 	" Colorschemes
 	Plug 'noahfrederick/vim-noctu'
+	Plug 'dylanaraps/wal.vim'
 
 	" Random
 	Plug 'johngrib/vim-game-snake', { 'on': 'VimGameSnake' }
@@ -75,16 +82,30 @@ call plug#end()
 
 " Startify options
 let g:startify_custom_header = [
-	\ '   ██▒   █▓ ██▓ ███▄ ▄███▓',
-	\ '  ▓██░   █▒▓██▒▓██▒▀█▀ ██▒',
-	\ '   ▓██  █▒░▒██▒▓██    ▓██░',
-	\ '    ▒██ █░░░██░▒██    ▒██',
-	\ '     ▒▀█░  ░██░▒██▒   ░██▒            \_`-)|_',
-	\ '     ░ ▐░  ░▓  ░ ▒░   ░  ░         ,""       \',
-	\ '     ░ ░░   ▒ ░░  ░      ░       ,"  ## |   ಠ ಠ.',
-	\ '       ░░   ▒ ░░      ░        ," ##   ,-\__    `.',
-	\ '        ░   ░         ░      ,"       /     `--._;)',
-	\ '       ░                   ,"     ## /',
+	\ "             ..uu.",
+	\ "            ?$\"\"`?i           z\'",
+	\ "            `M  .@\"          x\"",
+	\ "            \'Z :#\"  .   .    f 8M",
+	\ "            \'&H?`  :$f U8   <  MP   x#\'",
+	\ "            d#`    XM  $5.  $  M\' xM\"",
+	\ "          .!\">     @  \'f`$L:M  R.@!`",
+	\ "         +`  >     R  X  \"NXF  R\"*L",
+	\ "             k    \'f  M   \"$$ :E  5.",
+	\ "             %    `~  \"    `  \'K  \'M",
+	\ "                 .uH          \'E   `h",
+	\ "              .x*`             X     `",
+	\ "           .uf`                *",
+	\ "         .@8     .",
+	\ "        \'E9F  uf\"          ,     ,",
+	\ "          9h+\"   $M    eH. 8b. .8    .....",
+	\ "         .8`     $\'   M \'E  `R;\'   d?\"\"\"`\"#",
+	\ "        ` E      @    b  d   9R    ?*     @",
+	\ "          >      K.zM `%M\'   9\'    Xf   .f",
+	\ "         ;       R\'          9     M  .=`",
+	\ "         t                   M     Mx~",
+	\ "         @                  lR    z\"",
+	\ "         @                  `   ;\"",
+	\ "                               `",
 	\ ]
 
 let g:ackprg = 'rg --vimgrep' " Use rg with ack vim
@@ -120,7 +141,10 @@ let g:tagbar_type_markdown = {
 	\ }
 
 
+
+
 " Functions
+
 function! LinterStatus() abort
 	let l:counts = ale#statusline#Count(bufnr(''))
 	let l:all_errors = l:counts.error + l:counts.style_error
@@ -245,6 +269,7 @@ endfunction
 
 
 " netrw configuration
+
 let g:netrw_liststyle = 3 " netrw tree style view
 let g:netrw_banner = 0 " hide banner
 let g:netrw_browse_split = 2 " open file in new window
@@ -255,6 +280,7 @@ let g:netrw_altv = 1 " change from left splitting to right splitting
 
 
 " Keybindings
+
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 nnoremap <Up> :resize +2<CR>
 nnoremap <Down> :resize -2<CR>
@@ -280,6 +306,7 @@ cnoremap <C-l> <t_kr>
 cnoremap <C-h> <t_kl>
 
 " Keybinds for plugins
+
 nnoremap <Leader>a :Ack!<Space>
 nmap <Leader>t :TagbarToggle<CR>
 map y <Plug>(highlightedyank)
@@ -287,6 +314,7 @@ map <leader>l :RainbowLevelsToggle<CR>
 nnoremap <Leader>p :CtrlPTag<CR>
 
 " Mouse wheel will move throught time and not space
+
 map <ScrollWheelUp> <C-r>
 map <ScrollWheelDown> u
 
@@ -294,6 +322,7 @@ map <ScrollWheelDown> u
 
 
 " Initial configuration
+
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown " Detect *.md as markdown
 autocmd BufNewFile,BufReadPost *.tex set filetype=tex " Detect *.tex as latex
 autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
@@ -302,7 +331,8 @@ set path+=**
 set relativenumber
 set number
 set autoindent
-set list lcs=trail:·,precedes:«,extends:»,tab:▸\ ,eol:¬
+"set list lcs=trail:·,precedes:«,extends:»,tab:▸\ ,eol:¬
+set list lcs=trail:·,precedes:«,extends:»,tab:\ ,eol:¬
 set showcmd
 set digraph
 set visualbell
