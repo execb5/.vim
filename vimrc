@@ -82,30 +82,32 @@ call plug#end()
 
 " Startify options
 let g:startify_custom_header = [
-	\ "             ..uu.",
-	\ "            ?$\"\"`?i           z\'",
-	\ "            `M  .@\"          x\"",
-	\ "            \'Z :#\"  .   .    f 8M",
-	\ "            \'&H?`  :$f U8   <  MP   x#\'",
-	\ "            d#`    XM  $5.  $  M\' xM\"",
-	\ "          .!\">     @  \'f`$L:M  R.@!`",
-	\ "         +`  >     R  X  \"NXF  R\"*L",
-	\ "             k    \'f  M   \"$$ :E  5.",
-	\ "             %    `~  \"    `  \'K  \'M",
-	\ "                 .uH          \'E   `h",
-	\ "              .x*`             X     `",
-	\ "           .uf`                *",
-	\ "         .@8     .",
-	\ "        \'E9F  uf\"          ,     ,",
-	\ "          9h+\"   $M    eH. 8b. .8    .....",
-	\ "         .8`     $\'   M \'E  `R;\'   d?\"\"\"`\"#",
-	\ "        ` E      @    b  d   9R    ?*     @",
-	\ "          >      K.zM `%M\'   9\'    Xf   .f",
-	\ "         ;       R\'          9     M  .=`",
-	\ "         t                   M     Mx~",
-	\ "         @                  lR    z\"",
-	\ "         @                  `   ;\"",
-	\ "                               `",
+	\ "         __________________________",
+	\ "        |OFFo oON                  |",
+	\ "        | .----------------------. |",
+	\ "        | |  .----------------.  | |",
+	\ "        | |  |                |  | |",
+	\ "        | |))|                |  | |",
+	\ "        | |  |                |  | |",
+	\ "        | |  |                |  | |",
+	\ "        | |  |                |  | |",
+	\ "        | |  |                |  | |",
+	\ "        | |  |                |  | |",
+	\ "        | |  '----------------'  | |",
+	\ "        | |__GAME BOY____________/ |",
+	\ "        |          ________        |",
+	\ "        |    .    (Nintendo)       |",
+	\ "        |  _| |_   \"\"\"\"\"\"\"\"   .-.  |",
+	\ "        |-[_   _]-       .-. (   ) |",
+	\ "        |   |_|         (   ) '-'  |",
+	\ "        |    '           '-'   A   |",
+	\ "        |                 B        |",
+	\ "        |          ___   ___       |",
+	\ "        |         (___) (___)  ,., |",
+	\ "        |        select start ;:;: |",
+	\ "        |                    ,;:;' /",
+	\ "        |                   ,:;:'.'",
+	\ "        '-----------------------`",
 	\ ]
 
 let g:ackprg = 'rg --vimgrep' " Use rg with ack vim
@@ -318,6 +320,17 @@ nnoremap <Leader>p :CtrlPTag<CR>
 map <ScrollWheelUp> <C-r>
 map <ScrollWheelDown> u
 
+" Map for interactive curl
+
+map <leader>cc vipyPgvO<Esc>O<Esc>gv:!curl --config -<CR>
+
+
+
+
+" Custom commands
+
+command Writemode setlocal spell | Goyo 70
+
 
 
 
@@ -331,8 +344,7 @@ set path+=**
 set relativenumber
 set number
 set autoindent
-"set list lcs=trail:·,precedes:«,extends:»,tab:▸\ ,eol:¬
-set list lcs=trail:·,precedes:«,extends:»,tab:\ ,eol:¬
+set list lcs=trail:·,precedes:«,extends:»,tab:▸\ ,eol:¬
 set showcmd
 set digraph
 set visualbell
