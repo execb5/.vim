@@ -91,10 +91,6 @@ function tradewars() { #copythis
 	echo "[0m" #copythis
 } #copythis
 
-(cat ~/.cache/wal/sequences &)
-
-source ~/.cache/wal/colors-tty.sh
-
 [ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)"
 
 alias lsd='ls -d */' #copythis
@@ -119,28 +115,20 @@ export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.vim/aux_scripts:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
-export GOPATH=$HOME/repos/go
-export GOBIN=$GOPATH/bin
-export PATH=$GOBIN:$PATH
+export GPG_TTY=$(tty)
 
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+export AWS_PROFILE=matthias.nunes
+export AWS_REGION=us-east-1
 
-export PATH="$HOME/Downloads/treetagger/cmd:$PATH"
-export PATH="$HOME/Downloads/treetagger/bin:$PATH"
-export TREETAGGER="$HOME/Downloads/treetagger/cmd"
-export TREETAGGER_HOME="$HOME/Downloads/treetagger"
+# Set JAVA_HOME
+. ~/.asdf/plugins/java/set-java-home.zsh
 
-#export https_proxy=http://web-proxy.corp.hp.com:8080/
+. /usr/local/opt/asdf/asdf.sh
 
-export GOPATH=$HOME/repos/go
-export GOBIN=$GOPATH/bin
-export PATH=$GOBIN:$PATH
-#
+source <(kubectl completion zsh)
+
 export PATH="$(yarn global bin):$PATH"
 
 fpath=( "$HOME/.zfunctions" $fpath )
-
-if [ /home/execb5/.asdf/shims/kubectl ]; then source <(kubectl completion zsh); fi
 
 eval "$(starship init zsh)"

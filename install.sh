@@ -22,8 +22,6 @@ ln -sf "$(pwd)/ssh_config" ~/.ssh/config
 echo ".ssh_config symlinked"
 ln -sf "$(pwd)/Xresources" ~/.Xresources
 echo "Xresources symlinked"
-xrdb -merge ~/.Xresources
-echo "Xresources merged"
 
 [ -d ~/.ctags.d ] || mkdir ~/.ctags.d
 for f in "$(pwd)"/ctags/*.ctags
