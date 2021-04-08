@@ -365,7 +365,7 @@ set fileencoding=utf-8
 
 call BuildStatusLine()
 
-colorscheme wal
+colorscheme noctu
 
 set t_ZH=[3m
 set t_ZR=[23m
