@@ -14,7 +14,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-speeddating'
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-unimpaired'
-	Plug 'Townk/vim-autoclose'
 	Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 	Plug 'junegunn/vim-easy-align'
 	Plug 'ctrlpvim/ctrlp.vim'
@@ -46,6 +45,9 @@ call plug#begin('~/.vim/plugged')
 
 	" Markdown
 	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
+
+	" Wakatime
+	Plug 'wakatime/vim-wakatime'
 
 	" Pretify things
 	Plug 'mhinz/vim-signify'
@@ -290,6 +292,12 @@ cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-l> <t_kr>
 cnoremap <C-h> <t_kl>
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
 
 " Keybinds for plugins
 

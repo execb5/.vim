@@ -5,10 +5,12 @@ set -o pipefail
 set -o nounset
 #set -o xtrace
 
+[[ $# -ne 1 ]] && echo "pass wallpaper as parameter" && exit 1
+
 wal -n -i "$1"
 
 COLORS=${HOME}"/.cache/wal/colors"
-[[ ! -e $COLORS ]] && echo "ERR: Wal colors not found, exiting script. Did you executed Wal before?" && exit 0
+[[ ! -e $COLORS ]] && echo "colors not found. Execute wal before" && exit 1
 
 index=1
 while read -r line
