@@ -26,7 +26,5 @@
 	it = !git init && git commit -m "root" --allow-empty
 [includeIf "gitdir:~/repos/work/"]
 	path = ~/repos/work/.gitconfig
-[gpg]
-	program = gpg
 [init]
 	defaultBranch = master
