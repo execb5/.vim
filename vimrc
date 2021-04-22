@@ -49,6 +49,9 @@ call plug#begin('~/.vim/plugged')
 	" Wakatime
 	Plug 'wakatime/vim-wakatime'
 
+	" GitHub
+	Plug 'jehuipark/github-co-author-vim-plugin'
+
 	" Pretify things
 	Plug 'mhinz/vim-signify'
 	Plug 'mhinz/vim-startify'
@@ -127,6 +130,9 @@ let g:tagbar_type_markdown = {
 	\ 'k:Heading_L3'
 	\ ]
 	\ }
+
+" Vim GitHub Co Author Plugin
+let g:github_co_author_list_path = '~/.vim/github-co-author-list'
 
 
 
@@ -373,9 +379,24 @@ set fileencoding=utf-8
 
 call BuildStatusLine()
 
-colorscheme noctu
+colorscheme wal
 
+highlight EndOfBuffer ctermfg=black  guifg=black
+
+" For italics
 set t_ZH=[3m
 set t_ZR=[23m
 highlight Comment cterm=italic gui=italic
-highlight EndOfBuffer ctermfg=black  guifg=black
+
+" Fixing wal colors issue
+"
+"
+" Adjusting color for eol character since wal uses the same for the
+" background.
+"
+" From the :help 'listchars'
+highlight NonText ctermfg=red  guifg=red
+" Adjusting color for vertical lines since they're showing
+"
+" From the :help 'fillchars'
+highlight VertSplit ctermfg=0  ctermbg=0

@@ -1,7 +1,7 @@
 [user]
 	email = matthiasnunes@gmail.com
 	name = Matthias Nunes
-	signingkey = F5506AC1BD47C17116CF821DB6D8776ABB9B339E
+	signingKey = B6D8776ABB9B339E
 [commit]
 	gpgsign = true
 [rebase]
