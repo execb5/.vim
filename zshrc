@@ -18,8 +18,7 @@ explain () { #copythis
 	fi #copythis
 } #copythis
 
-function extract() #copythis
-{ #copythis
+extract() { #copythis
 	if [ -f $1 ] ; then #copythis
 		case $1 in #copythis
 			*.tar.bz2)   tar xvjf $1     ;; #copythis
@@ -40,7 +39,7 @@ function extract() #copythis
 	fi #copythis
 } #copythis
 
-function wow() { #copythis
+wow() { #copythis
 	echo "                Y.                      _             " #copythis
 	echo "                YiL                   .\`\`\`.           " #copythis
 	echo "  much files    Yii;                .; .;;\`.          " #copythis
@@ -108,8 +107,6 @@ alias cat='bat' #copythis
 export EDITOR="/usr/bin/vim" #copythis
 
 source $ZSH/oh-my-zsh.sh
-
-source ~/.bin/tmuxinator.zsh
 
 export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.vim/aux_scripts:$PATH"
