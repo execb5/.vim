@@ -108,9 +108,9 @@ export EDITOR="/usr/bin/vim" #copythis
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.vim/aux_scripts:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
 
 export GPG_TTY=$(tty)
 
@@ -129,3 +129,5 @@ export PATH="$(yarn global bin):$PATH"
 fpath=( "$HOME/.zfunctions" $fpath )
 
 eval "$(starship init zsh)"
+export PATH="/usr/local/opt/php@7.1/bin:$PATH"
+export PATH="/usr/local/opt/php@7.1/sbin:$PATH"

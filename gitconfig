@@ -1,7 +1,7 @@
 [user]
 	email = matthiasnunes@gmail.com
 	name = Matthias Nunes
-	signingKey = B6D8776ABB9B339E
+	signingKey = E76A7BE55BCFB603
 [commit]
 	gpgsign = true
 [rebase]
@@ -20,10 +20,24 @@
 [difftool]
 	prompt = false
 [alias]
-	l    = log --graph --abbrev-commit --date=relative
 	grog = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
 	lisardo = push --force-with-lease
 	it = !git init && git commit -m "root" --allow-empty
+	release = "!f() { \
+		set -ae; \
+		RELEASE_NAME=$1; \
+		CURRENT_FOLDER=${PWD##*/}; \
+		LATEST_TAG=$(git describe --tags --abbrev=0); \
+		MERGES=$(git log --oneline --decorate --graph --merges "$LATEST_TAG"..HEAD); \
+		TRIPLE_BACK_TICK='```'; \
+		SINGLE_BACK_TICK='`'; \
+		HASH=##; \
+		RELEASE_MESSAGE=\"@here I am going to release $CURRENT_FOLDER\\n\\nProduct: $SINGLE_BACK_TICK$CURRENT_FOLDER $RELEASE_NAME$SINGLE_BACK_TICK\\nRelease URL:\\n\\n$TRIPLE_BACK_TICK\\n$HASH\\n\\n$HASH Merged PRs\\n$MERGES\\n$TRIPLE_BACK_TICK\"; \
+		echo \"$RELEASE_MESSAGE\"; \
+		echo \"$RELEASE_MESSAGE\" | pbcopy;  \
+		git tag $1; \
+		echo "The release message is in your clipboard. Paste it in your favorite editor and add the human readable features and bug fixes and then paste it in slack";  \
+		}; f"
 [includeIf "gitdir:~/repos/work/"]
 	path = ~/repos/work/.gitconfig
 [init]
