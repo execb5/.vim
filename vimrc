@@ -5,8 +5,8 @@ call plug#begin('~/.vim/plugged')
 
 	" Workflow
 	Plug 'dense-analysis/ale'
-	Plug 'scrooloose/nerdcommenter'
 	Plug 'mileszs/ack.vim', { 'on': 'Ack' }
+	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-dadbod'
 	Plug 'tpope/vim-endwise', { 'for': ['ruby', 'elixir'] }
 	Plug 'tpope/vim-fugitive'
