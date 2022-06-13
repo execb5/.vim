@@ -19,6 +19,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/vim-easy-align'
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'wsdjeg/vim-fetch'
 
 	" Html
 	Plug 'adelarsq/vim-matchit'
@@ -268,6 +269,41 @@ function! StripTrailingWhitespace()
 	endif
 endfunction
 
+"" operator mapping
+func! DBExe(...)
+	if !a:0
+		let &operatorfunc = matchstr(expand('<sfile>'), '[^. ]*$')
+		return 'g@'
+	endif
+	let sel_save = &selection
+	let &selection = "inclusive"
+	let reg_save = @@
+
+	if a:1 == 'char'	" Invoked from Visual mode, use gv command.
+		silent exe 'normal! gvy'
+	elseif a:1 == 'line'
+		silent exe "normal! '[V']y"
+	else
+		silent exe 'normal! `[v`]y'
+	endif
+
+	execute "DB " . @@
+
+	let &selection = sel_save
+	let @@ = reg_save
+endfunc
+
+command! DBSelect :call popup_menu(map(copy(g:dadbods), {k,v -> v.name}), {
+			\"callback": 'DBSelected'
+			\})
+
+func! DBSelected(id, result)
+	if a:result != -1
+		let b:db = g:dadbods[a:result-1].url
+		echomsg 'DB ' . g:dadbods[a:result-1].name . ' is selected.'
+	endif
+endfunc
+
 
 
 
@@ -315,6 +351,13 @@ nmap <Leader>t :TagbarToggle<CR>
 map y <Plug>(highlightedyank)
 map <leader>l :RainbowLevelsToggle<CR>
 nnoremap <Leader>p :CtrlPTag<CR>
+xnoremap <expr> <Plug>(DBExe)     DBExe()
+nnoremap <expr> <Plug>(DBExe)     DBExe()
+nnoremap <expr> <Plug>(DBExeLine) DBExe() . '_'
+xmap <leader>db  <Plug>(DBExe)
+nmap <leader>db  <Plug>(DBExe)
+omap <leader>db  <Plug>(DBExe)
+nmap <leader>dbb <Plug>(DBExeLine)
 
 " Mouse wheel will move throught time and not space
 
@@ -379,6 +422,9 @@ command Writemode setlocal spell | Goyo 70 | Limelight
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown " Detect *.md as markdown
 autocmd BufNewFile,BufReadPost *.tex set filetype=tex " Detect *.tex as latex
+autocmd BufNewFile,BufReadPost *.dc set filetype=dc " Detect *.dc as desktop calculator
+autocmd BufRead,BufNewFile *.ex,*.exs set filetype=elixir
+autocmd BufRead,BufNewFile *.eex set filetype=eelixir
 autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
 autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
 autocmd cursorhold,bufwritepost * unlet! b:statusline_tab_warning

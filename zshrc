@@ -100,8 +100,8 @@ alias lenny_face='echo "( ͡° ͜ʖ ͡°)"' #copythis
 alias lenny_wall='echo "┬┴┬┴┤ ͜ʖ ͡°)"' #copythis
 alias shrug='echo "¯\_(ツ)_/¯"' #copythis
 alias httpserver='ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => Dir.pwd); trap('"'"'INT'"'"') { s.shutdown }; s.start"' #copythis
-alias dri='docker rmi -f `docker images -aq`' #copythis
-alias drc='docker rm -fv `docker ps -qa`' #copythis
+alias dri='docker rmi -f $(docker images -aq)' #copythis
+alias drc='docker rm -fv $(docker ps -qa)' #copythis
 alias cat='bat' #copythis
 
 export EDITOR="/usr/bin/vim" #copythis

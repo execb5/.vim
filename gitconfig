@@ -42,3 +42,5 @@
 	path = ~/repos/work/.gitconfig
 [init]
 	defaultBranch = master
+[url "git@github.com:"]
+	insteadOf = https://github.com/
