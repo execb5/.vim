@@ -1,0 +1,25 @@
+[docker_context]
+symbol = "🐋 "
+disabled = true
+
+[elixir]
+symbol = "🔮 "
+disabled = true
+
+[nodejs]
+disabled = true
+
+[aws]
+disabled = true
+
+[kubernetes]
+format = 'on [⛵ $context](dimmed green) '
+disabled = false
+
+[kubernetes.context_aliases]
+"dev.local.cluster.k8s" = "dev"
+"arn:aws:eks:us-east-1:583851570477:cluster/realm-staging" = "staging"
+"arn:aws:eks:us-east-1:583851570477:cluster/realm-production-v5" = "production"
+
+[package]
+disabled = true
