@@ -23,15 +23,6 @@ call plug#begin('~/.vim/plugged')
 	" Html
 	Plug 'adelarsq/vim-matchit'
 
-	" SQL
-	Plug 'exu/pgsql.vim'
-
-	" Org
-	Plug 'jceb/vim-orgmode', { 'for': 'org' }
-	Plug 'vim-scripts/SyntaxRange', { 'for': 'org' }
-	Plug 'mattn/calendar-vim', { 'for': 'org' }
-	Plug 'vim-scripts/utl.vim', { 'for': 'org' }
-
 	" Elixir
 	Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 	"Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
