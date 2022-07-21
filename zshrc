@@ -90,6 +90,11 @@ function tradewars() { #copythis
 	echo "[0m" #copythis
 } #copythis
 
+connect_kafka() {
+	kafka_pod=$(kubectl -n realm get pod -l run=kafka-console --no-headers -o custom-columns=":metadata.name")
+	kubectl -n realm exec -it "$kafka_pod" -c kafka-console "--" sh -c "clear; (bash || ash || sh)"
+}
+
 [ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)"
 
 alias lsd='ls -d */' #copythis
@@ -108,26 +113,24 @@ export EDITOR="/usr/bin/vim" #copythis
 
 source $ZSH/oh-my-zsh.sh
 
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
 export PATH="$HOME/.vim/aux_scripts:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/Library/Python/3.8/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$(yarn global bin):$PATH"
 
 export GPG_TTY=$(tty)
 
 export AWS_PROFILE=matthias.nunes
 export AWS_REGION=us-east-1
 
-# Set JAVA_HOME
-. ~/.asdf/plugins/java/set-java-home.zsh
-
-. /usr/local/opt/asdf/asdf.sh
-
 source <(kubectl completion zsh)
-
-export PATH="$(yarn global bin):$PATH"
 
 fpath=( "$HOME/.zfunctions" $fpath )
 
 eval "$(starship init zsh)"
-export PATH="/usr/local/opt/php@7.1/bin:$PATH"
-export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
+export PATH="/opt/homebrew/opt/php@7.1/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@7.1/sbin:$PATH"

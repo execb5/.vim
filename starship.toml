@@ -23,3 +23,6 @@ disabled = false
 
 [package]
 disabled = true
+
+[git_branch]
+symbol = "🌱 "
