@@ -1,3 +1,5 @@
 {
-	"elixirLS.dialyzerEnabled": true
+	"elixirLS.dialyzerEnabled": true,
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.import.gradle.java.home": "/Users/matthiasnunes/.asdf/installs/java/openjdk-17.0.2"
 }

@@ -20,6 +20,10 @@
 [difftool]
 	prompt = false
 [alias]
+	branch-dos-brothers = "!f() { \
+		NAME=$(echo $2 | tr -dc '[:alnum:]-\n ' | tr '[:upper:]' '[:lower:]'); \
+		git checkout -b $1/${NAME// /-}; \
+		}; f"
 	grog = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
 	lisardo = push --force-with-lease
 	it = !git init && git commit -m "root" --allow-empty

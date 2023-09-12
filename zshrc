@@ -95,6 +95,8 @@ connect_kafka() {
 	kubectl -n realm exec -it "$kafka_pod" -c kafka-console "--" sh -c "clear; (bash || ash || sh)"
 }
 
+wallpaper() { automator -i "${1}" ~/Documents/set_wallpaper.workflow }
+
 [ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)"
 
 alias lsd='ls -d */' #copythis
@@ -114,11 +116,13 @@ export EDITOR="/usr/bin/vim" #copythis
 source $ZSH/oh-my-zsh.sh
 
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+. ~/.asdf/plugins/java/set-java-home.zsh
 
 export PATH="$HOME/.vim/aux_scripts:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
-export PATH="$HOME/Library/Python/3.8/bin:$PATH"
+export PATH="$HOME/.bin/flutter/bin:$PATH"
+export PATH="$HOME/Library/Python/3.11/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$(yarn global bin):$PATH"
 
@@ -127,6 +131,8 @@ export GPG_TTY=$(tty)
 export AWS_PROFILE=matthias.nunes
 export AWS_REGION=us-east-1
 
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
 source <(kubectl completion zsh)
 
 fpath=( "$HOME/.zfunctions" $fpath )

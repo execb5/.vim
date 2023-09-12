@@ -24,13 +24,19 @@ call plug#begin('~/.vim/plugged')
 	Plug 'adelarsq/vim-matchit'
 
 	" Elixir
-	Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
+	Plug 'elixir-editors/vim-elixir'
 	"Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 	Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
+
+	Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 
 	" PHP
 	Plug 'StanAngeloff/php.vim'
 	Plug 'aeke/vim-php-cs-fixer'
+
+	" Tsx
+	Plug 'leafgarland/typescript-vim'
+	Plug 'peitalin/vim-jsx-typescript'
 
 	" csv
 	Plug 'chrisbra/csv.vim'
@@ -42,6 +48,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }
 	Plug 'vim-scripts/a.vim', { 'for': ['c', 'cpp'] }
 	Plug 'drmikehenry/vim-headerguard', { 'for': ['c', 'cpp'] }
+
+	" Golang
+	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 	" Markdown
 	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
@@ -58,10 +67,12 @@ call plug#begin('~/.vim/plugged')
 	Plug 'machakann/vim-highlightedyank'
 	Plug 'ap/vim-css-color'
 	Plug 'thiagoalessio/rainbow_levels.vim', { 'on': 'RainbowLevelsToggle' }
+	Plug 'willchao612/vim-diagon'
 
 	" Colorschemes
 	Plug 'noahfrederick/vim-noctu'
 	Plug 'dylanaraps/wal.vim'
+	Plug 'ghifarit53/tokyonight-vim'
 
 	" Random
 	Plug 'johngrib/vim-game-snake', { 'on': 'VimGameSnake' }
@@ -79,6 +90,9 @@ call plug#end()
 
 
 " Plugins configuration
+
+" ALE go
+let g:ale_go_golangci_lint_package = 1
 
 " Startify options
 let g:startify_custom_header = [
@@ -132,32 +146,45 @@ let g:tagbar_type_markdown = {
 	\ }
 
 let g:tagbar_type_elixir = {
-    \ 'ctagstype' : 'elixir',
-    \ 'kinds' : [
-        \ 'p:protocols',
-        \ 'm:modules',
-        \ 'e:exceptions',
-        \ 'y:types',
-        \ 'd:delegates',
-        \ 'f:functions',
-        \ 'c:callbacks',
-        \ 'a:macros',
-        \ 't:tests',
-        \ 'i:implementations',
-        \ 'o:operators',
-        \ 'r:records'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 'p' : 'protocol',
-        \ 'm' : 'module'
-    \ },
-    \ 'scope2kind' : {
-        \ 'protocol' : 'p',
-        \ 'module' : 'm'
-    \ },
-    \ 'sort' : 0
+	\ 'ctagstype' : 'elixir',
+	\ 'kinds' : [
+		\ 'p:protocols',
+		\ 'm:modules',
+		\ 'e:exceptions',
+		\ 'y:types',
+		\ 'd:delegates',
+		\ 'f:functions',
+		\ 'c:callbacks',
+		\ 'a:macros',
+		\ 't:tests',
+		\ 'i:implementations',
+		\ 'o:operators',
+		\ 'r:records'
+	\ ],
+	\ 'sro' : '.',
+	\ 'kind2scope' : {
+		\ 'p' : 'protocol',
+		\ 'm' : 'module'
+	\ },
+	\ 'scope2kind' : {
+		\ 'protocol' : 'p',
+		\ 'module' : 'm'
+	\ },
+	\ 'sort' : 0
 \ }
+
+let g:tagbar_type_elm = {
+      \ 'kinds' : [
+      \ 'f:function:0:0',
+      \ 'm:modules:0:0',
+      \ 'i:imports:1:0',
+      \ 't:types:1:0',
+      \ 'a:type aliases:0:0',
+      \ 'c:type constructors:0:0',
+      \ 'p:ports:0:0',
+      \ 's:functions:0:0',
+      \ ]
+      \}
 
 " Vim GitHub Co Author Plugin
 let g:github_co_author_list_path = '~/.vim/github-co-author-list'
@@ -244,6 +271,7 @@ endfunction
 
 function! BuildStatusLine(show_word = 0)
 	set statusline=
+	set statusline+=\%#Normal#
 	set statusline+=\ %#Search#%{CurrentMode()}
 	set statusline+=\%#Normal#
 	set statusline+=\ %#SpellCap#%{FugitiveHead()}
@@ -287,6 +315,34 @@ function! StripTrailingWhitespace()
 	endif
 endfunction
 
+function! DoPrettyXML()
+	" save the filetype so we can restore it later
+	let l:origft = &ft
+	set ft=
+	" delete the xml header if it exists. This will
+	" permit us to surround the document with fake tags
+	" without creating invalid xml.
+	1s/<?xml .*?>//e
+	" insert fake tags around the entire document.
+	" This will permit us to pretty-format excerpts of
+	" XML that may contain multiple top-level elements.
+	0put ='<PrettyXML>'
+	$put ='</PrettyXML>'
+	silent %!xmllint --format -
+	" xmllint will insert an <?xml?> header. it's easy enough to delete
+	" if you don't want it.
+	" delete the fake tags
+	2d
+	$d
+	" restore the 'normal' indentation, which is one extra level
+	" too deep due to the extra tags we wrapped around the document.
+	silent %<
+	" back to home
+	1
+	" restore the filetype
+	exe "set ft=" . l:origft
+endfunction
+command! PrettyXML call DoPrettyXML()
 
 
 
@@ -334,6 +390,11 @@ nmap <Leader>t :TagbarToggle<CR>
 map y <Plug>(highlightedyank)
 map <leader>l :RainbowLevelsToggle<CR>
 nnoremap <Leader>p :CtrlPTag<CR>
+
+noremap <Leader>D :Diagon<Space>
+noremap <Leader>dm :Diagon Math<CR>
+noremap <Leader>ds :Diagon Sequence<CR>
+noremap <Leader>dt :Diagon Tree<CR>
 
 " Mouse wheel will move throught time and not space
 
@@ -448,7 +509,15 @@ call BuildStatusLine()
 
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-colorscheme wal
+" colorscheme wal
+" set background=light
+" colorscheme PaperColor
+set termguicolors
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_transparent_background = 1
+let g:tokyonight_enable_italic = 1
+let g:tokyonight_current_word = 'underline'
+colorscheme tokyonight
 
 highlight EndOfBuffer ctermfg=black  guifg=black
 

@@ -3,7 +3,7 @@
 set -o errexit
 set -o pipefail
 set -o nounset
-#set -o xtrace
+# set -o xtrace
 
 [[ $# -lt 1 ]] && echo "pass wallpaper as parameter" && exit 1
 
@@ -59,3 +59,32 @@ colors:\n\
 # END_COLORS"
 
 gsed -i "/BEGIN_COLORS/,/END_COLORS/c$NEW_COLORS" ~/.alacritty.yml
+
+NEW_COLORS="\t\t\t-- BEGIN_COLORS\n\
+\t\t\tbackground = '$color1',\n\
+\t\t\tforeground = '$color8',\n\
+\t\t\tansi = {\n\
+\t\t\t\t'$color1',\n\
+\t\t\t\t'$color2',\n\
+\t\t\t\t'$color3',\n\
+\t\t\t\t'$color4',\n\
+\t\t\t\t'$color5',\n\
+\t\t\t\t'$color6',\n\
+\t\t\t\t'$color7',\n\
+\t\t\t\t'$color8',\n\
+\t\t\t},\n\
+\t\t\tbrights = {\n\
+\t\t\t\t'$color9',\n\
+\t\t\t\t'$color10',\n\
+\t\t\t\t'$color11',\n\
+\t\t\t\t'$color12',\n\
+\t\t\t\t'$color13',\n\
+\t\t\t\t'$color14',\n\
+\t\t\t\t'$color15',\n\
+\t\t\t\t'$color16',\n\
+\t\t\t},\n\
+\t\t\t-- END_COLORS"
+
+gsed -i "/BEGIN_COLORS/,/END_COLORS/c\\$NEW_COLORS" ~/.wezterm.lua
+
+automator -i "$1" ~/Documents/set_wallpaper.workflow
