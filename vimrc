@@ -510,8 +510,6 @@ call BuildStatusLine()
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " colorscheme wal
-" set background=light
-" colorscheme PaperColor
 set termguicolors
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_transparent_background = 1
@@ -522,8 +520,8 @@ colorscheme tokyonight
 highlight EndOfBuffer ctermfg=black  guifg=black
 
 " For italics
-set t_ZH=[3m
-set t_ZR=[23m
+" set t_ZH=[3m
+" set t_ZR=[23m
 highlight Comment cterm=italic gui=italic
 
 " Fixing wal colors issue
