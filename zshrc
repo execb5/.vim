@@ -90,11 +90,6 @@ function tradewars() { #copythis
 	echo "[0m" #copythis
 } #copythis
 
-connect_kafka() {
-	kafka_pod=$(kubectl -n realm get pod -l run=kafka-console --no-headers -o custom-columns=":metadata.name")
-	kubectl -n realm exec -it "$kafka_pod" -c kafka-console "--" sh -c "clear; (bash || ash || sh)"
-}
-
 wallpaper() { automator -i "${1}" ~/Documents/set_wallpaper.workflow }
 
 [ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)"
@@ -115,28 +110,31 @@ export EDITOR="/usr/bin/vim" #copythis
 
 source $ZSH/oh-my-zsh.sh
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-. ~/.asdf/plugins/java/set-java-home.zsh
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@7.1/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@7.1/sbin:$PATH"
+
+export ASDF_DATA_DIR=/Users/matthiasnunes/.asdf
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
+
+. ${ASDF_DATA_DIR:-$HOME/.asdf}/plugins/golang/set-env.zsh
 
 export PATH="$HOME/.vim/aux_scripts:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.bin/flutter/bin:$PATH"
 export PATH="$HOME/Library/Python/3.11/bin:$PATH"
-export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$(yarn global bin):$PATH"
 
 export GPG_TTY=$(tty)
-
-export AWS_PROFILE=matthias.nunes
-export AWS_REGION=us-east-1
-
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
-source <(kubectl completion zsh)
+#
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/matthiasnunes/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
 
 fpath=( "$HOME/.zfunctions" $fpath )
 
 eval "$(starship init zsh)"
-export PATH="/opt/homebrew/opt/php@7.1/bin:$PATH"
-export PATH="/opt/homebrew/opt/php@7.1/sbin:$PATH"
+

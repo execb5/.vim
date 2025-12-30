@@ -42,9 +42,7 @@
 		git tag $1; \
 		echo "The release message is in your clipboard. Paste it in your favorite editor and add the human readable features and bug fixes and then paste it in slack";  \
 		}; f"
-[includeIf "gitdir:~/repos/work/"]
-	path = ~/repos/work/.gitconfig
 [init]
 	defaultBranch = master
-[url "git@github.com:"]
-	insteadOf = https://github.com/
+; [url "git@github.com:"]
+; 	insteadOf = https://github.com/

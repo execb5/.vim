@@ -22,6 +22,10 @@ call plug#begin('~/.vim/plugged')
 
 	" Html
 	Plug 'adelarsq/vim-matchit'
+	Plug 'mattn/emmet-vim'
+
+	" Rust
+	Plug 'rust-lang/rust.vim'
 
 	" Elixir
 	Plug 'elixir-editors/vim-elixir'
@@ -93,24 +97,54 @@ call plug#end()
 
 " ALE go
 let g:ale_go_golangci_lint_package = 1
+let g:ale_linters = {
+  \ 'go': ['gopls'],
+  \ 'python': ['pylsp', 'flake8'],
+  \}
+let g:ale_completion_enabled = 1
+
+" vim-go
+let g:go_highlight_extra_types = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
 
 " Startify options
+" let g:startify_custom_header = [
+" 	\ "  ,-.       _,---._ __  / \\            _                        ",
+" 	\ " /  )    .-'       `./ /   \\           \\`*-.                    ",
+" 	\ "(  (   ,'            `/    /|           )  _`-.                 ",
+" 	\ " \\  `-\"             \\'\\   / |          .  : `. .                ",
+" 	\ "  `.              ,  \\ \\ /  |          : _   '  \\               ",
+" 	\ "   /`.          ,'-`----Y   |          ; *` _.   `*-._          ",
+" 	\ "  (            ;        |   '          `-.-'          `-.       ",
+" 	\ "  |  ,-.    ,-'         |  /             ;       `       `.     ",
+" 	\ "  |  | (   |            | /              :.       .        \\    ",
+" 	\ "  )  |  \\  `.___________|/               . \\  .   :   .-'   .   ",
+" 	\ "  `--'   `--'                            '  `+.;  ;  '      :   ",
+" 	\ "                                         :  '  |    ;       ;-. ",
+" 	\ "                                         ; '   : :`-:     _.`* ;",
+" 	\ "                                [bug] .*' /  .*' ; .*`- +'  `*' ",
+" 	\ "                                      `*-*   `*-*  `*-*'        ",
+" 	\ ]
+
 let g:startify_custom_header = [
-	\ "  ,-.       _,---._ __  / \\            _                        ",
-	\ " /  )    .-'       `./ /   \\           \\`*-.                    ",
-	\ "(  (   ,'            `/    /|           )  _`-.                 ",
-	\ " \\  `-\"             \\'\\   / |          .  : `. .                ",
-	\ "  `.              ,  \\ \\ /  |          : _   '  \\               ",
-	\ "   /`.          ,'-`----Y   |          ; *` _.   `*-._          ",
-	\ "  (            ;        |   '          `-.-'          `-.       ",
-	\ "  |  ,-.    ,-'         |  /             ;       `       `.     ",
-	\ "  |  | (   |            | /              :.       .        \\    ",
-	\ "  )  |  \\  `.___________|/               . \\  .   :   .-'   .   ",
-	\ "  `--'   `--'                            '  `+.;  ;  '      :   ",
-	\ "                                         :  '  |    ;       ;-. ",
-	\ "                                         ; '   : :`-:     _.`* ;",
-	\ "                                [bug] .*' /  .*' ; .*`- +'  `*' ",
-	\ "                                      `*-*   `*-*  `*-*'        ",
+	\ "___________   _______________________________________^__",
+	\ " ___   ___ |||  ___   ___   ___    ___ ___  |   __  ,----\\",
+	\ "|   | |   |||| |   | |   | |   |  |   |   | |  |  | |_____\\",
+	\ "|___| |___|||| |___| |___| |___|  | O | O | |  |  |        \\",
+	\ "           |||                    |___|___| |  |__|         )",
+	\ "___________|||______________________________|______________/",
+	\ "           |||                                        /--------",
+	\ "-----------'''---------------------------------------'",
 	\ ]
 
 let g:ackprg = 'rg --vimgrep' " Use rg with ack vim
@@ -509,13 +543,13 @@ call BuildStatusLine()
 
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-" colorscheme wal
-set termguicolors
-let g:tokyonight_style = 'night' " available: night, storm
-let g:tokyonight_transparent_background = 1
-let g:tokyonight_enable_italic = 1
-let g:tokyonight_current_word = 'underline'
-colorscheme tokyonight
+colorscheme wal
+" set termguicolors
+" let g:tokyonight_style = 'night' " available: night, storm
+" let g:tokyonight_transparent_background = 1
+" let g:tokyonight_enable_italic = 1
+" let g:tokyonight_current_word = 'underline'
+" colorscheme tokyonight
 
 highlight EndOfBuffer ctermfg=black  guifg=black
 

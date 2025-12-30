@@ -1,5 +1,21 @@
 {
-	"elixirLS.dialyzerEnabled": true,
+  "elixirLS.dialyzerEnabled": true,
   "java.compile.nullAnalysis.mode": "automatic",
-  "java.import.gradle.java.home": "/Users/matthiasnunes/.asdf/installs/java/openjdk-17.0.2"
+  "java.import.gradle.java.home": "/Users/matthiasnunes/.asdf/installs/java/openjdk-17.0.2",
+  "languageserver": {
+    "go": {
+      "command": "gopls",
+      "rootPatterns": ["go.work", "go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    }
+  },
+  "java.imports.gradle.wrapper.checksums": [
+    {
+      "sha256": "d3b261c2820e9e3d8d639ed084900f11f4a86050a8f83342ade7b6bc9b0d2bdd",
+      "allowed": true
+    }
+  ]
 }
